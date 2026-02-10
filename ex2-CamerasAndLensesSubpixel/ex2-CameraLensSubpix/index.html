@@ -1946,6 +1946,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Two amateur metrologists and an experiment in subpixel precision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coordinate-frames-and-triangulation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2003,6 +2014,17 @@
     <span class="md-ellipsis">
       
         Part 1 - Warming up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Two amateur metrologists and an experiment in subpixel precision
       
     </span>
   </a>
@@ -2106,13 +2128,15 @@ meters.</p>
 </details>
 <!-- END_SOLUTION 2 -->
 
-<h3 id="part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision">Part 2: Two amateur metrologists and an experiment in subpixel precision<a class="headerlink" href="#part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision" title="Permanent link">¶</a></h3>
+<h2 id="part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision">Part 2: Two amateur metrologists and an experiment in subpixel precision<a class="headerlink" href="#part-2-two-amateur-metrologists-and-an-experiment-in-subpixel-precision" title="Permanent link">¶</a></h2>
 <p>Two amateur metrologists try to measure the physical dimensions of a piece of paper using a low-quality homemade experimental setup. A piece of A4 paper is placed directly below a stair-case on which a low quality CCD camera lies. The optical axis of the CCD camera is exactly aligned with the centre of the piece of paper. </p>
 <p>The front lens element of the camera is located 299.68m above the paper (i.e. <span class="arithmatex">\(WD\approx2.9968 m\)</span>).</p>
 <p>The height of the piece of paper is 290mm and is along the <span class="arithmatex">\(y\)</span>-axis of the image. Similarly, the width is 210mm, and is along the <span class="arithmatex">\(x\)</span>-axis of the image. </p>
 <p>The camera is the smartphone camera in a Google Pixel 7, and the camera used has the following table specifications: </p>
+<div class="admonition abstract">
+<p class="admonition-title">Camera specifications</p>
 <ul>
-<li>50 MP, </li>
+<li>50 MP </li>
 <li>Image resolution: <span class="arithmatex">\(8160\times6144\)</span></li>
 <li>24mm equivalent f/1.85-aperture - physical focal length ~ 6.8mm</li>
 <li>82˚ field of view (wide)</li>
@@ -2120,6 +2144,7 @@ meters.</p>
 <li>Resolution from video: <span class="arithmatex">\(3840\times 2160\)</span> pixels </li>
 <li>Complete sensor size: <span class="arithmatex">\(9.782\text{mm}\times 7.3728\text{mm} (12.26\text{mm} \text{ diagonal})\)</span></li>
 </ul>
+</div>
 <p>Initially, the amateur metrologists start out with a single image of the scene. They try to verify whether they can utilize thin-lens theory, camera parameters and the object distance to measure the dimensions of the piece of paper correctly. </p>
 <p><strong>Preparation</strong>: It is easiest to start by drawing the scene and the thin lens equation. The scene should contain the optical axis, the optical center, the lens, the focal
 point, the CCD chip, the paper, and the variables for the thin lens equation. </p>
@@ -2223,7 +2248,7 @@ radians and degrees you can use:</p>
 <div class="arithmatex">\[W_{pix} \approx 473-315 = 158\]</div>
 <p>and a height: </p>
 <div class="arithmatex">\[H_{pix} \approx 381-282 = 99\]</div>
-<p>Which is quite close to the calculated theoretical value. Discrepancies may be caused by imprecise focal length, imprecised measured object distance and a slight rotation with respect to the sensor axes. In addition, the card is not in the optical center, which our calculations assume. <strong>This is the exact reason why machine vision setups seldom rely on theoretical calculations, but rather use calibration, as you will see in exercise 5.xxx</strong>.</p>
+<p>Which is quite close to the calculated theoretical value. Discrepancies may be caused by imprecise focal length, imprecised measured object distance and a slight rotation with respect to the sensor axes. In addition, the card is not in the optical center, which our calculations assume. <strong>This is the exact reason why machine vision setups seldom rely on theoretical calculations, but rather use calibration, as you will see in later exercises</strong>.</p>
 </details>
 <!-- END_SOLUTION 10 -->
 
