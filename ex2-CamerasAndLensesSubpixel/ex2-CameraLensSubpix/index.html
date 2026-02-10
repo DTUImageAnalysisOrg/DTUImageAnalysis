@@ -1967,6 +1967,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#demonstrating-sub-pixel-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstrating sub-pixel precision
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2036,6 +2047,17 @@
     <span class="md-ellipsis">
       
         Coordinate frames and triangulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demonstrating-sub-pixel-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demonstrating sub-pixel precision
       
     </span>
   </a>
@@ -2132,19 +2154,7 @@ meters.</p>
 <p>Two amateur metrologists try to measure the physical dimensions of a piece of paper using a low-quality homemade experimental setup. A piece of A4 paper is placed directly below a stair-case on which a low quality CCD camera lies. The optical axis of the CCD camera is exactly aligned with the centre of the piece of paper. </p>
 <p>The front lens element of the camera is located 299.68m above the paper (i.e. <span class="arithmatex">\(WD\approx2.9968 m\)</span>).</p>
 <p>The height of the piece of paper is 290mm and is along the <span class="arithmatex">\(y\)</span>-axis of the image. Similarly, the width is 210mm, and is along the <span class="arithmatex">\(x\)</span>-axis of the image. </p>
-<p>The camera is the smartphone camera in a Google Pixel 7, and the camera used has the following table specifications: </p>
-<div class="admonition abstract inline end">
-<p class="admonition-title">Camera specifications</p>
-<ul>
-<li>50 MP </li>
-<li>Image resolution: <span class="arithmatex">\(8160\times6144\)</span></li>
-<li>24mm equivalent f/1.85-aperture - physical focal length ~ 6.8mm</li>
-<li>82˚ field of view (wide)</li>
-<li>Pixel side length: 1.2 µm (also called pixel pitch)</li>
-<li>Resolution from video: <span class="arithmatex">\(3840\times 2160\)</span> pixels </li>
-<li>Complete sensor size: <span class="arithmatex">\(9.782\text{mm}\times 7.3728\text{mm} (12.26\text{mm} \text{ diagonal})\)</span></li>
-</ul>
-</div>
+<p>The camera is the smartphone camera in a Google Pixel 7, and the camera used has the following table specifications:</p>
 <div class="admonition abstract">
 <p class="admonition-title">Camera specifications</p>
 <ul>
@@ -2327,7 +2337,7 @@ If we used <span class="arithmatex">\(b\)</span> instead of <span class="arithma
 </details>
 <!-- END_SOLUTION 15 -->
 
-<h3 id="measuring-with-sub-pixel-precision">Measuring with sub-pixel precision<a class="headerlink" href="#measuring-with-sub-pixel-precision" title="Permanent link">¶</a></h3>
+<h2 id="demonstrating-sub-pixel-precision">Demonstrating sub-pixel precision<a class="headerlink" href="#demonstrating-sub-pixel-precision" title="Permanent link">¶</a></h2>
 <p>Due to the discrepancy found in exercise 10, the metrologists re-do the experiment, as they realize they cannot rely on thin-lens theory. As they only have a single camera, they can not triangulate their way out of their difficulties, and therefore they decide to use a <strong><em>calibration rod</em></strong> to infer the physical pixel size in the object plane. They decide to use a credit card, with dimensions <span class="arithmatex">\(53.98\text{mm}\times 86.50\text{mm}\)</span> for calibration. Therefore they place the card on top of the piece of paper, and again record a video. </p>
 <p>They record for approximately a minute, holding the camera as still as possible. The video is recorded at 24 fps, and in total they obtain 1466 frames. They followingly for each video frame: 
 1. Crop the video 
