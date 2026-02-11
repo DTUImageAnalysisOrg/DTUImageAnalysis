@@ -59,3 +59,15 @@ p {
     font-size: 23px;
 }
 
+.center {
+    text-align: center;
+}
+
+.inline-button {
+    height: auto;                 /* let it fit the text */
+    line-height: normal;          /* match surrounding text */
+    /* padding: 0.2em 0.6em; */
+    font-size: 0.9em;             /* optional: slightly smaller */
+    vertical-align: middle;       /* align with text */
+}
+
