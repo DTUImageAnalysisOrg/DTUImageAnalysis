@@ -2568,7 +2568,7 @@
 
 
 
-<p><em>Latest Page Update: 12-02-2026</em></p>
+<p><em>Latest Page Update: 16-02-2026</em></p>
 <h1 id="real-time-object-detection-using-viola-jones-method">Real Time Object Detection Using Viola Jones Method<a class="headerlink" href="#real-time-object-detection-using-viola-jones-method" title="Permanent link">¶</a></h1>
 <h2 id="part-1-warming-up-and-gaining-familiarity">Part 1: warming up and gaining familiarity<a class="headerlink" href="#part-1-warming-up-and-gaining-familiarity" title="Permanent link">¶</a></h2>
 <hr>
@@ -2849,6 +2849,18 @@ Try to see if you can speed things up. Can you find some obvious inefficiencies?
 <details class="tip">
 <summary>Suggestion 6:</summary>
 <p>The rotation of the anchor-point mask is currently done numerically, thus making one unecessary rotation per iteration. Could you find the coordinate analytically instead?</p>
+</details>
+<details class="tip">
+<summary>Suggestion 7:</summary>
+<p>Optimizing the cascade classifier: increasing the scaleFactor will reduce the number of layers in the image pyramid, and thus yield faster evaluation speeds. Similarly, increasing the number minNeighbors will allow faster rejection of candidates. Lastly, for the face-detection, the minSize argument could preferentially be tuned to only allow larger detections, which significantly will speed up the search. </p>
+</details>
+<details class="tip">
+<summary>Suggestion 8:</summary>
+<p>Currently the tracker is detecting faces on the complete image for each frame, but in practice a person in front of the camera would probably be located within a neighborhood of the last detection. If we reduce the search region of interest to only be within the crop <span class="arithmatex">\(x\pm\Delta\)</span> and <span class="arithmatex">\(y\pm\Delta\)</span>, we would be able to speed up the complete pipeline significantly. We could then evaluate it on the complete frame only if the face is lost.  </p>
+</details>
+<details class="tip">
+<summary>Suggestion 9:</summary>
+<p>Image downscaling: instead of evaluating the cascade classifier on the input image size, we could downscale it beforehand, e.g. by a factor 2. All detected coordinates would then simply have to be multiplied by a factor two in the shown modified image.  </p>
 </details>
 <p>You can try any of these optimizations (there exist more than these), and see if you can measure the impact on the fps displayed. </p>
 </details>
