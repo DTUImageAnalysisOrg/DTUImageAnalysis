@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
@@ -2498,7 +2498,8 @@
 
   <h1>Exercises</h1>
 
-<p><em>Latest Page Update: 17-02-2026</em></p>
+<p><em>Latest Page Update: 23-02-2026</em></p>
+<p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../raw/downloads/sol_material-2.zip">Solution</a></p>
 <h2 id="computing-camera-parameters">Computing camera parameters<a class="headerlink" href="#computing-camera-parameters" title="Permanent link">¶</a></h2>
 <h3 id="exercise-1">Exercise 1<a class="headerlink" href="#exercise-1" title="Permanent link">¶</a></h3>
 <p>Explain how to calculate the angle <span class="arithmatex">\(\theta\)</span> when <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> is given
@@ -2576,14 +2577,7 @@ image formed by the CCD is 640x480 pixels in a (x,y) coordinate system.</p>
 contain the optical axis, the optical center, the lens, the focal
 point, the CCD chip, and Thomas. Do it on paper or even better in a
 drawing program.</p>
-<ol>
-<li>A focused image of Thomas is formed inside the camera. At which distance from the lens?</li>
-<li>How tall (in mm) will Thomas be on the CCD-chip?</li>
-<li>What is the size of a single pixel on the CCD chip? (in mm)?</li>
-<li>How tall (in pixels) will Thomas be on the CCD-chip?</li>
-<li>What is the horizontal field-of-view (in degrees)?</li>
-<li>What is the vertical field-of-view (in degrees)?</li>
-</ol>
+<h4 id="exercise-31-a-focused-image-of-thomas-is-formed-inside-the-camera-at-which-distance-from-the-lens">Exercise 3.1: A focused image of Thomas is formed inside the camera. At which distance from the lens?<a class="headerlink" href="#exercise-31-a-focused-image-of-thomas-is-formed-inside-the-camera-at-which-distance-from-the-lens" title="Permanent link">¶</a></h4>
 <details class="tip">
 <summary>Solution</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">f</span> <span class="o">=</span> <span class="mf">5e-3</span> <span class="c1"># m</span>
@@ -2591,6 +2585,60 @@ drawing program.</p>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">b</span> <span class="o">=</span> <span class="n">camera_b_distance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The image is formed at </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> m from the lens"</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h4 id="exercise-32-how-tall-in-mm-will-thomas-be-on-the-ccd-chip">Exercise 3.2: How tall (in mm) will Thomas be on the CCD-chip?<a class="headerlink" href="#exercise-32-how-tall-in-mm-will-thomas-be-on-the-ccd-chip" title="Permanent link">¶</a></h4>
+<details class="tip">
+<summary>Solution</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">G</span> <span class="o">=</span> <span class="mf">1.8</span> <span class="c1"># m</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">B</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">G</span><span class="o">/</span><span class="n">g</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Thomas is </span><span class="si">{</span><span class="n">B</span><span class="o">*</span><span class="mf">1e3</span><span class="si">}</span><span class="s2"> mm tall on the CCD chip"</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h4 id="exercise-33-what-is-the-size-of-a-single-pixel-on-the-ccd-chip-in-mm">Exercise 3.3: What is the size of a single pixel on the CCD chip? (in mm)?<a class="headerlink" href="#exercise-33-what-is-the-size-of-a-single-pixel-on-the-ccd-chip-in-mm" title="Permanent link">¶</a></h4>
+<details class="tip">
+<summary>Solution</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># If you understand this as the real world size of an object in a pixel...</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">B</span> <span class="o">=</span> <span class="mf">4.8e-3</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">G_aux</span> <span class="o">=</span> <span class="n">g</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="n">b</span> <span class="c1"># Real world distance corresponding to 480 pixels</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">px_size</span> <span class="o">=</span> <span class="n">G_aux</span><span class="o">/</span><span class="mi">480</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The real world distance corresponding to a single pixel is </span><span class="si">{</span><span class="n">px_size</span><span class="o">*</span><span class="mf">1e3</span><span class="si">}</span><span class="s2"> mm"</span><span class="p">)</span>
+</span></code></pre></div>
+<p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># If you understand this as the "physical" size of a pixel on the CCD chip...</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">size_y</span> <span class="o">=</span> <span class="mf">4.8</span> <span class="o">/</span> <span class="mi">480</span> <span class="c1"># mm</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">size_x</span> <span class="o">=</span> <span class="mf">6.4</span> <span class="o">/</span> <span class="mi">640</span> <span class="c1"># mm</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"The pixel size is: "</span><span class="p">,</span> <span class="n">size_x</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">,</span> <span class="n">size_y</span><span class="p">)</span>
+</span></code></pre></div>
+<strong>Note</strong>: Some people may understand this question as what is the size of a "physical" pixel on the CCD chip. The answer to that is 6.4/640 mm x 4.8/480 mm = 0.01 x 0.01 mm.<p></p>
+</details>
+<h4 id="exercise-34-how-tall-in-pixels-will-thomas-be-on-the-ccd-chip">Exercise 3.4: How tall (in pixels) will Thomas be on the CCD-chip?<a class="headerlink" href="#exercise-34-how-tall-in-pixels-will-thomas-be-on-the-ccd-chip" title="Permanent link">¶</a></h4>
+<details class="tip">
+<summary>Solution</summary>
+<p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">h</span> <span class="o">=</span> <span class="mf">1.8</span><span class="o">/</span><span class="n">px_size</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Thomas will be </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> pixels tall"</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># You can also do it like this (i.e., like a proportion)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">B</span> <span class="o">=</span> <span class="mf">1.8018018018018018e-3</span> <span class="c1"># Exercise 3.2</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">h</span> <span class="o">=</span> <span class="mi">480</span><span class="o">*</span><span class="n">B</span><span class="o">/</span><span class="mf">4.8e-3</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Thomas will be </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> pixels tall"</span><span class="p">)</span>
+</span></code></pre></div><p></p>
+</details>
+<h4 id="exercise-35-what-is-the-horizontal-field-of-view-in-degrees">Exercise 3.5: What is the horizontal field-of-view (in degrees)?<a class="headerlink" href="#exercise-35-what-is-the-horizontal-field-of-view-in-degrees" title="Permanent link">¶</a></h4>
+<details class="tip">
+<summary>Solution</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">FOV_x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="mf">3.2e-3</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Horizontal FOV is </span><span class="si">{</span><span class="n">FOV_x</span><span class="si">}</span><span class="s2"> deg"</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h4 id="exercise-36-what-is-the-vertical-field-of-view-in-degrees">Exercise 3.6: What is the vertical field-of-view (in degrees)?<a class="headerlink" href="#exercise-36-what-is-the-vertical-field-of-view-in-degrees" title="Permanent link">¶</a></h4>
+<details class="tip">
+<summary>Solution</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">FOV_y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="mf">2.4e-3</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vertical FOV is </span><span class="si">{</span><span class="n">FOV_y</span><span class="si">}</span><span class="s2"> deg"</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 
