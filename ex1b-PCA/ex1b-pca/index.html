@@ -2371,6 +2371,8 @@
       
         
       
+        
+      
     
     
     
@@ -2418,6 +2420,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2542,7 +2572,7 @@
 
   <h1>Exercises</h1>
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-1b.zip">Solution</a></p>
 <h2 id="loading-the-data">Loading the data<a class="headerlink" href="#loading-the-data" title="Permanent link">¶</a></h2>
 <p>We start by reading the data and in this example we only use the first 50 measurements from the same type of flower:</p>
@@ -2573,7 +2603,7 @@
 </span></code></pre></div><p></p>
 <p>do that for all the features.</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 2</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">sep_l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sep_w</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pet_l</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
@@ -2592,7 +2622,7 @@
 <p>between the sepal length and the sepal width. Please note that we use <span class="arithmatex">\(N − 1\)</span> instead of just <span class="arithmatex">\(N\)</span> in the computation of the covariance. The reason for this can be found in estimation theory. Also note that the covariance we compute is not equal to for example the Numpy <code>cov</code> function. It can, though, still tell us something about the data.</p>
 <p>Compute the covariance between the sepal length and the petal length and compare it to the covariance between the sepal length and width. What do you observe?</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 3</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cov_l</span> <span class="o">=</span> <span class="n">sep_l</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pet_l</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n_obs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">cov_w</span> <span class="o">=</span> <span class="n">sep_l</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">sep_w</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n_obs</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
@@ -2628,7 +2658,7 @@ Now compute the covariance matrix using:<p></p>
 <p>Remember to use the data, where the mean has been subtracted. You can use the NumPy function <code>matmul</code> to multiply two matrices together. Also remember to transpose data in one of the arguments to the function.</p>
 <p>You can also use the NumPy function cov to compute the covariance matrix. Verify if the two approaches give the same result?</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 5</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">mn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">mn</span>
 </span></code></pre></div>
@@ -2644,7 +2674,7 @@ Now compute the covariance matrix using:<p></p>
 </span></code></pre></div><p></p>
 <p>The values are the eigenvalues and the vectors are the eigenvectors (the principal components).</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 6</summary>
 <p>values, vectors = np.linalg.eig(c_x)
 ```</p>
 </details>
@@ -2665,7 +2695,7 @@ Now compute the covariance matrix using:<p></p>
 </span></code></pre></div>
 Try to use seaborns pairplot with the projected data? How does the covariance structure look?<p></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 8</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">pc_proj</span> <span class="o">=</span> <span class="n">vectors</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1"># Added this to make sure that the figure appear</span>
@@ -2696,7 +2726,7 @@ Start by installing <em>sklearn</em> (see Appendix A) and importing the package:
 </span></code></pre></div>
 <p>Compare the results from the results you found using the step-by-step procedure. Some of the results are transposed - which ones?</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 9</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">decomposition</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">pca</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">()</span>

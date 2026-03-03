@@ -2415,6 +2415,8 @@
       
         
       
+        
+      
     
     
     
@@ -2462,6 +2464,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2630,7 +2660,7 @@
 
   <h1>Exercises</h1>
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-8.zip">Solution</a></p>
 <h2 id="preprocessing-data-for-machine-learning">Preprocessing data for machine learning<a class="headerlink" href="#preprocessing-data-for-machine-learning" title="Permanent link">¶</a></h2>
 <p>The photos contains cats in many situations and backgrounds. To make it easier to do machine learning, we will <em>preprocess</em> the data, so the photos only contains the face of the cat. Preprocessing is and important step in most machine learning approaches.</p>
@@ -2645,7 +2675,7 @@
 <p><strong>Exercise 1:</strong> <em>Preprocess all images in the training set. To do the preprocessing, you can use the code snippets supplied</em> <a href="../../downloads/material-8.zip">here</a>. There is also a <strong>Model Cat</strong> supplied.</p>
 <p>The result of the preprocessing is a directory containing smaller photos containing cat faces. All the preprocessed photos also have the same size. </p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 1</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">raw_dir</span> <span class="o">=</span> <span class="s2">"data/training_data_small/"</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">preprocess_dir</span> <span class="o">=</span> <span class="s2">"data/preprocessed_data_small/"</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -2666,7 +2696,7 @@
 </ul>
 <p><strong>Exercise 2:</strong> <em>Compute the data matrix.</em> </p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 2</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">preprocess_dir</span><span class="si">}</span><span class="s2">/*.jpg"</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">shape</span>
@@ -2683,13 +2713,13 @@
 <p>You can use the supplied function <code>create_u_byte_image_from_vector</code> to create an image from a 1-D image vector.</p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 3</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">average_cat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <p><strong>Exercise 4:</strong> <em>Visualize the Mean Cat</em> </p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 4</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">average_cat_img</span> <span class="o">=</span> <span class="n">create_u_byte_image_from_vector</span><span class="p">(</span><span class="n">average_cat</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">average_cat_img</span><span class="p">)</span>
@@ -2702,7 +2732,7 @@
 <p>You have promised to take care of your neighbours' cat while they are on vacation. But...Oh! no! You were in such a hurry to get to DTU that you forgot to close a window. Now the cat is gone!!! What to do? </p>
 <p><strong>Exercise 5:</strong> <em>Decide that you quickly buy a new cat that looks very much like the missing cat - so nobody notices.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 5</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># :) It is necessary to buy a new cat.</span>
 </span></code></pre></div>
 </details>
@@ -2710,7 +2740,7 @@
 <p>To find a cat that looks like the missing cat, you start by comparing the missing cat pixels to the pixels of the cats in the training set. The comparison between the missing cat data and the training data can be done using the sum-of-squared differences (SSD).</p>
 <p><strong>Exercise 6:</strong> <em>Use the <code>preprocess_one_cat</code> function to preprocess the photo of the poor missing cat</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 6</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">preprocess_one_cat</span><span class="p">()</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># First image is the missing cat, second one the model cat </span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># and the third one is the missing cat aligned and cropped</span>
@@ -2719,7 +2749,7 @@
 </details>
 <p><strong>Exercise 7:</strong> <em>Flatten the pixel values of the missing cat so it becomes a vector of values.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 7</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">im_miss</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">"data/MissingCatProcessed.jpg"</span><span class="p">)</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">im_miss_flat</span> <span class="o">=</span> <span class="n">im_miss</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </span></code></pre></div>
@@ -2733,20 +2763,20 @@
 </span></code></pre></div><p></p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 8</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">sub_data</span> <span class="o">=</span> <span class="n">data_matrix</span> <span class="o">-</span> <span class="n">im_miss_flat</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">sub_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">sub_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <p><strong>Exercise 9:</strong> <em>Find the cat that looks most like your missing cat by finding the cat, where the SSD is smallest. You can for example use <code>np.argmin</code>.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 9</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">min_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">sub_distances</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <p><strong>Exercise 10:</strong> <em>Extract the found cat from the data_matrix and use <code>create_u_byte_image_from_vector</code> to create an image that can be visualized. Did you find a good replacement cat? Do you think your neighbour will notice? Even with their glasses on?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 10</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">similar_cat</span> <span class="o">=</span> <span class="n">create_u_byte_image_from_vector</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">[</span><span class="n">min_idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -2758,7 +2788,7 @@
 </details>
 <p><strong>Exercise 11:</strong> <em>You can use <code>np.argmax</code> to find the cat that looks the least like the missing cat.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 11</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">max_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">sub_distances</span><span class="p">)</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">different_cat</span> <span class="o">=</span> <span class="n">create_u_byte_image_from_vector</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">[</span><span class="n">max_idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -2790,7 +2820,7 @@
 <p>This might take some time. If your compute cannot handle so many images, you can manually move or delete som photos out of the <strong>preprocessed</strong> folder before computing the data matrix.</p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 12</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Computing PCA"</span><span class="p">)</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">cats_pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">cats_pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">)</span>
@@ -2799,7 +2829,7 @@
 <p>The amount of the total variation that each component explains can be found in <code>cats_pca.explained_variance_ratio_</code>.</p>
 <p><strong>Exercise 13:</strong> <em>Plot the amount of the total variation explained by each component as function of the component number.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 13</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">explained_variance</span> <span class="o">=</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">explained_variance</span><span class="p">)</span>
@@ -2813,7 +2843,7 @@
 </details>
 <p><strong>Exercise 14:</strong> <em>How much of the total variation is explained by the first component?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 14</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"The first component explains </span><span class="si">{:.2f}% o</span><span class="s2">f the variance"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">explained_variance</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
 </span></code></pre></div>
 </details>
@@ -2822,7 +2852,7 @@
 </p><div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">components</span> <span class="o">=</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">)</span>
 </span></code></pre></div><p></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 15</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">components</span> <span class="o">=</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data_matrix</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
@@ -2830,7 +2860,7 @@
 <p>We can plot the first two dimensions of the PCA space, to see where the cats are placed. The first PCA coordinate for all the cats can be found using <code>pc_1 = components[:, 0]</code> .</p>
 <p><strong>Exercise 16:</strong> <em>Plot the PCA space by plotting all the cats first and second PCA coordinates in a (x, y) plot.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 16</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">pc_1</span> <span class="o">=</span> <span class="n">components</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> 
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">pc_2</span> <span class="o">=</span> <span class="n">components</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -2846,7 +2876,7 @@
 <p>We start by finding out which cats that have the most <em>extreme coordinates</em> in PCA space. </p>
 <p><strong>Exercise 17:</strong> <em>Use <code>np.argmin</code> and <code>np.argmax</code> to find the ids of the cats that have extreme values in the first and second PCA coordinates. Extract the cats data from the data matrix and use <code>create_u_byte_image_from_vector</code> to visualize these cats. Also plot the PCA space where you plot the extreme cats with another marker and color.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 17</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">nargmax</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="c1"># Like np.argmax but returns the n largest values</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span><span class="p">)[</span><span class="o">-</span><span class="n">n</span><span class="p">:]</span>
@@ -2893,7 +2923,7 @@
 </details>
 <p><strong>Exercise 18:</strong> <em>How do these extreme cat photo look like? Are some actually of such bad quality that they should be removed from the training set? If you remove images from the training set, then you should run the PCA again. Do this until you are satisfied with the quality of the training data.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 18</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">filtered_matrix</span> <span class="o">=</span> <span class="n">data_matrix</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># Remove the 8 largest values of PC1, 5 smallest values of PC1,</span>
@@ -2931,7 +2961,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </p><div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">synth_cat</span> <span class="o">=</span> <span class="n">average_cat</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
 </span></code></pre></div><p></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 19</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Maximal value of PC1: </span><span class="si">{:.8f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])))</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Minimal value of PC1: </span><span class="si">{:.8f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])))</span>
 </span></code></pre></div>
@@ -2941,7 +2971,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </details>
 <p><strong>Exercise 20:</strong> <em>Use <code>create_u_byte_image_from_vector</code> visualize your fake cat.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 20</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">synth_cat_img</span> <span class="o">=</span> <span class="n">create_u_byte_image_from_vector</span><span class="p">(</span><span class="n">synth_cat</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span><span class="p">)</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">synth_cat_img</span><span class="p">)</span>
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2950,7 +2980,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 <p>You can use the PCA plot we did before to select some suitable values for w.</p>
 <p><strong>Exercise 21:</strong> <em>Synthesize some cats, where you use both the first and second principal components and select their individual weights based on the PCA plot.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 21</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Maximal value of PC2: </span><span class="si">{:.8f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])))</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Minimal value of PC2: </span><span class="si">{:.8f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])))</span>
 </span></code></pre></div>
@@ -2970,7 +3000,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 <p>here <strong>m</strong> is the principal component that we are investigating.</p>
 <p><strong>Exercise 22:</strong> <em>Synthesize and visualize cats that demonstrate the first three major modes of variation. Try show the average cat in the middle of a plot, with the negative sample to the left and the positive to the right. Can you recognise some visual patterns in these modes of variation?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 22</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">visualize_mode_of_variation</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
 </span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>    <span class="n">synth_cat_plus</span> <span class="o">=</span> <span class="n">average_cat</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">*</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="p">:]</span>
 </span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>    <span class="n">synth_cat_minus</span> <span class="o">=</span> <span class="n">average_cat</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">cats_pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">[</span><span class="n">m</span><span class="p">])</span> <span class="o">*</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="p">:]</span>
@@ -3000,7 +3030,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </span></code></pre></div>
 <p><strong>Exercise 23:</strong> <em>Generate as many cat photos as your heart desires.</em>.</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 23</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">random_cat_generator</span><span class="p">():</span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">*</span><span class="mi">50000</span>
 </span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span> <span class="c1"># Decrease the influence of the higher PCs</span>
@@ -3025,7 +3055,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </span></code></pre></div>
 <p>The <code>flatten</code> calls are needed to bring the arrays into the right shapes.</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 24</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">im_miss</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">"data/MissingCatProcessed.jpg"</span><span class="p">)</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">im_miss_flat</span> <span class="o">=</span> <span class="n">im_miss</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="n">im_miss_flat</span> <span class="o">=</span> <span class="n">im_miss_flat</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -3035,7 +3065,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </details>
 <p><strong>Exercise 25:</strong> <em>Plot all the cats in PCA space using the first two dimensions. Plot your missing cat in the same plot, with another color and marker. Is it placed somewhere sensible and does it have close neighbours?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 25</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">components</span> <span class="o">=</span> <span class="n">cats_pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">filtered_matrix</span><span class="p">)</span>
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">pc_1</span> <span class="o">=</span> <span class="n">components</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> 
 </span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="n">pc_2</span> <span class="o">=</span> <span class="n">components</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
@@ -3056,7 +3086,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </span></code></pre></div>
 <p><strong>Exercise 26:</strong> <em>Generate synthetic versions of your cat, where you change the n_components_to_use from 1 to for example 50.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 26</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">n_components_to_use</span> <span class="o">=</span> <span class="mi">10</span>
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">synth_cat</span> <span class="o">=</span> <span class="n">average_cat</span>
 </span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_components_to_use</span><span class="p">):</span>
@@ -3079,7 +3109,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 </span></code></pre></div>
 <p><strong>Exercise 27:</strong> <em>Find the id of the cat that has the smallest and largest distance in PCA space to your missing cat. Visualize these cats. Are they as you expected? Do you think your neighours will notice a difference?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 27</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">comp_sub</span> <span class="o">=</span> <span class="n">components</span> <span class="o">-</span> <span class="n">pca_coords</span>
 </span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="n">pca_distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">comp_sub</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
@@ -3103,7 +3133,7 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 <p>You can also find the n closest cats by using the <code>np.argpartition</code> function. </p>
 <p><strong>Exercise 28:</strong> <em>Find the ids of and visualize the 5 closest cats in PCA space. Do they look like your cat?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 28</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">n_best</span> <span class="o">=</span> <span class="mi">5</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">best</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argpartition</span><span class="p">(</span><span class="n">pca_distances</span><span class="p">,</span> <span class="n">n_best</span><span class="p">)</span>
 </span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="n">n_best</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>

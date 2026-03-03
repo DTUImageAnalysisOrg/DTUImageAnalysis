@@ -2284,6 +2284,8 @@
       
         
       
+        
+      
     
     
     
@@ -2331,6 +2333,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2455,25 +2485,23 @@
 
 
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <h1 id="exercise-10-viola-jones-type-object-detection-and-snapchat-lenses">Exercise 10 - Viola Jones type object detection and Snapchat lenses<a class="headerlink" href="#exercise-10-viola-jones-type-object-detection-and-snapchat-lenses" title="Permanent link">¶</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <hr>
-<p>In this exercise, we take a look at the use case of the widely deployed Viola-Jones algorithm - a method that enables real-time face detection. Object detection is a core problem within computer vision, and with its introduction in 2001, Viola Jones became the first face detection algorithm used in real-time. Even for its ancient beginnings, it is still applicable today due to its relatively high accuracy performance in conjunction with its low compute requirement, which is still competitive with much later frameworks such as YOLO v3. The algorithm has later been integrated within large applications such as <em>Snapchat</em>, which use the framework within their popular <em>Snapchat Lenses</em> widget. Later on, we'll explore how face detection can be adopted for such uses. Similarly we'll show, that the algorithm can be adapted to detect other object classes.</p>
+<p>In this exercise, we take a look at the use case of the widely deployed <em>Viola-Jones</em> algorithm - a method that enables real-time face detection. Object detection is a core problem within computer vision, and with its introduction in 2001, Viola Jones became the first face detection algorithm used in real-time. Even for its "ancient" beginnings, it is still applicable today due to its relatively high accuracy performance in conjunction with its low compute requirement, which is still competitive with much later frameworks such as <em>YOLO v3</em>. The algorithm has later been integrated within large applications such as <em>Snapchat</em>, which use the framework within their popular <em>Snapchat Lenses</em> widget. Later on, we'll explore how face detection can be adopted for such uses. Similarly we'll show, that the algorithm can be adapted to detect other object classes.</p>
 <p>![[viola_jones_face_detection.png]]
 Figure retrieved from the <a href="https://ieeexplore.ieee.org/document/990517">Viola Jones paper</a>.</p>
-<p>In OpenCV, the task of Viola-Jones-style object detection is referred to as cascade classification. We will use the two terms interchangeably, although there are a few differences as compared to the original Viola-Jones paper. Disregarding details, from an intuitive standpoint, the two approaches are almost the same.</p>
+<p>In OpenCV, the task of Viola-Jones-style object detection is referred to as <em>cascade classification</em>. We will use the two terms interchangeably, although there are a few differences as compared to the original Viola-Jones paper. Disregarding details, from an intuitive standpoint, the two approaches are almost the same.</p>
 <h2 id="exercises-outline">Exercises outline<a class="headerlink" href="#exercises-outline" title="Permanent link">¶</a></h2>
-<hr>
 <ul>
-<li>In part 1 you will gain familiarity with some pretrained Viola-Jones type detectors provided by OpenCV and learn how to use them</li>
-<li>In part 2 you will build a Snapchat-inspired object-tracking filter for pasting an object onto a face</li>
-<li>In part 3 you will work on intuitively interpreting the building blocks of Viola-Jones, namely the Haar-features, and relate the scale-parameter to the detection quality.</li>
-<li>In part 4 you will extract the value of a chosen Haar feature, gaining an understanding of the underlying mechanism of Viola Jones feature extraction.</li>
-<li>In part 5 you'll be given the opportunity to <strong>optionally</strong> train your own classifier.</li>
+<li>In <strong><em>part 1</em></strong> you will gain familiarity with some pretrained Viola-Jones type detectors provided by <code>OpenCV</code> and learn how to use them.</li>
+<li>In <strong><em>part 2</em></strong> you will build a Snapchat-inspired object-tracking filter for pasting an object onto a face.</li>
+<li>In <strong><em>part 3</em></strong> you will work on intuitively interpreting the building blocks of Viola-Jones, namely the Haar-features, and relate the scale-parameter to the detection quality.</li>
+<li>In <strong><em>part 4</em></strong> you will extract the value of a chosen Haar feature, gaining an understanding of the underlying mechanism of Viola Jones feature extraction.</li>
+<li>In <strong><em>part 5</em></strong> you'll be given the opportunity to <strong>optionally</strong> train your own classifier.</li>
 </ul>
 <h2 id="learning-goals-not-finished-still-to-be-checked">Learning goals (not finished, still to be checked)<a class="headerlink" href="#learning-goals-not-finished-still-to-be-checked" title="Permanent link">¶</a></h2>
-<hr>
 <ul>
 <li>Be able to use opencv pretrained cv2::CascadeClassifier()</li>
 <li>Count the number of detections from a pretrained cv2::CascadeClassifier</li>

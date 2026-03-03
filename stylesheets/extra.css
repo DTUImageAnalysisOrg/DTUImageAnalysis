@@ -71,3 +71,11 @@ p {
     vertical-align: middle;       /* align with text */
 }
 
+/* Fix smaller font inside admonitions */
+/* .md-typeset .admonition { */
+/*     font-size: 1rem; */
+/* } */
+
+.md-typeset .admonition ol {
+    font-size: 0.875rem;
+}

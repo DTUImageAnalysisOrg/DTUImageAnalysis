@@ -2360,6 +2360,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2409,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2520,7 +2550,7 @@
 
   <h1>Exercises</h1>
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-2b.zip">Solution</a></p>
 <h2 id="opencv-program-for-image-differencing">OpenCV program for image differencing<a class="headerlink" href="#opencv-program-for-image-differencing" title="Permanent link">¶</a></h2>
 <p>In the <a href="../imports_and_functions/#exercise-script-for-change-detection-by-image-differencing">exercise material</a>, there is a Python script using OpenCV that:</p>
@@ -2548,12 +2578,12 @@ in a code cell and execute it. <p></p>
 <p>Ensure that the path to the file is correct relatively to from where you are calling it from. </p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
-<p>Run from jupyter by executing solution file 
-</p><div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">!</span><span class="n">python</span> <span class="n">data</span><span class="o">/</span><span class="n">Ex2b</span><span class="o">-</span><span class="n">ChangeDetectionInVideosExercise</span><span class="o">.</span><span class="n">py</span>
+<summary>Solution 1</summary>
+<p>Run from jupyter by executing solution file: </p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">!</span><span class="n">python</span> <span class="n">data</span><span class="o">/</span><span class="n">Ex2b</span><span class="o">-</span><span class="n">ChangeDetectionInVideosExercise</span><span class="o">.</span><span class="n">py</span>
 </span></code></pre></div>
- in a code block
- The solution files contains:
+<p>in a code block.
+The solution file contains:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -2641,11 +2671,11 @@ in a code cell and execute it. <p></p>
 </span><span id="__span-3-85"><a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>
 </span><span id="__span-3-86"><a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
 </span><span id="__span-3-87"><a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>    <span class="n">capture_from_camera_and_show_images</span><span class="p">()</span>
-</span></code></pre></div><p></p>
+</span></code></pre></div>
 </details>
 <p><strong>Exercise 2:</strong> <em>Identify the important steps above in the program. What function is used to convert a color image to a gray-scale image?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 2</summary>
 <p><code>cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</code> (Lines 38 and 51)</p>
 </details>
 <h2 id="change-detection-by-background-subtraction">Change detection by background subtraction<a class="headerlink" href="#change-detection-by-background-subtraction" title="Permanent link">¶</a></h2>
@@ -2756,12 +2786,12 @@ in a code cell and execute it. <p></p>
 </span></code></pre></div>
 </details>
 <details class="tip">
-<summary>Solution</summary>
-<p>Run from jupyter by executing solution file 
-</p><div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">!</span><span class="n">python</span> <span class="n">Ex2b</span><span class="o">-</span><span class="n">ChangeDetectionInVideosSolution</span><span class="o">.</span><span class="n">py</span> <span class="mf">0.95</span> <span class="mi">10</span> <span class="mi">15000</span> <span class="mi">0</span>
+<summary>Solution 3</summary>
+<p>Run from jupyter by executing solution file: </p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">!</span><span class="n">python</span> <span class="n">Ex2b</span><span class="o">-</span><span class="n">ChangeDetectionInVideosSolution</span><span class="o">.</span><span class="n">py</span> <span class="mf">0.95</span> <span class="mi">10</span> <span class="mi">15000</span> <span class="mi">0</span>
 </span></code></pre></div>
- in a code block
- The solution files contains:
+<p>in a code block.
+The solution file contains:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
@@ -2869,13 +2899,13 @@ in a code cell and execute it. <p></p>
 </span><span id="__span-6-105"><a id="__codelineno-6-105" name="__codelineno-6-105" href="#__codelineno-6-105"></a>    <span class="n">alpha</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">ex6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="c1"># Convert to float32</span>
 </span><span id="__span-6-106"><a id="__codelineno-6-106" name="__codelineno-6-106" href="#__codelineno-6-106"></a>    <span class="n">ex6</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">ex6</span><span class="p">)</span> <span class="c1"># Convert to bool the last argument</span>
 </span><span id="__span-6-107"><a id="__codelineno-6-107" name="__codelineno-6-107" href="#__codelineno-6-107"></a>    <span class="n">capture_from_camera_and_show_images</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">ex6</span><span class="p">)</span>
-</span></code></pre></div><p></p>
+</span></code></pre></div>
 </details>
 <p><strong>Exercise 4:</strong> <em>Try to change</em> <span class="arithmatex">\(\alpha\)</span>, <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(A\)</span>. <em>What effects do it have?</em></p>
 <p>The images are displayed using the OpenCV function <code>imshow</code>. The display window has several ways of zooming in the displayed image. </p>
 <p><strong>Exercise 5:</strong> <em>Try to play around with the zoom window.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 5</summary>
 <p>The images are displayed using the OpenCV function <code>imshow</code>. The display window has several ways of zooming in the displayed image. One function is to zoom x30 that shows the pixel values as numbers. Do that and notice the change of the values.</p>
 </details>
 <p><strong>Exercise 6:</strong> <em>Use <code>putText</code> to write some important information on the image. For example the number of changed pixel, the average, minumum and maximum value in the difference image. These values can then be used to find even better values for <span class="arithmatex">\(\alpha\)</span>, <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(A\)</span>.</em></p>

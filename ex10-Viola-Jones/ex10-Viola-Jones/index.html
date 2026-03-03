@@ -2301,10 +2301,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-warming-up-and-gaining-familiarity" class="md-nav__link">
+  <a href="#part-4-applied-viola-jones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 1: warming up and gaining familiarity
+        Part 4: Applied Viola-Jones
       
     </span>
   </a>
@@ -2312,10 +2312,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-snapchat-like-object-filters" class="md-nav__link">
+  <a href="#part-5-snapchat-like-object-filters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 2: Snapchat-like object filters
+        Part 5: Snapchat-like object filters
       
     </span>
   </a>
@@ -2386,6 +2386,8 @@
       
         
       
+        
+      
     
     
     
@@ -2433,6 +2435,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2497,10 +2527,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#part-1-warming-up-and-gaining-familiarity" class="md-nav__link">
+  <a href="#part-4-applied-viola-jones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 1: warming up and gaining familiarity
+        Part 4: Applied Viola-Jones
       
     </span>
   </a>
@@ -2508,10 +2538,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2-snapchat-like-object-filters" class="md-nav__link">
+  <a href="#part-5-snapchat-like-object-filters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part 2: Snapchat-like object filters
+        Part 5: Snapchat-like object filters
       
     </span>
   </a>
@@ -2568,30 +2598,38 @@
 
 
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <h1 id="real-time-object-detection-using-viola-jones-method">Real Time Object Detection Using Viola Jones Method<a class="headerlink" href="#real-time-object-detection-using-viola-jones-method" title="Permanent link">¶</a></h1>
-<h2 id="part-1-warming-up-and-gaining-familiarity">Part 1: warming up and gaining familiarity<a class="headerlink" href="#part-1-warming-up-and-gaining-familiarity" title="Permanent link">¶</a></h2>
-<hr>
-<p>Before solving these exercises, you will need to download pretrained cascade classifiers from this <a href="https://raw.githubusercontent.com/opencv/opencv/3.4/data/haarcascades/">link</a>. We will need:</p>
+<h2 id="part-4-applied-viola-jones">Part 4: Applied Viola-Jones<a class="headerlink" href="#part-4-applied-viola-jones" title="Permanent link">¶</a></h2>
+<p>Now that we've familiarized ourselves with the underlying workings of the Viola-Jones method, the remaining exercises intend to showcase how the algorithm can be applied in practice. To do so, we will employ some pretrained cascade classifiers, which can be found <a href="https://github.com/opencv/opencv/tree/master/data/haarcascades">here</a>. For the exercises, we'll need the classifiers:</p>
 <ul>
-<li>haarcascade_frontalface_default.xml </li>
-<li>haarcascade_eye.xml</li>
-<li>haarcascade_eye_tree_eyeglasses.xml</li>
+<li><em>haarcascade_frontalface_default.xml</em> </li>
+<li><em>haarcascade_eye.xml</em></li>
+<li><em>haarcascade_eye_tree_eyeglasses.xml</em></li>
 </ul>
-<p>In the following exercises. 
-Save them somewhere where you can easily define the path for loading, e.g. in a folder called pretrained_classifiers</p>
+<p>Save them somewhere where you can easily define the path for loading, e.g. in a folder called <strong>pretrained_classifiers</strong>.</p>
+<p>In this first part, you'll familiarize yourself with the tools you'll use in <a href="#part-5-snapchat-like-object-filters">Part 5</a>, where you'll create your own <em>Snapchat</em> like filter!</p>
 <details class="note">
 <summary>Automatic download for Mac and linux users</summary>
-<p>In the exercise <a href="https://github.com/DTUImageAnalysisOrg/DTUImageAnalysis/tree/main/exercises/ex10-Viola-Jones/data">data/</a> folder, there is a script you can use to download all the classifiers called download_classifiers.sh. 
+<p>In the exercise <a href="../../downloads/material-10.zip">data/</a> folder, there is a script you can use to download all the classifiers called download_classifiers.sh. 
 To do so, do the following two steps in a terminal with your root as the exercise root: 
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd your_exercise_2_root 
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cd your_exercise_10_root 
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>chmod +x data/download_classifiers.sh
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>./data/download_classifiers.sh
 </span></code></pre></div><p></p>
 <p>If you experience any issues, simply download them manually. </p>
 </details>
+<div class="admonition warning">
+<p class="admonition-title">Warning: Lack of model detections</p>
+<p>For the exercises in <a href="#part-4-warming-up-and-gaining-familiarity">Part 4</a> and <a href="#part-5-snapchat-like-object-filters">Part 5</a>, you are encouraged to use your webcam. As the classifier models are highly susceptible to poor lighting conditions, e.g. produced by directional lighting, it might be difficult for it to detect eyes and faces.</p>
+<p>If this is the case, in order for you to still be able to go through with the exercises, you have two options:</p>
+<ol>
+<li>Relocate to somewhere with better lighting (brighter and/or diffused lighting),</li>
+<li>Instead of using your webcam, you may use a video instead. For this, we've provided a video <em>speech_snippet.mp4</em> at the root of the <a href="../../downloads/material-10.zip">exercise data</a>. Set the videopath as value of the <code>VIDEO_FILE</code> variable.</li>
+</ol>
+</div>
 <h3 id="exercise-1-using-a-pretrained-classifier-on-web-cam-feed">Exercise 1: using a pretrained classifier on web-cam feed<a class="headerlink" href="#exercise-1-using-a-pretrained-classifier-on-web-cam-feed" title="Permanent link">¶</a></h3>
-<p>Start out by opening the file <em>part_one_viola_jones.py</em>. Change the variable <em>pretrained_dir</em> such that it points to your pretrained classifiers and gain a quick overview of the script.</p>
+<p>Start out by opening the file <em>part_1_viola_jones.py</em>. Change the variable <code>pretrained_dir</code> such that it points to your pretrained classifiers and gain a quick overview of the script.</p>
 <details class="example">
 <summary>Code Template for exercises 1-3</summary>
 <p>The contents of the file part_one_viola_jones.py are roughly: *</p>
@@ -2605,8 +2643,8 @@ To do so, do the following two steps in a terminal with your root as the exercis
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">"""</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">connect_camera</span><span class="p">(</span><span class="n">use_droid_cam</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">:</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">    Attempts to connect to the webcam. </span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">Attempts</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">the</span> <span class="n">webcam</span><span class="o">.</span> 
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="sd">"""</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">    If this fails, prints an error message and exits the complete script. </span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="sd">    Args:</span>
@@ -2720,39 +2758,57 @@ To do so, do the following two steps in a terminal with your root as the exercis
 </span><span id="__span-1-123"><a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a>            <span class="n">stop</span> <span class="o">=</span> <span class="kc">True</span>
 </span></code></pre></div>
 </details>
-<p><strong>Question 1</strong>: <em>Which functions do what? Where is the detection actually happening?</em></p>
+<p><strong>Question 1</strong>: <em>Which functions does what? Where is the detection actually happening?</em></p>
 <p>Now run the script and try moving a bit around in front of the webcam, e.g. by rotating your head, looking to the sides, and changing your distance to the screen.</p>
 <p><strong>Question 2</strong>: <em>When does the detection work well, and can you tell why the model has deficiencies?</em> </p>
 <h3 id="exercise-2-counting-the-number-of-detections">Exercise 2: Counting the number of detections<a class="headerlink" href="#exercise-2-counting-the-number-of-detections" title="Permanent link">¶</a></h3>
-<p>Implement functionality to count the number of faces and eyes detected. This should be based on the output of the detectMultiScale function calls, i.e. the variables faces and eyes. Print the number of eyes and faces detected into the text which already measures the frames per second. Ensure that it works correctly when multiple faces with eyes are detected.    </p>
+<p>Implement functionality to count the number of faces and eyes detected. This should be based on the output of the <code>detectMultiScale</code> function calls, i.e. the variables faces and eyes. Print the number of eyes and faces detected into the text which already measures the frames per second. Ensure that it works correctly when multiple faces with eyes are detected.    </p>
 <details class="tip">
 <summary>Hint:</summary>
 <p>In order to figure out what the function returns, try to write print(faces) when a face is detected vs when you put a finger in front of the webcam. Is the return type consistent in the two cases?</p>
 </details>
 <details class="tip">
 <summary>Hint 2:</summary>
-<p><strong><em>len()</em></strong> both works both for numpy arrays and python lists and tuples.</p>
+<p><strong><em>len()</em></strong> works for numpy arrays, python lists and tuples.</p>
 </details>
 <h3 id="exercise-3-decreasing-false-positive-and-false-negative-detections">Exercise 3: Decreasing false positive and false negative detections<a class="headerlink" href="#exercise-3-decreasing-false-positive-and-false-negative-detections" title="Permanent link">¶</a></h3>
 <p>You may notice a number of false positive detections, especially for the eye detection. Likewise, if you wear glasses, you may experience some false negatives. 
 Let's try to improve upon that. There are two quick fixes we will try out:</p>
 <ol>
-<li>Check out the <em>detectMultiScale()</em> documentation <a href="https://docs.opencv.org/3.4/d1/de5/classcv_1_1CascadeClassifier.html">here</a>. We can restrict detections to be larger than a certain size. Try to tune the size such that nostrils are no longer detected. You can also set a maxSize, if many detections are larger than what you expect eyes would be. Both should ideally be set adaptively based on the height and width of the face detected. </li>
-<li>Using another trained detection model. We could e.g. try the <em>haarcascade_eye_tree_eyeglasses.xml</em> model instead, which is trained to be more robust. Change the function <em>load_cascades</em> so that you use the eyeglasses-model instead and see if this improves robustness. Try comparing the quality when the minSize and maxSize arguments are set vs. not set. </li>
+<li>
+<p>Check out the <code>detectMultiScale()</code> documentation <a href="https://docs.opencv.org/master/d1/de5/classcv_1_1CascadeClassifier.html">here</a>. We can restrict detections to be larger than a certain size. Try to tune the size such that nostrils are no longer detected. You can also set a <code>maxSize</code>, if many detections are larger than what you expect eyes would be. Both should ideally be set adaptively based on the height and width of the face detected. </p>
+</li>
+<li>
+<p>Using another trained detection model. We could e.g. try the <em>haarcascade_eye_tree_eyeglasses.xml</em> model instead, which is trained to be more robust. Change the function <code>load_cascades</code> so that you use the eyeglasses-model instead and see if this improves robustness. Try comparing the quality when the <code>minSize</code> and <code>maxSize</code> arguments are set vs. not set. </p>
+</li>
 </ol>
-<p>You could of course also implement these changes into the face detection, the quality of which also is based on lighting conditions, etc. </p>
-<h2 id="part-2-snapchat-like-object-filters">Part 2: Snapchat-like object filters<a class="headerlink" href="#part-2-snapchat-like-object-filters" title="Permanent link">¶</a></h2>
-<hr>
-<p>We've already seen that we can detect eyes and faces somewhat robustly. Now, we will use this knowledge to make a Snapchat-like filter, where an object is placed on an image (the webcam feed) on an anchor-point (e.g. the top of the head). The goal is, that the object should track the anchor-point on the head through successive frames. </p>
+<p>You could also implement these changes into the face detection, the quality of which also is based on lighting conditions, etc.</p>
+<h2 id="part-5-snapchat-like-object-filters">Part 5: Snapchat-like object filters<a class="headerlink" href="#part-5-snapchat-like-object-filters" title="Permanent link">¶</a></h2>
+<p>We've already seen that we can detect eyes and faces somewhat robustly. Now, we will use this knowledge to make a Snapchat-like filter, where an object is placed on an image (the webcam/video feed) on an anchor-point (e.g. the top of the head). The goal is, that the object should track the anchor-point on the head through successive frames. </p>
 <p>In order to achieve this, we will need to be able to load an image with either a transparent background (RGBA-image), or alternatively load an image which we can make a mask for which could achieve the same end.</p>
 <h3 id="exercise-4-loading-an-rgba-image">Exercise 4: loading an RGBA image<a class="headerlink" href="#exercise-4-loading-an-rgba-image" title="Permanent link">¶</a></h3>
-<p>Open the file <em>part_2_viola_jones_snapchat.py</em> in the <strong><em>data/</em></strong> directory. Finish the function <em>load_png_object</em> and use it to load the hat object which has the path *image_props/hat_rescaled.png. pass the flag cv2.IMREAD_UNCHANGED, which forces openCV to load the image using an alpha-channel. Return the image and the image shape. Test that the shape is as you expect.</p>
+<p>Open the file <em>part_2_viola_jones_snapchat.py</em> in the <strong><em>data/</em></strong> directory. Finish the function <code>load_png_object</code> and use it to load the hat object which has the path <em>image_props/hat_rescaled.png</em>. Pass the flag <code>cv2.IMREAD_UNCHANGED</code>, which forces <em>OpenCV</em> to load the image using an extra alpha-channel. Return the image and the image shape. Test that the shape is as you expect.</p>
+<details class="failure">
+<summary>No hat is displayed</summary>
+<p>In order to render the hat initially, the eye model needs to detect two eyes. After this, the hat will persistently be displayed at a dummmy position.</p>
+</details>
 <p><strong>Question 3</strong>: <em>How can you interpret the alpha-channel?</em></p>
 <h3 id="exercise-5-eye-centre-landmark-registration">Exercise 5: Eye-centre landmark registration<a class="headerlink" href="#exercise-5-eye-centre-landmark-registration" title="Permanent link">¶</a></h3>
-<p>For the approach we will use for visualizing the hat on top of the head, we will use a simplified landmark-based approach. In order to place the hat correctly, we will need to infer three landmarks: <strong>1)</strong> the centre coordinate of the top of the detected face, <strong>2)</strong> the centre coordinate of the left eye detection and <strong>3)</strong> the centre coordinate of the right eye detection. 
-For each detected face and pair of eyes, we will need to save these coordinates.</p>
-<p>All quantities we need to infer the landmarks are defined in the following loop:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">faces</span><span class="p">):</span>
+<p>For the approach we will use for visualizing the hat on top of the head, we will use a simplified landmark-based approach. In order to place the hat correctly, we will need to infer three landmarks:</p>
+<ol>
+<li>
+<p>The centre coordinate of the left eye detection;</p>
+</li>
+<li>
+<p>The centre coordinate of the right eye detection; and</p>
+</li>
+<li>
+<p>The centre coordinate of the top of the detected face.</p>
+</li>
+</ol>
+<p>For each detected face and pair of eyes, we will need to save these coordinates.</p>
+<p>All landmarks we need to infer are defined in the following loop:</p>
+<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">faces</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>            <span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>            <span class="n">face_center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">h</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
@@ -2769,35 +2825,44 @@ For each detected face and pair of eyes, we will need to save these coordinates.
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>                    <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">eye_center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                    <span class="n">eye_coord_arr</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">eye_center</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">eye_center</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="c1">#x, y in frame coordinates</span>
 </span></code></pre></div>
+Which can be found in the reference file.<p></p>
 <p>First, we will start by detecting the left and right eye centre coordinates.
-If we work from a simplified assumption that the right eye will be located to the right of the left eye, we can identify the centre coordinates based on the contents of  eye_coord_arr. </p>
-<p>Your task is to finish the function <em>assign_eyes</em> which should output the left and right eye centre coordinates as np.arrays.</p>
+If we work from a simplified assumption that the right eye will be located to the right of the left eye, we can identify the centre coordinates based on the contents of <code>eye_coord_arr</code>. </p>
+<p>Your task is to finish the function <code>assign_eyes</code> which should output the left and right eye centre coordinates as numpy arrays.</p>
 <h3 id="exercise-6-constructing-a-normal-vector-for-finding-the-top-of-the-face">Exercise 6: Constructing a normal vector for finding the top of the face<a class="headerlink" href="#exercise-6-constructing-a-normal-vector-for-finding-the-top-of-the-face" title="Permanent link">¶</a></h3>
-<p>Now, based on the left and right eye centre coordinates, we want to identify the top of the head. This can examplewise be done by finding a vector which always points upwards in the face coordinate system. This can be achieved by first finding the vector which goes from the left eye to the right eye, and followingly finding its normalized normal vector. </p>
-<p>Your task is to: 
-1. Calculate the vector going from left eye to right eye
-2. Find the corresponding normal vector 
-3. Calculate the normalizing factor such that it is a unit-norm normal vector</p>
-<p>The normalizing factor can be found by using np.linalg.norm(n_vec).</p>
+<p>Having found the left and right eye centre coordinates, we now want to identify the top of the head. This can examplewise be done by finding a vector which always points upwards in the face coordinate system. This can be achieved by first finding the vector which goes from the left eye to the right eye <span class="arithmatex">\(\vec{P}\)</span>, and followingly finding its normalized normal vector, <span class="arithmatex">\(\vec{n}_{\vec{P}}\)</span>. </p>
+<p>Your task is to: </p>
+<ol>
+<li>
+<p>Calculate the vector going from left eye to right eye, <span class="arithmatex">\(\vec{P}\)</span></p>
+</li>
+<li>
+<p>Find the corresponding normal vector, <span class="arithmatex">\(\vec{n}_{\vec{P}}\)</span></p>
+</li>
+<li>
+<p>Calculate the normalizing factor such that it is a unit-norm normal vector</p>
+</li>
+</ol>
+<p>The normalizing factor can be found by using <code>np.linalg.norm(n_vec)</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In some cases, the CascadeClassifier registers multiple eye instances in the same eye. In this case, the norm will be zero, and normalization will yield an error. As a result, we will in this case not proceed further with calculating the normalized normal vector.</p>
 </div>
 <h3 id="exercise-7-identifying-the-coordinate-at-the-top-middle-of-the-face">Exercise 7: Identifying the coordinate at the top-middle of the face<a class="headerlink" href="#exercise-7-identifying-the-coordinate-at-the-top-middle-of-the-face" title="Permanent link">¶</a></h3>
-<p>If we from the centre coordinate of the face go along the normal vector along the length <span class="arithmatex">\(\frac{h}{2}\)</span>, where <span class="arithmatex">\(h\)</span> is the height of the face, we should reach the top coordinate of the face. This will yield our third landmark. </p>
+<p>If we from the centre coordinate of the face go along the normal vector <span class="arithmatex">\(\vec{n}_{\vec{P}}\)</span> along the length <span class="arithmatex">\(\frac{h}{2}\)</span>, where <span class="arithmatex">\(h\)</span> is the height of the face, we should reach the top coordinate of the face. This will yield our third landmark.</p>
 <p>Calculate the end-point on the face. Ensure that the output is an integer, and if not, round it to an integer. 
 You can debug your solution with: 
 </p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">frame</span><span class="p">,(</span><span class="n">end_point_hat_x</span><span class="p">,</span><span class="n">end_point_hat_y</span><span class="p">),</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">lineType</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#blue circle - top of face </span>
 </span></code></pre></div><p></p>
-<p>which inserts a circle at the coordinate you've found. </p>
+<p>which inserts a circle at the coordinate you've found.</p>
 <h3 id="exercise-8-transformations">Exercise 8: Transformations!<a class="headerlink" href="#exercise-8-transformations" title="Permanent link">¶</a></h3>
-<p>A snapchat filter resizes the objects such that they somewhat fit with the width of the head, so we will do the same - currently, it is way too small! Finish the function <em>rescale_object</em> such that the hat somewhat fits on the face. Use <em>skimage.transforms.rescale</em> for this. </p>
+<p>A Snapchat filter resizes the objects such that they somewhat fit with the width of the head, so we will do the same - currently, it is way too small! Finish the function <code>rescale_object</code> such that the hat somewhat fits on the face. Use <code>skimage.transforms.rescale</code> for this. </p>
 <h3 id="exercise-9-place-the-hat-on-the-coordinate">Exercise 9: Place the hat on the coordinate<a class="headerlink" href="#exercise-9-place-the-hat-on-the-coordinate" title="Permanent link">¶</a></h3>
-<p>In order to place the hat, we need to identify which coordinate in the hat coordinate frame we wish to align with the found end_point_hat_x and end_point_hat_y. In other words, we need to find the necessary translation between the hat coordinate frame (local) and the web-cam image coordinate frame (global). We save these coordinates in format y,x in the anchor_point variable. 
+<p>In order to place the hat, we need to identify which coordinate in the hat coordinate frame we wish to align with the found <code>end_point_hat_x</code> and <code>end_point_hat_y</code>. In other words, we need to find the necessary translation between the hat coordinate frame (local) and the webcam/video image coordinate frame (global). We save these coordinates in format <span class="arithmatex">\(y,x\)</span> in the <code>anchor_point</code> variable. 
 Try defining a suitable alignment point and visualizing the results by running the script.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The transformation is carried out in the <em>insert_hat_on_frame</em> function, where the variables <em>slice_start_y</em> and <em>slice_start_x</em>:
+<p>The transformation is carried out in the <code>insert_hat_on_frame</code> function, where the variables <code>slice_start_y</code> and <code>slice_start_x</code>:
 </p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">insert_hat_on_frame</span><span class="p">(</span><span class="n">frame_rgb</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">anchor</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># coords = where anchor should go in the rgb frame, i.e. face coordinate position</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">target_y</span><span class="p">,</span> <span class="n">target_x</span> <span class="o">=</span> <span class="n">coords</span>
@@ -2808,15 +2873,15 @@ Try defining a suitable alignment point and visualizing the results by running t
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">slice_start_x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_x</span> <span class="o">-</span> <span class="n">anchor_x</span><span class="p">)</span>
 </span></code></pre></div><p></p>
 </div>
-<p>define at which global coordinate the hat image (0,0) should be located. </p>
+<p>define at which global coordinate the hat image <span class="arithmatex">\((0,0)\)</span> should be located. </p>
 <details class="tip">
-<summary>Hint:</summary>
-<p>A good coordinate could be the bottom centre of the hat image </p>
+<summary>Hint</summary>
+<p>A good coordinate could be the bottom-centre of the hat image.</p>
 </details>
 <h3 id="exercise-10-rotating-for-realism">Exercise 10: Rotating for realism<a class="headerlink" href="#exercise-10-rotating-for-realism" title="Permanent link">¶</a></h3>
-<p>Based on our normal-vector, we can even calculate the corresponding angle the hat should be rotated to follow the face rotation. The angle of rotation is measured in counter-clockwise direction compared to the horizontal axis, and as such can be calculated using the normal-vector. </p>
-<p>Set the boolean <em>ROTATE</em> flag as True and implement the calculation of the rotation angle. Store the result in <em>theta</em>, and ensure it is in degrees. 
-The <em>rotate_object</em> function rotates the object using the <em>anchor_point</em> as rotation centre with the <em>skimage.transform.rotate</em> function we've worked with before. Use the center bottom point of the object image as the centre coordinate, i.e.: 
+<p>Based on our normal-vector <span class="arithmatex">\(\vec{n}_{\vec{P}}\)</span>, we can even calculate the corresponding angle the hat should be rotated to follow the face rotation. The angle of rotation is measured in counter-clockwise direction compared to the horizontal axis, and as such can be calculated using the normal-vector. </p>
+<p>Set the boolean <code>ROTATE</code> flag as <code>True</code> and implement the calculation of the rotation angle. Store the result in <code>theta</code>, and ensure it is in degrees. 
+The <code>rotate_object</code> function rotates the object using the <code>anchor_point</code> as rotation centre with the <code>skimage.transform.rotate</code> function we've worked with before. Use the center bottom point of the object image as the centre coordinate, i.e.: 
 </p><div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">anchor_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">object_im_trf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">object_im_trf</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
 </span></code></pre></div><p></p>
 <p>The function outputs the position of the rotation-centre post transformation aswell. </p>
@@ -2824,8 +2889,8 @@ The <em>rotate_object</em> function rotates the object using the <em>anchor_poin
 <p class="admonition-title">Rotation limitations</p>
 <p>For larger rotation angles the object will become cropped. If you set the flag allow_resize=True, the rotated object image is resized such that no information is lost. This adds a layer of complexity, as we in this case need to correct for the resizing of the object as well. This is handled by the variables dy and dx. Only run it with resize=False. </p>
 </div>
-<h3 id="exercise-11-speeding-things-up-optional">Exercise 11: Speeding things up (Optional)<a class="headerlink" href="#exercise-11-speeding-things-up-optional" title="Permanent link">¶</a></h3>
-<p>There are quite a few inefficiencies in the code. The largest overhead is in the image transformations, so reducing the number of times they are called or making them more efficient would improve real-time performance. 
+<h3 id="exercise-11-speeding-things-up-optional">Exercise 11: Speeding things up (<strong>Optional</strong>)<a class="headerlink" href="#exercise-11-speeding-things-up-optional" title="Permanent link">¶</a></h3>
+<p>You might have noticed that the video feed is quite sluggish. In its current state, there are quite a few inefficiencies in the code. The largest overhead is in the image transformations, so reducing the number of times they are called or making them more efficient would improve real-time performance. 
 Try to see if you can speed things up. Can you find some obvious inefficiencies? </p>
 <details class="tip">
 <summary>Optimization suggestions</summary>
@@ -2864,11 +2929,14 @@ Try to see if you can speed things up. Can you find some obvious inefficiencies?
 </details>
 <p>You can try any of these optimizations (there exist more than these), and see if you can measure the impact on the fps displayed. </p>
 </details>
-<h3 id="exercise-12-increasing-robustness-optional">Exercise 12: Increasing robustness (Optional)<a class="headerlink" href="#exercise-12-increasing-robustness-optional" title="Permanent link">¶</a></h3>
-<p>In some lighting conditions, the hat placement is still very unrobust, and eye-detection may still be faulty. Try to tune the max and min-size of face and eye detections. In addition, you could build in "memory" of earlier rotation angles theta and the end_point_hat_y and end_point_hat_x positions. Hint: consider equation 4 from the video-change-detection note. Finish the time_smoothen_detections function and add smoothing support. Does your result improve? 
-Consider the reason why we calculate the smoothing only on the end-points and angle, and not on the intermediary quantities. </p>
+<h3 id="exercise-12-increasing-robustness-optional">Exercise 12: Increasing robustness (<strong>Optional</strong>)<a class="headerlink" href="#exercise-12-increasing-robustness-optional" title="Permanent link">¶</a></h3>
+<p>In some lighting conditions, the hat placement is still very unrobust and eye-detection may still be faulty. Try to tune the max and min-size of face and eye detections. In addition, you could build in "memory" of earlier rotation angles <code>theta</code> and the <code>end_point_hat_y</code> and <code>end_point_hat_x</code> positions.</p>
+<details class="tip">
+<summary>Hint</summary>
+<p>Consider equation 4 from the video-change-detection note. Finish the <code>time_smoothen_detections</code> function and add smoothing support. Does your result improve? </p>
+</details>
+<p>Consider the reason why we calculate the smoothing only on the end-points and angle, and not on the intermediary quantities.</p>
 <h2 id="part-3-cascade-classifier-used-for-object-detection">Part 3: Cascade Classifier used for object detection<a class="headerlink" href="#part-3-cascade-classifier-used-for-object-detection" title="Permanent link">¶</a></h2>
-<hr>
 <p>In the following exercises, we'll investigate the performance of the Viola-Jones algorithm when trained to detect non-faces. To do this, we've trained a stop-sign object detector, which we'll use in the following exercises. Later on, you'll be able to try such a model yourselves (optional). We'll show, that the framework doesn't necessarily need to be used for faces, but that it is instead a general object detection tool which can be trained to solve any object detection problem.</p>
 <p>We'll start by employing a pretrained stop-sign object detector for image capture. To do this, we'll use the script <strong>VJ_performance_eval.py</strong> in the <strong><em>data</em></strong> directory. You can find all the scripts and data we'll need <a href="https://github.com/DTUImageAnalysisOrg/DTUImageAnalysis/tree/main/exercises/ex10-Viola-Jones/data">here</a>. Download the folder and <em>cd</em> into it.</p>
 <h3 id="exercise-13-testing-stop-sign-model-performance">Exercise 13: Testing stop-sign model performance<a class="headerlink" href="#exercise-13-testing-stop-sign-model-performance" title="Permanent link">¶</a></h3>
@@ -2918,11 +2986,11 @@ Consider the reason why we calculate the smoothing only on the end-points and an
 <p>To retrieve the Haar feature. The following figure might become of use:</p>
 <p>![[haar_computation.png]]
 Figure copied from <a href="https://en.wikipedia.org/wiki/Summed-area_table">Wikipedia</a>.</p>
-<h2 id="part-5-training-your-own-object-detector-optional">Part 5: Training your own object detector (Optional)<a class="headerlink" href="#part-5-training-your-own-object-detector-optional" title="Permanent link">¶</a></h2>
+<h2 id="part-5-training-your-own-object-detector-optional">Part 5: Training your own object detector (<strong>Optional</strong>)<a class="headerlink" href="#part-5-training-your-own-object-detector-optional" title="Permanent link">¶</a></h2>
 <hr>
 <p>The stop-sign model was trained using data from Caltech-101, consisting of 64 training images with bounding box annotations. We'll now try to train our own object detector from the same dataset! The dataset contains 101 annotated object categories each with separate subset sizes, ranging from 40-800 images. You can download the dataset from <a href="https://data.caltech.edu/records/mzrjq-6wc02">here</a>. In order for everything to work as expected, you need to place the root of the Caltech-101 dataset into the <strong>data</strong> folder.</p>
 <p>In order to perform this exercise, we highly recommend using the Anaconda Python distribution. Training an object detector using tools provided by OpenCV requires an older version of OpenCV, which can be handled much easier using Anaconda.</p>
-<h3 id="exercise-20-setup-new-virtual-environment-optional">Exercise 20: Setup new virtual environment (Optional)<a class="headerlink" href="#exercise-20-setup-new-virtual-environment-optional" title="Permanent link">¶</a></h3>
+<h3 id="exercise-20-setup-new-virtual-environment-optional">Exercise 20: Setup new virtual environment (<strong>Optional</strong>)<a class="headerlink" href="#exercise-20-setup-new-virtual-environment-optional" title="Permanent link">¶</a></h3>
 <p>We first need to setup a new virtual environment, in order to run the tools we need, which have been disabled for newer versions of OpenCV (&gt;3.4) . To start with, if you're currently in a virtual environment, deactivate by running:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda<span class="w"> </span>deactivate
 </span></code></pre></div>
@@ -2930,14 +2998,14 @@ Figure copied from <a href="https://en.wikipedia.org/wiki/Summed-area_table">Wik
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>obj_train<span class="w"> </span>python<span class="w"> </span><span class="s1">'opencv&gt;=3,&lt;4'</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>obj_train
 </span></code></pre></div>
-<h3 id="exercise-21-preprocess-data-optional">Exercise 21: Preprocess data (Optional)<a class="headerlink" href="#exercise-21-preprocess-data-optional" title="Permanent link">¶</a></h3>
+<h3 id="exercise-21-preprocess-data-optional">Exercise 21: Preprocess data (<strong>Optional</strong>)<a class="headerlink" href="#exercise-21-preprocess-data-optional" title="Permanent link">¶</a></h3>
 <p>In order for our data to fit to the semantic notation needed for the OpenCV training tools, we first need to perform some pre-processing on our annotations. To do so, you need to choose <strong>1)</strong> a <em>positive</em> class, denoting the class you want your model to identify; and <strong>2)</strong> a <em>negative</em> class, denoting a mock class intended to act as a model <em>regularizer</em>, meaning that we try to nudge our model to learn relevant features instead of erroneous features. In the case of the stop-sign model, the chosen positive class was <em>stop_sign</em> and the negative class was <em>car_side</em>.</p>
 <p>Run the following command when at the root of the <strong>process_dataset.py</strong> script:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>process_dataset.py<span class="w"> </span>--pos<span class="w"> </span>&lt;pos_class&gt;<span class="w"> </span>--neg<span class="w"> </span>&lt;neg_class&gt;
 </span></code></pre></div>
 <p>With <em>pos_class</em> and <em>neg_class</em> being the explicit names of the categories in the Caltech-101 dataset.</p>
 <p>Having run this script, the data files <em>pos_class_pos.dat</em> and <em>pos_class_neg.dat</em> should be contained in the Caltech-101 folder along with their gray-scaled datasets in the folders <strong>pos_class_gray</strong> and <strong>neg_class_gray</strong>.</p>
-<h3 id="exercise-22-train-object-detector-optional">Exercise 22: Train object detector (Optional)<a class="headerlink" href="#exercise-22-train-object-detector-optional" title="Permanent link">¶</a></h3>
+<h3 id="exercise-22-train-object-detector-optional">Exercise 22: Train object detector (<strong>Optional</strong>)<a class="headerlink" href="#exercise-22-train-object-detector-optional" title="Permanent link">¶</a></h3>
 <p>Now we'll commence the training portion of the exercise! To start with, <em>cd</em> into the Caltech-101 folder, as the following OpenCV tools only work from the folder where the data resides. We first need to create positive samples, which define what the model should look for when trying to find the object of interest. This will be handled by the OpenCV create_samples CLI tool, which creates a <em>positive vector file</em> holding the positive samples. This can be done as follows:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>opencv_createsamples<span class="w"> </span>-info<span class="w"> </span>&lt;pos_class&gt;_pos.dat<span class="w"> </span>-vec<span class="w"> </span>positive.vec<span class="w"> </span>-w<span class="w"> </span>&lt;width&gt;<span class="w"> </span>-h<span class="w"> </span>&lt;height&gt;
 </span></code></pre></div>
@@ -2958,6 +3026,7 @@ Figure copied from <a href="https://en.wikipedia.org/wiki/Summed-area_table">Wik
 <p><a href="https://arxiv.org/abs/1506.02640">YOLO object detection</a></p>
 <p><a href="https://www.researchgate.net/publication/364311838_Comparative_of_Viola-Jones_and_YOLO_v3_for_Face_Detection_in_Real_time">Comparison of Viola-Jones performance vs. YOLO v3</a></p>
 <p><a href="https://www.researchgate.net/publication/367584143_evaluation_study_of_face_detection_by_Viola-Jones_algorithm">Study on the strength and limitations of the Viola-Jones algorithm</a></p>
+<p><a href="https://archive.org/details/201291_International_Union_of_Electrical_Radio_and_Machine_Workers">Speech at the International Union of Electrical Radio and Machine Workers</a></p>
 
 
 

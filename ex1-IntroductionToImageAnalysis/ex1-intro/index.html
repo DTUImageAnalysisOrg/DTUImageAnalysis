@@ -2441,6 +2441,8 @@
       
         
       
+        
+      
     
     
     
@@ -2488,6 +2490,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2678,7 +2708,7 @@
 
 
 
-<p><em>Latest Page Update: 24-02-2026</em></p>
+<p><em>Latest Page Update: 03-03-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-1.zip">Solution</a></p>
 <h1 id="basic-image-handling">Basic image handling<a class="headerlink" href="#basic-image-handling" title="Permanent link">¶</a></h1>
 <p>In this exercise, we will read images from the disk, display them and make some basic examinations of them.</p>
@@ -2697,7 +2727,7 @@ for bone fracture detection.</p>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="n">im_name</span><span class="p">)</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 1</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Directory containing data and images</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">in_dir</span> <span class="o">=</span> <span class="s2">"data/"</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -2713,7 +2743,7 @@ for bone fracture detection.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 2</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </span></code></pre></div>
@@ -2722,7 +2752,7 @@ for bone fracture detection.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 3</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </span></code></pre></div>
@@ -2733,7 +2763,7 @@ for bone fracture detection.</p>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 4</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Metacarpal image"</span><span class="p">)</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2751,7 +2781,7 @@ predefined color maps.</p>
 </span></code></pre></div>
 <p>A list of color maps can be found here: <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">Matplotlib color maps</a>.</p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 5</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"jet"</span><span class="p">)</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Metacarpal image (with colormap)'</span><span class="p">)</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2759,7 +2789,7 @@ predefined color maps.</p>
 </details>
 <p><strong>Exercise 6:</strong> <em>Experiment with different colormaps. For example cool, hot, pink, copper, coolwarm, cubehelix, and terrain.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 6</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Experiment with different colormaps. For example cool, hot, pink, copper, coolwarm, cubehelix, and terrain.</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">colormaps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cool"</span><span class="p">,</span> <span class="s2">"hot"</span><span class="p">,</span> <span class="s2">"pink"</span><span class="p">,</span> <span class="s2">"copper"</span><span class="p">,</span> <span class="s2">"coolwarm"</span><span class="p">,</span> <span class="s2">"cubehelix"</span><span class="p">,</span> <span class="s2">"terrain"</span><span class="p">]</span>
@@ -2780,7 +2810,7 @@ predefined color maps.</p>
 <p>Pixels with values of 20 and below will be visualized black and pixels with values of 170 and above as white and values in between as shades of gray.</p>
 <p><strong>Exercise 7:</strong> <em>Try to find a way to automatically scale the visualization, so the pixel with the lowest value in the image is shown as black and the pixel with the highest value in the image is shown as white.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 7</summary>
 <p>Manually:</p>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">170</span><span class="p">)</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Metacarpal image (with gray level scaling)'</span><span class="p">)</span>
@@ -2800,7 +2830,7 @@ Automatically:
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 8</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">nbins</span> <span class="o">=</span> <span class="mi">256</span> <span class="c1"># Number of bins for the histogram. 256 is the number of gray levels.</span>
 </span></code></pre></div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">nbins</span><span class="p">)</span>
@@ -2850,7 +2880,7 @@ Automatically:
 <p>You can use the list functions <code>max</code> and <code>argmax</code>.</p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 9</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Rather than the position of the maximum count, I want to know the most common range of intensities</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">bin_left</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">max_at</span><span class="p">]</span>
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">bin_right</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">max_at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
@@ -2868,7 +2898,7 @@ Automatically:
 <p>where r and c are the row and column of the pixel. </p>
 <p><strong>Exercise 10:</strong> <em>What is the pixel value at (r, c) = (110, 90) ?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 10</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">100</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">c</span> <span class="o">=</span> <span class="mi">90</span>
 </span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="n">im_val</span> <span class="o">=</span> <span class="n">im_org</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
@@ -2882,7 +2912,7 @@ Automatically:
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 11</summary>
 <p>The first 30 rows become 0 (black).</p>
 </details>
 <p>A <strong>mask</strong> is a binary image of the same size as the original image, where the values are either 0 or 1 (or True/False). Here</p>
@@ -2893,7 +2923,7 @@ Automatically:
 <p>a mask is created from the original image. </p>
 <p><strong>Exercise 12:</strong> <em>Where are the values 1 and where are they 0?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 12</summary>
 <p>The mask value becomes 1 if a pixel is &gt; 150 and 0 if &lt; 150</p>
 </details>
 <p><strong>Exercise 13:</strong> <em>What does this piece of code do?:</em></p>
@@ -2902,7 +2932,7 @@ Automatically:
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 13</summary>
 <p>All the pixels in the mask with a value of 1 is set to 255 (brighest) in the original image.</p>
 </details>
 <h2 id="color-images">Color images<a class="headerlink" href="#color-images" title="Permanent link">¶</a></h2>
@@ -2911,7 +2941,7 @@ Automatically:
 <p>An example image <strong>ardeche.jpg</strong> is provided.</p>
 <p><strong>Exercise 14:</strong> <em>Read the image and print the image dimensions and its pixel type. How many rows and columns do the image have?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 14</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">im</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'ardeche.jpg'</span><span class="p">)</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -2921,7 +2951,7 @@ Automatically:
 </details>
 <p><strong>Exercise 15:</strong> <em>What are the (R, G, B) pixel values at (r, c) = (110, 90)?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 15</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">110</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">c</span> <span class="o">=</span> <span class="mi">90</span>
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The pixel value at (r,c) = (</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">) is: </span><span class="si">{</span><span class="n">im</span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="p">:]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -2938,7 +2968,7 @@ Automatically:
 <p>The number of rows in the image can be found using <code>rows = im_org.shape[0]</code>. Remember to <strong>cast</strong> your computed height into <strong>int</strong> before using it. For example: <code>r_2 = int(rows / 2)</code> or use the <strong>division floor operator</strong>: <code>r_2 = rows // 2</code>.</p>
 </details>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 16</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">r_2</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
 </span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">im</span><span class="p">[:</span><span class="n">r_2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Set the red and blue channel to zero for the top half of the image. Hence only the numbers in the green channel will be visible.</span>
 </span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
@@ -2951,7 +2981,7 @@ you know how to either save an image from a digital camera on the disk
 or download an image. Copy the image to your relevant Python folder.</p>
 <p><strong>Exercise 17:</strong> <em>Start by reading the image and examine the size of it.</em> </p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 17</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'car.png'</span><span class="p">)</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2971,7 +3001,7 @@ or download an image. Copy the image to your relevant Python folder.</p>
 <p>Here we selected a scale factor of 0.25. We also specify, that we have more than one channel (since it is RGB) and that the channels are kept in the third dimension of the NumPy array. The rescale function has this side effect, that it changes the type of the pixel values.</p>
 <p><strong>Exercise 18:</strong> <em>What is the type of the pixels after rescaling? Try to show the image and inspect the pixel values. Are they still in the range of [0, 255]?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 18</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Run</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">image_rescaled</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">image_rescaled</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -2986,7 +3016,7 @@ or download an image. Copy the image to your relevant Python folder.</p>
 </span></code></pre></div>
 <p><strong>Exercise 19:</strong> <em>Try to find a way to automatically scale your image so the resulting width (number of columns) is always equal to 400, no matter the size of the input image?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 19</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">_</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">im_org</span><span class="o">.</span><span class="n">shape</span>
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">rescale_factor</span> <span class="o">=</span> <span class="mi">400</span> <span class="o">/</span> <span class="n">c</span>
 </span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
@@ -3005,7 +3035,7 @@ gray-level image:</p>
 <p>We are forcing the pixel type back into <strong>unsigned bytes</strong> using the <code>img_as_ubyte</code> function, since the <code>rgb2gray</code> functions returns the pixel values as floating point numbers.</p>
 <p><strong>Exercise 20:</strong> <em>Compute and show the histogram of you own image.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 20</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">im_gray</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">im_org</span><span class="p">)</span> <span class="c1"># Convert it to gray scale</span>
 </span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="n">im_byte</span> <span class="o">=</span> <span class="n">img_as_ubyte</span><span class="p">(</span><span class="n">im_gray</span><span class="p">)</span> <span class="c1"># Convert it to 8-bit image (0-255)</span>
 </span></code></pre></div>
@@ -3022,7 +3052,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 <p>We are now going to look at the intensity values of the different channels of a color (RGB) image taken at DTU.</p>
 <p><strong>Exercise 23:</strong> <em>Start by reading and showing the </em><em>DTUSign1.jpg</em><em> image.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 23</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1.jpg'</span><span class="p">)</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -3036,7 +3066,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </span></code></pre></div>
 <p><strong>Exercise 24:</strong> <em>Visualize the R, G, and B components individually. Why does the DTU Compute sign look bright on the R channel image and dark on the G and B channels?  Why do the walls of the building look bright in all channels?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 24</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">'gray'</span><span class="p">)</span>
 </span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Red channel'</span><span class="p">)</span>
@@ -3050,7 +3080,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 <h2 id="simple-image-manipulations">Simple Image Manipulations<a class="headerlink" href="#simple-image-manipulations" title="Permanent link">¶</a></h2>
 <p><strong>Exercise 25:</strong> <em>Start by reading and showing the </em><em>DTUSign1.jpg</em><em> image.</em> </p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 25</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">out_dir</span> <span class="o">=</span> <span class="s1">'results/'</span>
 </span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="n">im_org</span><span class="p">[</span><span class="mi">500</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">:</span><span class="mi">1500</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3061,7 +3091,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </span></code></pre></div>
 <p><strong>Exercise 26:</strong> <em>Show the image again and save it to disk as </em><em>DTUSign1-marked.jpg</em><em> using the <code>io.imsave</code> function. Try to save the image using different image formats like for example PNG.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 26</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">out_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1-marked.jpg'</span><span class="p">,</span> <span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">out_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1-marked.png'</span><span class="p">,</span> <span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">out_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1-marked.tif'</span><span class="p">,</span> <span class="n">im_org</span><span class="p">)</span>
@@ -3069,7 +3099,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </details>
 <p><strong>Exercise 27:</strong> <em>Try to create a blue rectangle around the DTU Compute sign and save the resulting image.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 27</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1.jpg'</span><span class="p">)</span>
 </span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="n">im_copy</span> <span class="o">=</span> <span class="n">im_org</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="n">im_copy</span><span class="p">[</span><span class="mi">1500</span><span class="p">:</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3081,7 +3111,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </details>
 <p><strong>Exercise 28:</strong> <em>Try to automatically create an image based on </em><em>metacarpals.png</em><em> where the bones are colored blue. You should use <code>color.gray2rgb</code> and pixel masks.</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 28</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'metacarpals.png'</span><span class="p">)</span>
 </span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
 </span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="n">mask</span> <span class="o">=</span> <span class="n">im_org</span> <span class="o">&gt;</span> <span class="mi">140</span>
@@ -3135,7 +3165,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </span></code></pre></div>
 <p><strong>Exercise 31:</strong> <em>Try to find the shape of this image and the pixel type? Does the shape match the size of the image found by inspecting the image header information?</em></p>
 <details class="tip">
-<summary>Solution</summary>
+<summary>Solution 31</summary>
 <p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="n">im</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">pixel_array</span>
 </span></code></pre></div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
