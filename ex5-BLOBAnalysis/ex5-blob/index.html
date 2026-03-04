@@ -1489,6 +1489,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2527,6 +2538,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2688,6 +2710,38 @@ f_\text{circ} = \frac{4 \pi A}{P^2},
 <p>Try your method on the <strong>Sample G1 - COS7 cells DAPI channel.tiff</strong> image.  COS7 cells are <a href="https://cos-7.com/">African Green Monkey Fibroblast-like Kidney Cells</a> used for a variety of research purposes.</p>
 <h3 id="exercise-17-handling-overlap">Exercise 17: Handling overlap<a class="headerlink" href="#exercise-17-handling-overlap" title="Permanent link">¶</a></h3>
 <p>In certain cases cell nuclei are touching and are therefore being treated as one object. It can sometimes be solved using for example the morphological operation <strong>opening</strong> before the object labelling. The operation <strong>erosion</strong> can also be used but it changes the object area.</p>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h4 id="02502-image-analysis-exam-fall-2022-finding-mini-figures">02502 Image Analysis Exam Fall 2022: finding mini figures<a class="headerlink" href="#02502-image-analysis-exam-fall-2022-finding-mini-figures" title="Permanent link">¶</a></h4>
+<p>The company, PaintMyMiniz, would like to have a system that can automatically count the number of mini figures standing on a white plate. They have therefore called on your expertise. You decide to solve the task using BLOB analysis. Your first system works like this:</p>
+<ol>
+<li>Converts the input photo from RGB to gray scale</li>
+<li>Computes a threshold using Otsu's method</li>
+<li>Computes a binary image by setting all pixels below the threshold to foreground
+and the rest to background</li>
+<li>Removes BLOBs that are connected to the edges of the image</li>
+<li>Computes all BLOBs in the image</li>
+<li>Computes the area and the perimeter of all found BLOBs</li>
+</ol>
+<p>You start by testing the system on an example photo (<strong><em>data/figures.png</em></strong>).</p>
+<p><em>Exam question 1: You compute the area of all the BLOBs in the image. How many BLOBs have an area larger than 13000 pixels?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 5</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 4</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 3</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 2</li>
+</ul>
+<p><em>Exam question 2: You find the BLOB with the largest area. What is the perimeter of this BLOB?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1589</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1234</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 2034</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1998</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1679</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.label">sci-kit image label</a></li>
