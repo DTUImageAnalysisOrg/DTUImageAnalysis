@@ -752,6 +752,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#appendix-a-package-installations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2543,6 +2554,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#appendix-a-package-installations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2745,16 +2767,111 @@ Start by installing <em>sklearn</em> (see Appendix A) and importing the package:
 </span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div><p></p>
 </details>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are four example exam exercises related to this weeks material. Work with them, and if you have issues, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h4 id="exercise-from-02502-image-analysis-exam-fall-2024-analysis-of-breast-cancer-data">Exercise from 02502 Image Analysis Exam Fall 2024: Analysis of breast cancer data<a class="headerlink" href="#exercise-from-02502-image-analysis-exam-fall-2024-analysis-of-breast-cancer-data" title="Permanent link">¶</a></h4>
+<p>To be able to use image analysis to diagnose breast cancer, a sample dataset has been created, where images of fine structures of breast tissues are provided together with information about the patients cancer status. There are samples from patients with without cancer (positive=1) and with cancer (negative=0). For each patient a set of image features are computed and used in the further analysis. Since the image features are probably correlated a principal component analysis is performed to reduce the dimensions of the feature space.</p>
+<p>The data set can be loaded by first importing:
+<code>from sklearn.datasets import load_breast_cancer</code></p>
+<p>and then by:
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>breast = load_breast_cancer()
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>x = breast.data
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>target = breast.target
+</span></code></pre></div><p></p>
+<p>here x contains the features per observation and target contains the indicator for with
+cancer (negative) (0) and without (positive) (1). First the data should be scaled by subtracting the mean value from each measurements and then dividing by the standard deviation of each measurement. The PCA should be computed using np.linalg.eig.
+After the PCA, the scaled measurements are projected to PCA space for further analysis.</p>
+<p><em>Question 1: A PCA based classifier is tested by setting all samples that are projected to a negative value on the first principal component to positive (without cancer) and the rest to negative (with cancer). How many samples are classified as positive (without cancer)?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 370 and 38</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 100 and 120</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 305 and 320</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 345 and 355</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 250 and 260</li>
+</ul>
+<details class="tip">
+<summary>Solution 10</summary>
+<p><em>Question 1: A PCA based classifier is tested by setting all samples that are projected to a negative value on the first principal component to positive (without cancer) and the rest to negative (with cancer). How many samples are classified as positive (without cancer)?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 370 and 38</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 100 and 120</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 305 and 320</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> between 345 and 355</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 250 and 260</li>
+</ul>
+</details>
+<p><em>Question 2: A PCA based classifier is tested by setting all samples that are projected to a negative value on the first principal component to positive (without cancer) and the rest to negative (with cancer). What is the accuracy of this classifier?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.90 and 1.0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.80 and 0.90</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.70 and 0.80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.60 and 0.70</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.50 and 0.60</li>
+</ul>
+<details class="tip">
+<summary>Solution 11</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> between 0.90 and 1.0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.80 and 0.90</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.70 and 0.80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.60 and 0.70</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.50 and 0.60</li>
+</ul>
+</details>
+<p><em>Question 3: To better understand the data in PCA, the average values of the projection on the first principal component are computed for the negative (patients with cancer) and the positive (patients without cancer) samples. The two average values are:</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -2.21 and 3.71</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -3.23 and 4.23</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -4.98 and 4.87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -5.43 and 1.87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -1.23 and 2.67</li>
+</ul>
+<details class="tip">
+<summary>Solution 12</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> -2.21 and 3.71</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -3.23 and 4.23</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -4.98 and 4.87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -5.43 and 1.87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -1.23 and 2.67</li>
+</ul>
+</details>
+<p><em>Question 4: To get a better understanding of the data, the number of features and the number of observations are computed. They are:</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=25, observations = 423</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=30, observations=569</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=41, observations=714</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=17, observations=265</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=47, observations=435</li>
+</ul>
+<details class="tip">
+<summary>Solution 13</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=25, observations = 423</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Features=30, observations=569</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=41, observations=714</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=17, observations=265</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Features=47, observations=435</li>
+</ul>
+</details>
 <h2 id="appendix-a-package-installations">Appendix A - Package installations<a class="headerlink" href="#appendix-a-package-installations" title="Permanent link">¶</a></h2>
 <p><strong>sklearn (sci-kit learn)</strong>
 (Further info <a href="https://anaconda.org/anaconda/scikit-learn">here</a> and <a href="https://scikit-learn.org/stable/">here</a>)</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>activate course02503
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>conda install -c anaconda scikit-learn
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>activate course02503
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>conda install -c anaconda scikit-learn
 </span></code></pre></div>
 <p><strong>seaborn</strong>
 (Further info <a href="https://anaconda.org/anaconda/seaborn">here</a> and <a href="https://seaborn.pydata.org/">here</a>)
-</p><div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>activate course02503
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>conda install -c anaconda seaborn
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>activate course02503
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>conda install -c anaconda seaborn
 </span></code></pre></div><p></p>
 
 

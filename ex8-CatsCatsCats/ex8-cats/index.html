@@ -3152,6 +3152,86 @@ I_\text{synth} = I_\text{average} + w_1 * P_1 + w_2 * P_2 + \ldots + w_k * P_k \
 <p>What we have been doing here is what has been used for face identification and face recognition (<em>Matthew Turk and Alex Pentland: Eigenfaces for Recognition, 1991</em>).</p>
 <p>In summary, we can now synthesize all the cat photos you will only need and we can help people that are loooking for cats that looks like another cat. On top of that, we can now use methods that are considered state-of-the-art before the step into deep learning.</p>
 </div>
+<h3 id="exercise-from-02502-image-analysis-exam-spring-2023-pizzai">Exercise from 02502 Image Analysis Exam Spring 2023: PizzAI<a class="headerlink" href="#exercise-from-02502-image-analysis-exam-spring-2023-pizzai" title="Permanent link">¶</a></h3>
+<p>A pizza startup, PizzAI, wants to use machine learning to match customer taste to the optimal pizza. They have provided you with ten training photos of their current selection of pizzas (they are provided in the <strong><em>data</em></strong>-folder as <strong><em>pizzaAI.zip</em></strong>). </p>
+<p>You start by using image based principal component analysis to make a statistical model of the visual appearance of the pizzas in the training set. You start by computing the average pizza and then you use PCA from sklearn.decomposition to compute 5 principal components of the 10 images.</p>
+<p><em>Question 1: One of your friends is an experimental eater and wants to taste the pizza that is visually as far away from the average pizza as possible. You compare all pizzas with the average pizza and select the one which has the largest sum of squared di erences compared to the average pizza. Which pizza do you serve for your friend?</em></p>
+<p>One of the following statements is not correct. Which one?
+- [ ] BigSausage
+- [ ] CucumberParty
+- [ ] BewareOfOnions
+- [ ] Do not know
+- [ ] TheBush
+- [ ] PaleOn</p>
+<details class="tip">
+<summary>Solution 29</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> BigSausage</li>
+<li>[] CucumberParty</li>
+<li>[] BewareOfOnions</li>
+<li>[] Do not know</li>
+<li>[] TheBush</li>
+<li>[] PaleOn</li>
+</ul>
+</details>
+<p><em>Question 2: The company has asked you to compute a measure of the variation on their menu. After doing the PCA, you compute how much the first principal component explains of the total variation. It is:</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 23%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 38%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 42%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 57%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 68%</li>
+</ul>
+<details class="tip">
+<summary>Solution 30</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 23%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 38%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 42%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 57%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 68%</li>
+</ul>
+</details>
+<p><em>Question 3: The company has asked you to define their signature pizzas. The ones that are most varied. After computing the PCA, you project all pizzas on to the PCA space. You find the two pizzas that are the furthest away on the first principal axes. One in the positive and one in the negative direction. What pizzas do you suggest to be signature pizzas?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> TheBush and WhiteSnail</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> FindTheOlives and BigSausage</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> PaleOne and SnowAndGrass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Leafy and GreenHam</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> CucumberParty and WhiteSnail</li>
+</ul>
+<details class="tip">
+<summary>Solution 31</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> TheBush and WhiteSnail</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> FindTheOlives and BigSausage</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> PaleOne and SnowAndGrass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Leafy and GreenHam</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> CucumberParty and WhiteSnail</li>
+</ul>
+</details>
+<p><em>Question 4: An international student at DTU, is missing his favorite pizza. The student has asked his family to send him a photo (super_pizza.png) of this amazing pizza. Which pizza on the PizzAI menu looks most similar to this pizza. You find the solution by projecting the photo of the wanted pizza on to PCA space and finding the closest menu pizza in PCA space. Which pizza is that?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> PaleOne</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> FindTheOlives</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> GreenHam</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> TheBush</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> BewareOfOnions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<details class="tip">
+<summary>Solution 32</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> PaleOne</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> FindTheOlives</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> GreenHam</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> TheBush</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> BewareOfOnions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.kaggle.com/datasets/crawford/cat-dataset">Cat data set</a></li>

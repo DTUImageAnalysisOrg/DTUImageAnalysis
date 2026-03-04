@@ -979,6 +979,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2531,6 +2542,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2925,6 +2947,106 @@ The solution file contains:</p>
 <details class="bug">
 <summary>BUG - Notes on OpenCV and MacOS</summary>
 <p>Viktor Holmenlund Larsen had problems using MacOS (Big Sur 11.2.3) and fixed it by changing <code>cv.VideoCapture(0)</code> to <code>cv.VideoCapture(1)</code>. Also by updating <code>Gstreamer</code> and its dependencies and deinstalling and resinstalling OpenCV after.</p>
+</details>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h3 id="change-detection-exercise-from-02502-image-analysis-exam-fall-2022">Change detection exercise from 02502 Image Analysis Exam Fall 2022.<a class="headerlink" href="#change-detection-exercise-from-02502-image-analysis-exam-fall-2022" title="Permanent link">¶</a></h3>
+<p><em>Exam question 1: You and your friends have created a startup company, weCU, where you offer a surveillance system for warehouses. The system consists of a camera connected to a computer that raises an alarm if the system detects visual changes in the warehouse. The camera is connected to the computer using a USB-2 connection. The maximum transfer speed between the camera and the computer is 30 megabytes per second. Each image is RGB (3 bytes per pixel) with a size of 1024 x 768 pixels. Your change detection algorithm uses 54 milliseconds to process one image. What is the maximum frames-per-second your system can do?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 19</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 12</li>
+<li>[ ]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 24</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 33</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 5</li>
+</ul>
+<details class="tip">
+<summary>Solution 7</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 19</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 12</li>
+<li>[ ]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 24</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 33</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 5</li>
+</ul>
+</details>
+<p>To test your system, you have taken two test photos (change1.png and change2.png) they are RGB images of size (360, 457). The images are provided in the <strong><em>data/ChangeDetection</em></strong>-folder. </p>
+<p>Your algorithm works like this:
+1. Converts both images to gray scale using color.rgb2gray. Both
+images are now floating point images where the pixel values are
+between 0 and 1.
+2. Computes the absolute difference image between the two gray
+scale images.
+3. Computes how many pixels in the difference image that have a
+value above 0.3. These are the changed pixels.
+4. Computes the percentage of changed pixels compared to the total
+number of pixels in the image.</p>
+<p><em>Exam question 2: What is the percentage of changed pixels for the test images?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 18 %</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 12%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 21 %</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 5%</li>
+<li>[ ]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 2%</li>
+</ul>
+<details class="tip">
+<summary>Solution 8</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 18 %</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 12%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 21 %</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 5%</li>
+<li>[ ]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 2%</li>
+</ul>
+</details>
+<h3 id="change-detection-exercise-from-02502-image-analysis-exam-spring-2025-change-detection-in-video">Change detection exercise from 02502 Image Analysis Exam Spring 2025: Change detection in video<a class="headerlink" href="#change-detection-exercise-from-02502-image-analysis-exam-spring-2025-change-detection-in-video" title="Permanent link">¶</a></h3>
+<p>You are developing a small change detection algorithm and have acquired a set of six test images for simulating a video-stream input. The test images are named in chronological order:
+movie000.jpg to movie005.jpg. All images are converted to gray scale using rgb2gray before further processing. You algorithm works by estimating a slowly changing background image. The algorithm start by setting movie000.jpg as the first background estimate. For each new frame the
+background is updated using α = 0.80. You start by simulating a short video using movie000.jpg to movie004.jpg and inspecting the estimated background image at that point. Secondly, you use movie005.jpg as a new frame. This frame is compared to the background image using the pixel-wise absolute difference. The absolute difference image is converted to a binary image using a threshold of 0.2.</p>
+<p><em>Exam question 3: After estimating the background image using the first images, you compute the maximum pixel value in the image. What is this value?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.75 and 0.80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.90 and 0.95</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.95 and 1.0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.85 and 0.90</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.80 and 0.85</li>
+</ul>
+<details class="tip">
+<summary>Solution 9</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.75 and 0.80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 0.90 and 0.95</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.95 and 1.0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.85 and 0.90</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.80 and 0.85</li>
+</ul>
+</details>
+<p><em>Exam question 4: How many pixels are classified as changed in the binary image?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 3000 and 3500</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 1500 and 2000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do now know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 3500 and 4000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 2000 and 2500</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 2500 and 3000</li>
+</ul>
+<details class="tip">
+<summary>Solution 10</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 3000 and 3500</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 1500 and 2000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do now know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 3500 and 4000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 2000 and 2500</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 2500 and 3000</li>
+</ul>
 </details>
 
 
