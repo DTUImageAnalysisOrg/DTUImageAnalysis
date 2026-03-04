@@ -1141,6 +1141,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2597,6 +2608,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3340,6 +3362,85 @@ The solution file contains:</p>
 </span><span id="__span-31-96"><a id="__codelineno-31-96" name="__codelineno-31-96" href="#__codelineno-31-96"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
 </span><span id="__span-31-97"><a id="__codelineno-31-97" name="__codelineno-31-97" href="#__codelineno-31-97"></a>    <span class="n">capture_from_camera_and_show_images</span><span class="p">()</span>
 </span></code></pre></div>
+</details>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h3 id="exercise-from-02502-image-analysis-spring-2021-exam">Exercise from 02502 Image Analysis Spring 2021 exam<a class="headerlink" href="#exercise-from-02502-image-analysis-spring-2021-exam" title="Permanent link">¶</a></h3>
+<p><em>Exam question 1: The photo called sky_gray.png (in </em><strong>data/</strong><em>) is loaded and a linear histogram stretching is performed so the new image has a maximum pixel value of 200 and a minimum pixel value of 10. What is the average pixel value of the new image?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 98</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 113</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 167</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 103</li>
+</ul>
+<details class="tip">
+<summary>Solution 19</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 98</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 113</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 167</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 103</li>
+</ul>
+</details>
+<h3 id="exercise-from-02502-image-analysis-fall-2022-exam">Exercise from 02502 Image Analysis Fall 2022 exam<a class="headerlink" href="#exercise-from-02502-image-analysis-fall-2022-exam" title="Permanent link">¶</a></h3>
+<p>You are testing a prototype of a system that can monitor car parking areas. In order to locate the cars you want to create a binary image. Your algorithm does:
+1. Converts the input image from RGB to gray scale and transforms it into a floating point image.
+2. Does a linear gray scale transformation so the transformed image has a minimum pixel value of 0.1 and a maximum pixel value of 0.6
+3. Computes a pixel value threshold using Otsu's method
+4. Applies the found threshold, so all pixels with values above the threshold becomes foreground (white) and the rest background (black). </p>
+<p>You test your algorithm on the supplied photo (<strong><em>data/pixelwise.png</em></strong>)</p>
+<p><em>Exam question 2: What is the threshold value found by Otsu method?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.17</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.37</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.33</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.21</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.49</li>
+</ul>
+<details class="tip">
+<summary>Solution 20</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.17</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 0.37</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.33</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.21</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.49</li>
+</ul>
+</details>
+<p><em>Exam question 3: What is the resulting binary image, when applying your algorithm to the test photo?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 1: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/exam_sol_1.png" data-desc-position="bottom"><img alt="Figure 1" src="../figures/exam_sol_1.png"></a> </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 2: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/exam_sol_2.png" data-desc-position="bottom"><img alt="Figure 2" src="../figures/exam_sol_2.png"></a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 3: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/exam_sol_3.png" data-desc-position="bottom"><img alt="Figure 1" src="../figures/exam_sol_3.png"></a></li>
+</ul>
+<details class="tip">
+<summary>Solution 21</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 1 </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 2 </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Figure 3 </li>
+<li>[ ]</li>
+</ul>
+</details>
+<p><em>Exam question 4: You are working with quality assurance of printing of industrial products. As a test you want to see the color quality of printing on tea bags (</em><strong>data/TeaBag.png</strong><em>). You have developed a simple method that produces the image below. What are the steps in your pipeline?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Load image, RGB to grayscale, Otsu's optimal threshold</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Load image, RGB to HSV, threshold with 230 on V component</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Load image, RGB thresholding with R &lt; 100, G &lt; 100, and B &gt; 100</li>
+</ul>
+<details class="tip">
+<summary>Solution 22</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Load image, RGB to grayscale, Otsu's optimal threshold</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Load image, RGB to HSV, threshold with 230 on V component</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Load image, RGB thresholding with R &lt; 100, G &lt; 100, and B &gt; 100</li>
+</ul>
 </details>
 
 

@@ -1308,6 +1308,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2681,6 +2692,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3428,6 +3450,133 @@ The solution file contains:</p>
 </span><span id="__span-48-121"><a id="__codelineno-48-121" name="__codelineno-48-121" href="#__codelineno-48-121"></a>    <span class="c1"># Call the function with the flags</span>
 </span><span id="__span-48-122"><a id="__codelineno-48-122" name="__codelineno-48-122" href="#__codelineno-48-122"></a>    <span class="n">capture_from_camera_and_show_images</span><span class="p">(</span><span class="n">prewitt_flag</span><span class="p">,</span> <span class="n">otsu_flag</span><span class="p">,</span> <span class="n">median_flag</span><span class="p">)</span>
 </span></code></pre></div>
+</details>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h4 id="02502-image-analysis-exam-spring-2025-animal-similarity">02502 Image Analysis Exam Spring 2025: Animal similarity<a class="headerlink" href="#02502-image-analysis-exam-spring-2025-animal-similarity" title="Permanent link">¶</a></h4>
+<p>As a small part of a large system to analyze animal photos, there is a need for computing how similar two images are. We have two images, ImageA.png and ImageB.png, that we wish to explore the similarity of. </p>
+<p>The procedure is the following: Load the two images and convert them to grayscale Intensity-normalize the two images by setting the mean to zero and the standard deviation to one. Then, add 50 to each pixel. The normalization to a mean of 50 is done separately for each image. Select every second pixel in the images for calculating the similarity index, and organize them as two vectors. The same procedure for selecting the pixels is to be used for both images. As the similarity index, we calculate the normalized correlation coefficient (NCC).</p>
+<p><em>Exam question 1: The NCC can be expressed as the angle between the two vectors. What is this angle in degrees?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 70 and 75</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 60 and 65</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 55 and 60</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 75 and 80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 65 and 70</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<details class="tip">
+<summary>Solution 13</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 70 and 75</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 60 and 65</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 55 and 60</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 75 and 80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 65 and 70</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
+<p><em>Exam question 2: What is the NCC between the two images?</em>
+- [ ] between 0.40 and 0.45
+- [ ] between 0.45 and 0.50
+- [x] Between 0.50 and 0.55
+- [ ] Between 0.55 and 0.60
+- [ ] Between 0.60 and 0.65
+- [ ] Do not know</p>
+<details class="tip">
+<summary>Solution 14</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.40 and 0.45</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0.45 and 0.50</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 0.50 and 0.55</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.55 and 0.60</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.60 and 0.65</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
+<p><em>Exam question 3: The photo called sky_gray.png is transformed using a gamma mapping with gamma=1.21. The output image is filtered using a 5x5 median filter. What is the resulting pixel value in the pixel at row=40, column=50 (when using a 1-based matrix-based coordinate system)?</em>
+- [x] 68
+- [ ] 12
+- [ ] 30
+- [ ] 123
+- [ ] 233
+- [ ] Do not know</p>
+<details class="tip">
+<summary>Solution 15</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 68</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 12</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 30</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 123</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 233</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
+<h3 id="02502-image-analysis-exam-fall-2023-ardeche-river">02502 Image Analysis Exam Fall 2023: Ardeche river<a class="headerlink" href="#02502-image-analysis-exam-fall-2023-ardeche-river" title="Permanent link">¶</a></h3>
+<p>You have taken a photo from your last holidays and you would like to see if you enhance or modify the appearance of this photo. For this you are experimenting with some pixelwise operations. You do:</p>
+<ol>
+<li>Load the image as an RGB image.</li>
+<li>Convert the image to gray scale. Now the image is a floating point image where
+the values are in the range of [0, 1].</li>
+<li>Do a linear gray scale histogram stretch. The new image should have a minimum value of 0.2 and a maximum value of 0.8.</li>
+<li>Computing the average value of the histogram stretched image.</li>
+<li>Use the prewitt_h filter to extract edges in the image.</li>
+<li>Computing the maximum absolute value of the Prewitt filtered image.</li>
+<li>Creating a binary image from the histogram stretched image by using a threshold with a value that is equal to the average value of the image.</li>
+<li>Computing the number of foreground pixels in the binary image.</li>
+</ol>
+<p>The photo for the questions: ardeche_river.jpg</p>
+<p><em>Exam question 4: What is the number of foreground pixels in the binary image?</em>
+- [ ] Do not know
+- [ ] Between 400000 and 500000
+- [ ] Between 300000 and 400000
+- [x] Between 200000 and 300000
+- [ ] Between 100000 and 200000
+- [ ] between 0 and 100000</p>
+<details class="tip">
+<summary>Solution 16</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 400000 and 500000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 300000 and 400000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 200000 and 300000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 100000 and 200000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> between 0 and 100000</li>
+</ul>
+</details>
+<p><em>Exam question 5: What is the maximum absolute value in the Prewitt filtered image?</em>
+- [ ] 0.66
+- [ ] 0.42
+- [ ] 0.34
+- [x] 0.53
+- [ ] 0.12</p>
+<details class="tip">
+<summary>Solution 17</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.66</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.42</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.34</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 0.53</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.12</li>
+</ul>
+</details>
+<p><em>Exam question 6: What is the average value of the histogram stretched image?</em>
+- [ ] 0.23
+- [ ] 0.37
+- [x] 0.48
+- [ ] 0.53
+- [ ] Do not know
+- [ ] 0.65</p>
+<details class="tip">
+<summary>Solution 18</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.23</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.37</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 0.48</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.53</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.65</li>
+</ul>
 </details>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>

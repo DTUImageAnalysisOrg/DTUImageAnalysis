@@ -1404,6 +1404,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2615,6 +2626,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2961,6 +2983,51 @@
 <p class="admonition-title">Summary</p>
 <p>The conclusion is that you can solve a lot of problems using morphological operations but sometimes it is better to think even more about how to acquire the images.</p>
 </div>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<h4 id="02502-image-analysis-exam-spring-2022-bright-cars">02502 Image Analysis Exam Spring 2022: bright cars<a class="headerlink" href="#02502-image-analysis-exam-spring-2022-bright-cars" title="Permanent link">¶</a></h4>
+<p>In order to create a system that can recognize brightly colored cars, a photo of a car is provided. The photo called car.png shows one car. The goal is compute the size of the car by finding the unique color of the car. First the photo is converted from the RGB color space to the HSV color space. Then a binary image is created by setting all the pixels that have an S component higher than 0.7 to foreground and the rest of the pixels to background. The values of the H and V components are ignored. The binary image is morphologically eroded using a disk-shaped structuring element with radius=6. When doing the erosion, the pixels beyond the image border are assigned a value of 1. The resulting image is morphologically dilated using a disk-shaped structuring element with radius=4. When doing the dilation, the pixels beyond the image border are assigned a value of 0.</p>
+<p><em>Exam question 1: How many foreground pixels are there in the final image?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 41000 and 42000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 30000 and 31000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 10000 and 11000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 17000 and 18000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 23000 and 24000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<details class="tip">
+<summary>Solution 17</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 41000 and 42000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Between 30000 and 31000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 10000 and 11000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 17000 and 18000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 23000 and 24000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
+<hr>
+<h4 id="02502-image-analysis-spring-exam-2021-flower-opening">02502 Image Analysis Spring Exam 2021: flower opening<a class="headerlink" href="#02502-image-analysis-spring-exam-2021-flower-opening" title="Permanent link">¶</a></h4>
+<p>The photo called <strong><em>flower.png</em></strong> is loaded and it is converted from the RGB color space to the HSV color space. Secondly, a threshold is performed on the HSV values with the limits H &lt; 0.25, S &gt; 0.8 and V &gt; 0.8. Pixels with values within these limits are set to foreground and the rest of the pixels are set to background. Finally, a morphological opening is performed on the binary image using a disk-shaped structuring element with radius=5. When doing a dilation, pixels beyond the image border are assigned a value of 0 and when doing an erosion the pixels beyond the image border are assigned a value of 1.</p>
+<p><em>Exam question 2: What is the number of foreground pixels in the resulting image?</em>
+- [ ] 5665
+- [ ] 3421
+- [ ] 8753
+- [ ] 6712
+- [ ] 1340
+- [ ] Do not know</p>
+<details class="tip">
+<summary>Solution 18</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 5665</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 3421</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 8753</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 6712</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 1340</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+</details>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://scikit-image.org/docs/stable/api/skimage.morphology.html">sci-kit image morphology</a></li>
