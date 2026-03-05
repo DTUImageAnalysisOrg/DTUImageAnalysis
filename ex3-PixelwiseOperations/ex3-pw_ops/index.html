@@ -3385,11 +3385,13 @@ The solution file contains:</p>
 </ul>
 </details>
 <h3 id="exercise-from-02502-image-analysis-fall-2022-exam">Exercise from 02502 Image Analysis Fall 2022 exam<a class="headerlink" href="#exercise-from-02502-image-analysis-fall-2022-exam" title="Permanent link">¶</a></h3>
-<p>You are testing a prototype of a system that can monitor car parking areas. In order to locate the cars you want to create a binary image. Your algorithm does:
-1. Converts the input image from RGB to gray scale and transforms it into a floating point image.
-2. Does a linear gray scale transformation so the transformed image has a minimum pixel value of 0.1 and a maximum pixel value of 0.6
-3. Computes a pixel value threshold using Otsu's method
-4. Applies the found threshold, so all pixels with values above the threshold becomes foreground (white) and the rest background (black). </p>
+<p>You are testing a prototype of a system that can monitor car parking areas. In order to locate the cars you want to create a binary image. Your algorithm does:</p>
+<ol>
+<li>Converts the input image from RGB to gray scale and transforms it into a floating point image.</li>
+<li>Does a linear gray scale transformation so the transformed image has a minimum pixel value of 0.1 and a maximum pixel value of 0.6</li>
+<li>Computes a pixel value threshold using Otsu's method</li>
+<li>Applies the found threshold, so all pixels with values above the threshold becomes foreground (white) and the rest background (black). </li>
+</ol>
 <p>You test your algorithm on the supplied photo (<strong><em>data/pixelwise.png</em></strong>)</p>
 <p><em>Exam question 2: What is the threshold value found by Otsu method?</em></p>
 <ul class="task-list">
@@ -3422,8 +3424,7 @@ The solution file contains:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 1 </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 2 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Figure 3 </li>
-<li>[ ]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> Figure 3</li>
 </ul>
 </details>
 <p><em>Exam question 4: You are working with quality assurance of printing of industrial products. As a test you want to see the color quality of printing on tea bags (</em><strong>data/TeaBag.png</strong><em>). You have developed a simple method that produces the image below. What are the steps in your pipeline?</em></p>

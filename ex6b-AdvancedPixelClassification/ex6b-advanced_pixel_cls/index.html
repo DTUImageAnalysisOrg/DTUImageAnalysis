@@ -2838,8 +2838,8 @@ Add relevant title and label for each axis. One can use <code>plt.subplots()</co
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Morphological opening of binary image from camera, median filtering of binary images, image rotation to get slope in the right camera view?</li>
 </ul>
 <hr>
-<p>We have used data points from two classes in a two-dimensional space and trained a classifier model using two Gaussian distributions. The mean values are [24, 3] and [30, 7] for classes 1 and 2 respectively. As a classifier, we use the Linear Discriminant Classifier that assumes equal prior-probabilities and isotropic covariances. The covariance matrix is:
-$<span class="arithmatex">\(\Sigma = \begin{bmatrix} 2 &amp; 0\\ 0 &amp; 2\end{bmatrix}\)</span>$</p>
+<p>We have used data points from two classes in a two-dimensional space and trained a classifier model using two Gaussian distributions. The mean values are [24, 3] and [30, 7] for classes 1 and 2 respectively. As a classifier, we use the Linear Discriminant Classifier that assumes equal prior-probabilities and isotropic covariances. The covariance matrix is:</p>
+<div class="arithmatex">\[\bm{\Sigma} = \begin{bmatrix} 2 &amp; 0\\ 0 &amp; 2\end{bmatrix}\]</div>
 <p>A general formulation for a hyperplane and points belonging to class 2 is:</p>
 <div class="arithmatex">\[\bm{y}_{C\in 2}(\bm{x}) = \bm{x}^T\bm{w}+\bm{cw}\]</div>
 <p>where <span class="arithmatex">\(w\)</span> is the weight vector and <span class="arithmatex">\(bm{cw}\)</span> is the threshold defining the hyperplane. So, if <span class="arithmatex">\(\bm{x}^T\bm{w}&gt;\bm{cw}\)</span> a sample point belongs to class 2.</p>

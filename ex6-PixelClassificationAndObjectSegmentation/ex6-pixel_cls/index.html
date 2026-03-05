@@ -2822,8 +2822,8 @@ We manually set the threshold for background to -200. So all pixels below -200 a
 <p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
 <h4 id="02502-image-analysis-exam-fall-2022-animal-sorting-machine">02502 Image Analysis Exam Fall 2022: Animal sorting machine<a class="headerlink" href="#02502-image-analysis-exam-fall-2022-animal-sorting-machine" title="Permanent link">¶</a></h4>
 <p>You have been asked by a farmer to develop a machine vision system that can detect if a cow or a sheep is passing by a camera. The camera just measure the average intensity of the image of the animal. To train your system, the farmer has given you these measured training data measured on 10 cows and 12 sheep:</p>
-<p>Cows = [26, 46, 33, 23, 35, 28, 21, 30, 38, 43]
-Sheep = [67, 27, 40, 60, 39, 45, 27, 67, 43, 50, 37, 100]</p>
+<p>Cows = [26, 46, 33, 23, 35, 28, 21, 30, 38, 43]</p>
+<p>Sheep = [67, 27, 40, 60, 39, 45, 27, 67, 43, 50, 37, 100]</p>
 <p>First, you try to compute the intensity threshold dividing cows and sheep using a minimum distance classifier. Secondly, you fit Gaussians to the two sets of the data to do a parametric classification.</p>
 <p><em>Exam question 1: What threshold did you find in the minimum distance classifier?</em></p>
 <ul class="task-list">
@@ -2832,16 +2832,17 @@ Sheep = [67, 27, 40, 60, 39, 45, 27, 67, 43, 50, 37, 100]</p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 42.1</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 38.1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked><span class="task-list-indicator"></span></label> 41.2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 41.2</li>
 </ul>
 <p><em>Exam question 2: You want to find the point where the two Gaussians cross. To do that you sample values of the two Gaussians for di erent values. What are the values of the Gaussians for the cows and the sheep when trying with value=38?</em></p>
-<p>Choose one answer
-- [ ] Do not know
-- [ ] 0.03 and 0.02
-- [ ] 0.04 and 0.04
-- [ ] 0.03 and 0.04
-- [ ] 0.03 and 0.03
-- [x] 0.04 and 0.02</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.03 and 0.02</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.04 and 0.04</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.03 and 0.04</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.03 and 0.03</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.04 and 0.02</li>
+</ul>
 <hr>
 <h4 id="02502-image-analysis-exam-fall-2023-heart-analysis">02502 Image Analysis Exam Fall 2023: Heart analysis<a class="headerlink" href="#02502-image-analysis-exam-fall-2023-heart-analysis" title="Permanent link">¶</a></h4>
 <p>A radiologist has asked you for help to assess the function of the heart as seen on a computed tomography scan. The main interest is the heart muscle (myocardium) and the blood inside the myocardium (blood). All files of interest are found in <strong><em>data/HeartCT.zip</em></strong>. We try first on a single DICOM slice (1-001.dcm), where we also have some manual annotations. We have a region-of-interest (ROI) in the myocardium (MyocardiumROI.png), a region-of-interest in the blood (bloodROI.png) and a full ground truth annotation of the blood (bloodGT.png). </p>
@@ -2853,27 +2854,33 @@ Sheep = [67, 27, 40, 60, 39, 45, 27, 67, 43, 50, 37, 100]</p>
 <div class="arithmatex">\[\mu-3\sigma &lt; \text{value} &lt; \mu+3\sigma\]</div>
 <p>Are set to foreground (1) and the rest of the pixels are set to background (0). To clean the binary image, a morphological closing with disk shaped structuring element of radius 3 is performed followed by a morphological opening with a structuring element of radius 5. A BLOB analysis is performed on the resulting image and the area of all the BLOBs are computed. The BLOBs are filtered so only BLOBs with an area larger than 2000 pixels and an area less than 5000 pixels are kept. </p>
 <p>Finally, the found BLOB(s) are compared to the manual segmentation found in BloodGT.png and the DICE score is computed.</p>
-<p><em>Exam question 3: A class range is computed, so all pixels with: $<span class="arithmatex">\(\mu-3\sigma &lt; \text{value} &lt; \mu+3\sigma\)</span>$ are set to foreground (1) and the rest of the pixels are set to background (0). What is the class range (in Hounsfield units)?</em>
-- [ ] Do not know
-- [ ] [219, 256]
-- [ ] [172, 213]
-- [ ] [234, 342]
-- [ ] [198, 312]
-- [x] [210, 296]</p>
-<p><em>Exam question 4: How many BLOBs are found before they are filtered using the area?</em>
-- [x] Between 4 and 7
-- [ ] Between 8 and 11
-- [ ] Between 16 and 19
-- [ ] Between 12 and 15
-- [ ] Do not know
-- [ ] Between 1 and 3  </p>
-<p><em>Exam question 5: You compare your found blood estimate with the manual drawn blood estimate in BloodGT.png. What is the DICE score?</em>
-- [ ] 0.87
-- [ ] 0.85
-- [ ] 0.78
-- [ ] 0.81
-- [x] 0.94
-- [ ] Do not know</p>
+<p><em>Exam question 3: A class range is computed, so all pixels with: <span class="arithmatex">\(\mu-3\sigma &lt; \text{value} &lt; \mu+3\sigma\)</span> are set to foreground (1) and the rest of the pixels are set to background (0). What is the class range (in Hounsfield units)?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> [219, 256]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> [172, 213]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> [234, 342]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> [198, 312]</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> [210, 296]</li>
+</ul>
+<p><em>Exam question 4: How many BLOBs are found before they are filtered using the area?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 4 and 7</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 8 and 11</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 16 and 19</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 12 and 15</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 1 and 3  </li>
+</ul>
+<p><em>Exam question 5: You compare your found blood estimate with the manual drawn blood estimate in BloodGT.png. What is the DICE score?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.87</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.85</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.78</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.81</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 0.94</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">Normal distribution</a></li>
