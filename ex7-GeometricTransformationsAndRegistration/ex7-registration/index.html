@@ -1999,6 +1999,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2660,6 +2671,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2692,7 +2714,7 @@
 
 
 
-<p><em>Latest Page Update: 04-03-2026</em></p>
+<p><em>Latest Page Update: 05-03-2026</em></p>
 <h2 id="image-rotation">Image rotation<a class="headerlink" href="#image-rotation" title="Permanent link">¶</a></h2>
 <p>One of the most useful and simple geometric transformation is rotation, where an image is rotated around a point. </p>
 <p>We start by some experiments on the image called <strong>NusaPenida.png</strong>. It can be found in the <a href="https://github.com/RasmusRPaulsen/DTUImageAnalysis/tree/main/exercises/Ex7-GeometricTransformationsAndRegistration/data">exercise material</a>.</p>
@@ -2846,6 +2868,93 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">str</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">counter</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>
 </span></code></pre></div>
 <p>Try this and also try to change the other transform parameters using the counter.</p>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<p>To be able to do a landmark-based image registration between a reference image and a template image, two sets of corresponding landmarks have been placed in the two images. The landmarks can be seen in the table:</p>
+<p>| Landmarks in reference | x | y | Landmarks in template | x | y |
+| ----------- | ------------------------------------ | -- | -- | --------------- | -- | -- |
+| a1 | 3 | 3 | b1 | 6 | 7 |
+| a2 | 4 | 2 | b2 | 3 | 7 |
+| a3 | 7 | 3 | b3 | 2 | 2 |</p>
+<p>Before the registration, the first point in the reference image is rotated with 11 degrees using a rotation matrix (rotating counter-clockwise). </p>
+<p><em>Exam question 1: What is the squared distance objective function <span class="arithmatex">\(F\)</span> between the two point-sets?</em> </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 41.2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 53.4</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 77.3</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 101.2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 23.2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<p><em>Exam question 2: The points in the reference image are translated using a translation vector of <span class="arithmatex">\(t=(-2, 5)\)</span>. What is the change in the squared distance objective function <span class="arithmatex">\(F\)</span> between the two point-sets?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 89</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 46</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 77</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 123</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 99</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<p><em>Exam question 3: A company producing farming machines wants you to develop an automated system for plant identification. The specific plant typically has red leaves and is often found on brown farmland surrounded by green crops. What could be the pipeline that you would use to solve the task?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Image acquisition, HSI color thresholding, morphological operations, BLOB analysis, feature classification</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Image acquisition, landmark registration, chain coding</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Binary run-length coding, PCA analysis, histogram stretching, morphological closing</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Hough transformation, parametric classification, confusion matrix, grey-level run length coding</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Gaussian filtering, active shape model, binary chain coding, automatic thresholding</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<hr>
+<p>For the following exercise, all data is provided in <strong><em>data/exam_prep/</em></strong>.
+Two photos with toy figures have been taken with a standard camera (play1.png and play5.png).Five landmarks have been placed on the photos and stored in the files playfixedPoints.mat and playmovingPoints.mat.</p>
+<p>A similarity transform (translation, rotation, and scaling) has been computed so that it aligns the moving points to the fixed points. The computed transform is applied to the play5.png photo. After the transformation, a threshold is applied to the transformed image, so pixels below 180 are assigned to foreground (1) and the pixels above 180 are background (0).</p>
+<p>A reference image called reference.png is provided. The DICE score between the reference image and the transformed (and thresholded) image is computed. </p>
+<p><em>Exam question 4: What is this DICE score?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.85 and 0.90</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.75 and 0.80</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.70 and 0.75.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.80 and 0.85</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.90 and 0.95</li>
+</ul>
+<p><em>Exam question 5: What is the Euclidean distance between the first landmark in the fixed points and the first landmark in the moving points?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 86.1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 97.1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 165.7</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 181.2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 132.4</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
+<hr>
+<h4 id="exam-exercise-on-hough-transform">Exam exercise on Hough transform<a class="headerlink" href="#exam-exercise-on-hough-transform" title="Permanent link">¶</a></h4>
+<p>The five data points (x, y): (7,13), (9,10), (6,10), (6,8), (3,6) </p>
+<p>result in the corresponding five Hough space sinograms (curves in Hough space) shown below. Two Hough space sinograms are crossing at (<span class="arithmatex">\(\rho\)</span> = 0.29, <span class="arithmatex">\(\theta\)</span> = <span class="arithmatex">\(151^\circ\)</span>).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/hough_exam.png" data-desc-position="bottom"><img alt="exam_hough_plot" src="../figs/hough_exam.png"></a></p>
+<p><em>Exam question 6: What are the corresponding data points for the two crossing curves in Hough space? (approximately)</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> (9, 10) and (6, 10)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> (7, 13) and (3, 6)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> (9, 10) and (7, 13)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> (6, 10) and (3, 6)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> (7, 13) and (6, 10)</li>
+</ul>
+<hr>
+<h4 id="exam-exercise-on-dynamic-programming-fall-2018">Exam exercise on dynamic programming, fall 2018<a class="headerlink" href="#exam-exercise-on-dynamic-programming-fall-2018" title="Permanent link">¶</a></h4>
+<p>A gamma mapping with <span class="arithmatex">\(\gamma = 1.12\)</span> is performed on the image in the below figure. </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/dynamic_programming_exam.png" data-desc-position="bottom"><img alt="dp_exam_plot" src="../figs/dynamic_programming_exam.png"></a></p>
+<p>All pixels are then rounded to integers. Dynamic programming is used to compute the optimal path from the top to the bottom of the resulting image. </p>
+<p><em>Exam question 7: What are the values in the lowest row in the accumulator image?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 103, 215, 234</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 101, 233, 250</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 40, 122, 130</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 50, 200, 121</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 91, 239, 277</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://scikit-image.org/docs/stable/api/skimage.transform.html">sci-kit image transformations</a></li>

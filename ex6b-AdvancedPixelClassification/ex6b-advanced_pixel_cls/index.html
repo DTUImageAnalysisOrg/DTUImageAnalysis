@@ -1905,6 +1905,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2713,6 +2724,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2730,7 +2752,7 @@
 
 
 
-<p><em>Latest Page Update: 04-03-2026</em></p>
+<p><em>Latest Page Update: 05-03-2026</em></p>
 <h1 id="image-segmentation">Image Segmentation<a class="headerlink" href="#image-segmentation" title="Permanent link">¶</a></h1>
 <h2 id="exercise-1">Exercise 1<a class="headerlink" href="#exercise-1" title="Permanent link">¶</a></h2>
 <p>Display both the T1 and T2 images, their 1 and 2D histograms and scatter plots.
@@ -2804,6 +2826,32 @@ Add relevant title and label for each axis. One can use <code>plt.subplots()</co
 <p><strong>Q10</strong> Are the training examples representative for the segmentation results? Are you surprised that so few training examples perform so well? Do you need to be an anatomical expert to draw these?</p>
 <p><strong>Q11</strong> Compare the segmentation results with the original image. Are the segmentation results satisfactory? Why not?</p>
 <p><strong>Q12</strong> Is one class completely wrong segmented? What is the problem?</p>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<p><em>Exam question 1: You are asked to design a system that can track skiers on a ski slope. Due to the weather, you can expect that the lightning conditions slowly changes during the slope opening times. What elements do you need in your image analysis system?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Estimation of a slowly changing background image, computing difference between current video frame and background, detection of significant changes in the image, analysis of moving objects.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Conversion of image from RGB to grey scale, parametric classification of pixel values, image registration to a template figure</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Dynamic programming to find slope, image filtering to sort birds from the image, fast facial recognition to find skiers</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Image registration of slopes to a template slope, LDA classification of registration results, morphological closing of outlines</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Morphological opening of binary image from camera, median filtering of binary images, image rotation to get slope in the right camera view?</li>
+</ul>
+<hr>
+<p>We have used data points from two classes in a two-dimensional space and trained a classifier model using two Gaussian distributions. The mean values are [24, 3] and [30, 7] for classes 1 and 2 respectively. As a classifier, we use the Linear Discriminant Classifier that assumes equal prior-probabilities and isotropic covariances. The covariance matrix is:
+$<span class="arithmatex">\(\Sigma = \begin{bmatrix} 2 &amp; 0\\ 0 &amp; 2\end{bmatrix}\)</span>$</p>
+<p>A general formulation for a hyperplane and points belonging to class 2 is:</p>
+<div class="arithmatex">\[\bm{y}_{C\in 2}(\bm{x}) = \bm{x}^T\bm{w}+\bm{cw}\]</div>
+<p>where <span class="arithmatex">\(w\)</span> is the weight vector and <span class="arithmatex">\(bm{cw}\)</span> is the threshold defining the hyperplane. So, if <span class="arithmatex">\(\bm{x}^T\bm{w}&gt;\bm{cw}\)</span> a sample point belongs to class 2.</p>
+<p><em>Exam question 2: What is <span class="arithmatex">\(\bm{y}_{C\in 2}(\bm{x})\)</span> for <span class="arithmatex">\(\bm{x}=(23,5)\)</span> and what class does the sample belong to?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -12 and class 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 170 and class 2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -30 and class 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 12 and class 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> -1.7 and class 2</li>
+</ul>
 
 
 
