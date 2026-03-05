@@ -2263,6 +2263,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2597,6 +2608,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exam-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exam preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2807,6 +2829,39 @@ Show in ortho-view that the rotations are applied as expected for each new image
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">R</span><span class="o">.</span><span class="n">SmoothingSigmasAreSpecifiedInPhysicalUnitsOn</span><span class="p">()</span>
 </span></code></pre></div>
 <p><strong>Exercise 12:</strong> Register the noisy moving image using the pyramidal procedure. Try three levels of setting sigma=[3.0, 1.0, 0.0]. Repeat the registration procedure with different step lengths. Does the image registration become more insensitive to the step length? If not try increasing sigma=[5.0, 1.0, 0.0]. Can one use only 2 levels of the pyramid? What do you suggest of sigma values? <strong>Show the optimal affine matrices for each of the repeats to check robustness.</strong></p>
+<h2 id="exam-preparation">Exam preparation<a class="headerlink" href="#exam-preparation" title="Permanent link">¶</a></h2>
+<p>Below are some example exam exercises related to this weeks material. Work with them, and if you have issues or questions, please ask the TAs, as you will not be able to get help after the last exercise round.</p>
+<p>You have developed a novel deep learning algorithm for performing 3D image registration. For testing purposes, you want to design some test cases to evaluate the performance of your algorithm. </p>
+<p>You will use a 3D MRI image of a brain (T1_brain_template.nii.gz). </p>
+<p>To inspect the results, you use the ortho view that shows the brain in three planes: The axial view shows the x-y plane, the coronal views the x-z plan, and the sagittal view shows the y-z plan of the brain (for example the imshow_orthogonal_view from the advanced registration exercise). </p>
+<p>You apply a rigid registration to “T1_brain_template” to generate your first test. The rigid transform is composed of a rotation with a yaw of 10 degrees followed by a pitch of -30 degrees. The output will be the moving image for your tests. </p>
+<p>You also generate a mask by applying Otsu thresholding on the template volume. Then, apply a morphological closing with a skimage.morphology.ball as a structuring element with radius 5. Finally, apply erosion with a ball with a radius of 3.</p>
+<p>The mask is applied to both the moving and template images. Compute the intensity based normalized correlation coefficient between the two (Equation 2.6 in Elastix notes).</p>
+<details class="tip">
+<summary>Tip:</summary>
+<p>For doing the exercise, you may need to work with numpy arrays. You can extract the numpy array from a SimpleITK object using the function sitk.GetArrayFromImage(…). If needed, you can make a SimpleITK object from the numpy array with the function sitk.GetImageFromArray(…).</p>
+</details>
+<p><em>Exam question 1: How does the binary mask look like?</em> </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 1: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_1.png" data-desc-position="bottom"><img alt="exam_fig_1" src="../figs/exam_fig_1.png"></a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 2: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_2.png" data-desc-position="bottom"><img alt="exam_fig_2" src="../figs/exam_fig_2.png"></a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 3: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_3.png" data-desc-position="bottom"><img alt="exam_fig_3" src="../figs/exam_fig_3.png"></a></li>
+</ul>
+<p><em>Exam question 2: What is the normalized correlation coefficient between the moving and the template image when masked with the binary mask?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.35 and 0.45</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.15 and 0.25</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.45 and 0.55</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.0 and 0.15</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Between 0.25 and 0.35</li>
+</ul>
+<p><em>Exam question 3: How does the moving image look like after the two-step rigid transformation?</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 1: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_2_1.png" data-desc-position="bottom"><img alt="exam_fig_2_1" src="../figs/exam_fig_2_1.png"></a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 2: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_2_2.png" data-desc-position="bottom"><img alt="exam_fig_2_2" src="../figs/exam_fig_2_2.png"></a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Figure 3: <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figs/exam_fig_2_3.png" data-desc-position="bottom"><img alt="exam_fig_2_3" src="../figs/exam_fig_2_3.png"></a></li>
+</ul>
 
 
 
