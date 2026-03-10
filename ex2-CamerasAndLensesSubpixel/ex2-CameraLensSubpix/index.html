@@ -2752,15 +2752,30 @@ of their A4 paper sheets, which need to be standardized to their liking before h
 them in.</p>
 <p>During production, A4 paper is designed to have a tolerance of <span class="arithmatex">\(\pm 2\text{mm}\)</span> for both
 height and width, which obstrues their plan of making a perfectly symmetrical paperstack.</p>
-<p>Luckily, they're also amateur metrologists that know a little about quality control
-measurements! The amateur metrologists therefore set themselves the task, of measuring
-the physical dimensions of a piece of paper. They don't possess any professional
-equipment, yet they're determined to make it work using a low-quality homemade
-experimental setup.</p>
-<p>As capture device, they use the low-quality CCD cameras from one of the metrologists'
-Google Pixel 7 smartphone, and mount it on a stair-case face-down. They then place the A4
-paper on the ground floor directly beneath the camera. They make sure that the optical
-axis of the CCD camera is exactly aligned with the centre of the piece of paper.</p>
+<p>Using a ruler to measure is possible, but this is dependent on the accuracy of the
+beholder. Luckily, they're also amateur metrologists that are passionate about quality
+control measurements!</p>
+<p>The amateur metrologists therefore set themselves the task of measuring the physical
+dimensions of a piece of paper. To solve the problem, they come up with two solutions:</p>
+<ol>
+<li>Take an image of the A4 paper and use the thin-lens theory, camera parameters, and the object distance to measure the dimensions of the piece of paper correctly.</li>
+<li>Record a video of the A4 paper and employ <em>Sub-Pixel Accuracy</em> to make an evidence based estimate of the paper dimensions.</li>
+</ol>
+<p>They start by testing solution 1. if this fails, they perform solution 2.</p>
+<p>They don't possess any professional equipment to perform the experiments, yet they're
+determined to make it work using a low-quality homemade experimental setup. </p>
+<div class="admonition note">
+<p class="admonition-title">Exercise requirements</p>
+<p>In the subsequent exercises, it is assumed that you're aware of the concepts of
+triangulation and sub-pixel accuracy. An important description on these can be found
+in: <a href="path/to/nowhere">Exercise theory - Triangulation and Sub-Pixel Accuracy (DEAD LINK)</a>.</p>
+</div>
+<p><strong>Experiment setup and specifications</strong></p>
+<hr>
+<p>As capture device, they use the low-quality CCD cameras from a Google Pixel 7 smartphone,
+and mount it on a stair-case face-down. They then place the A4 paper on the ground floor
+directly beneath the camera. They make sure that the optical axis of the CCD camera is
+exactly aligned with the centre of the piece of paper.</p>
 <p>To measure the distance from the camera to the paper, they attach a string onto the front
 lens element of the camera, measuring that the camera is located <span class="arithmatex">\(2.9968m\)</span> above the
 paper (i.e. <span class="arithmatex">\(\text{WD}\approx2.9968 m\)</span>).</p>
@@ -2786,9 +2801,6 @@ search and encounter a table with the following specifications:</p>
 <li>Complete sensor size: <span class="arithmatex">\(9.782\text{mm}\times 7.3728\text{mm} (12.26\text{mm} \text{ diagonal})\)</span></li>
 </ul>
 </div>
-<p>Initially, the amateur metrologists start out with a single image of the scene. They try
-to verify whether they can utilize the thin-lens theory, camera parameters and the object
-distance to measure the dimensions of the piece of paper correctly. </p>
 <figure>
     <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/scene_configuration.png" data-desc-position="bottom"><img alt="Scene configuration" src="../figures/scene_configuration.png" width="300"></a>
     <figcaption>The metrologists' scene configuration</figcaption>
@@ -2805,7 +2817,7 @@ radians and degrees you can use:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>angle_degrees = 180.0 / math.pi * angle_radians
 </span></code></pre></div>
 </details>
-<h3 id="excercise-3">Excercise 3:<a class="headerlink" href="#excercise-3" title="Permanent link">¶</a></h3>
+<h3 id="excercise-3">Excercise 3<a class="headerlink" href="#excercise-3" title="Permanent link">¶</a></h3>
 <p>A focused image of the paper is formed inside the camera. One of the metrologists
 measures the full image height of the paper in a frame to be 385 pixels. What is the
 equivalent height of the image in mm?</p>
@@ -2814,7 +2826,7 @@ equivalent height of the image in mm?</p>
 <div class="arithmatex">\[B = \frac{385}{2} \cdot 1.2 \cdot 10^{-6} \text{m} = 2.31\cdot 10^{-4} \text{m}\]</div>
 </details>
 <h3 id="exercise-4">Exercise 4<a class="headerlink" href="#exercise-4" title="Permanent link">¶</a></h3>
-<p>At which distance to the lens is the image formed? <strong>Look at this again, result inconsistencies found.</strong></p>
+<p>At which distance to the lens is the image formed? <strong>(Look at this again, result inconsistencies found.)</strong></p>
 <details class="tip">
 <summary>Solution 4</summary>
 <div class="arithmatex">\[\frac{b}{B} = \frac{g}{G} \leftrightarrow b = \frac{g\cdot B}{G} = \frac{2.9968 \text{m}  \cdot 2.31\cdot 10^{-4}}{\frac{0.290}{2}\text{m}} = 4.77\cdot 10^{-3}\text{m}\]</div>
@@ -2856,8 +2868,8 @@ size of the active image region for their video?</p>
 of their current approach. In order to verify this assumption, they scour the internet to
 identify a highly standardized object, which can be used as a reference for result
 evaluation.</p>
-<p>From scouring the internet, the metroologists learn that the size of a credit card is
-highly standardized with shape <span class="arithmatex">\(85.60\times 53.98\text{ mm}\)</span>. </p>
+<p>The metroologists learn that the size of a credit card is highly standardized with shape
+<span class="arithmatex">\(85.60\times 53.98\text{ mm}\)</span>. </p>
 <h3 id="exercise-8">Exercise 8<a class="headerlink" href="#exercise-8" title="Permanent link">¶</a></h3>
 <p>Assume that they exchange the paper with a credit card. How tall in pixels will the credit
 card be on the sensor, still assuming it is perfectly centered in the optical axis?</p>
@@ -2885,11 +2897,14 @@ card be on the sensor, still assuming it is perfectly centered in the optical ax
 <p>To determine whether their assumption holds, the two amateur metrologists gather data
 with a credit card within the image frame, and try to measure its height and width in
 pixels. A cropped frame from the resulting image looks as presented in the Figure below: </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/crop_0.png" data-desc-position="bottom"><img alt="Result image" src="../figures/crop_0.png"></a> </p>
+<figure>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/crop_0.png" data-desc-position="bottom"><img alt="Result image" src="../figures/crop_0.png" width="300"></a>
+    <figcaption>Captured image from the metrologists' camera.</figcaption>
+</figure>
 <p>To measure the height and width, they load a single image frame from the experiment using <code>matplotlib</code>: </p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>import matplotlib.pyplot as plt 
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>from skimage.io import imread
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>im = imread("data/images/with_calib/crops/0.png")
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>im = imread("data/images/crop_0.png")
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>plt.imshow(im, cmap="gray")
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>plt.show()
 </span></code></pre></div>
@@ -2898,6 +2913,10 @@ pixels. A cropped frame from the resulting image looks as presented in the Figur
 <p>What is the width and height of the credit card approximately measured in pixels? Does it
 fit with the theoretical calculations? If not, can you explain the reason for the found
 discrepencies?</p>
+<details class="warning">
+<summary>Python Notebook users</summary>
+<p>If you're using a Python Notebook to inspect the image, navigate to <a href="../imports_and_functions/#python-notebook-users">Imports and Functions</a> if you haven't already.</p>
+</details>
 <details class="tip">
 <summary>Solution 10</summary>
 <p>Measuring yields a width which is approximately: </p>
@@ -2963,20 +2982,16 @@ If we used <span class="arithmatex">\(b\)</span> instead of <span class="arithma
 <h2 id="demonstrating-sub-pixel-precision">Demonstrating sub-pixel precision<a class="headerlink" href="#demonstrating-sub-pixel-precision" title="Permanent link">¶</a></h2>
 <p>The results found in exercise 10 exposed, that the metrologists cannot
 rely on the theoretically expected conversions using the thin-lens theory. As they only
-have a single camera they cannot triangulate their way out of their difficulties. They
-therefore decide to use a <strong><em>calibration rod</em></strong> to infer the physical pixel size in the
-object plane.</p>
-<p>Having already gained familiarity with the fixed specifications of a credit card
+have a single camera they cannot triangulate their way out of their difficulties. As
+solution 1 has failed, they trial solution 2 instead by testing whether they can
+accurately compute the A4 <strong>width</strong>.</p>
+<p>To do so, they decide to use a <strong><em>calibration rod</em></strong> to infer the physical pixel size in
+the object plane. Having become familiar with the fixed specifications of a credit card
 (<span class="arithmatex">\(53.98\text{mm}\times 86.50\text{mm}\)</span>), they decide to use this for calibration. The
 card is placed on top of the piece of paper.</p>
-<p>The metrologists have recently become aware of a method known as <em>Sub-Pixel Accuracy</em>,
-which will stabilize measurements by integrating results over time. Using this approach,
-they can become more confident about their paper dimensions and enable them to filter
-congruent ones!</p>
-<p>To account for temporality, they record a video and analyze the video feed.</p>
-<p>Recording is made for approximately a minute, holding the camera as still as possible.
-The video is recorded at 24 fps, and in total they obtain 1466 frames.
-For each video frame, they:</p>
+<p>To account for temporality, they record a video and analyze the video feed. Recording is
+made for approximately a minute, holding the camera as still as possible. The video is
+recorded at 24 fps, and in total they obtain 1466 frames. For each video frame, they:</p>
 <ol>
 <li>Crop the video </li>
 <li>Convert it to grayscale </li>
@@ -2992,8 +3007,8 @@ course. Their procedure is as follows:</p>
 <li>Make a regression on the remaining points. This gives a function for the left and right edge</li>
 <li>From one edge, compute the orthogonal distance to the function describing the other edge</li>
 </ol>
-<p>The complete process is outlined in the following Figure: 
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/pipeline.png" data-desc-position="bottom"><img alt="Pipeline figure" src="../figures/pipeline.png"></a></p>
+<p>The complete process is outlined in the following Figure: </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/pipeline.png" data-desc-position="bottom"><img alt="Pipeline figure" src="../figures/pipeline.png"></a></p>
 <p>The metrologists have saved all data extracted from the pipeline in the folder
 <strong><em>data/measurements/lstsq/</em></strong> as <em>.csv</em> files. In each file, the recorded average value
 of the quantity of interest is saved per frame.</p>
@@ -3036,12 +3051,9 @@ known size of the credit card. Do this in the x and y directions. </p>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"width mm/pixel resolution in object plane: </span><span class="si">{</span><span class="n">mm_per_pixel_w</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
-<hr>
-<p>To simplify, the following exercises only deal with width observations. They are however
-fully generalizable to height measurements, which you may test out yourself.</p>
 <h3 id="exercise-18">Exercise 18<a class="headerlink" href="#exercise-18" title="Permanent link">¶</a></h3>
 <p>Make a loop and calculate statistics as a function of the number of samples used in the
-estimation of the paper dimensions. </p>
+estimation of the paper width. </p>
 <p>In the loop you should: </p>
 <ol>
 <li>Estimate the mean width of the paper in pixels, using all samples up to n. </li>
@@ -3104,14 +3116,14 @@ visual analysis to assess the reliability of their video feed.</p>
 The most straight-forward way is visualization. All plots should be a function of the
 number of samples used in the estimate. Produce the following four plots:</p>
 <ol>
-<li>The sample standard-error <span class="arithmatex">\(\frac{\sigma(\tilde{W})}{\sqrt{N}}\)</span> of the mean as a function of the number of samples,</li>
+<li>The sample standard-error <span class="arithmatex">\(\frac{\sigma(\bar{W})}{\sqrt{N}}\)</span> of the mean as a function of the number of samples,</li>
 <li>plot 1 in a log-log plot,</li>
 <li>A plot of the standard-deviation of the sample as a function of the number of samples,</li>
-<li>A plot of the recorded sample width over time.</li>
+<li>A plot of the sample width mean, <span class="arithmatex">\(\bar{W}\)</span>, over time.</li>
 </ol>
 <p>Plots 1-3 should be a function of the number of samples used in the estimate. We are
-mostly interested in the standard-deviation <span class="arithmatex">\(\sigma(\tilde{W})\)</span>, and the mean values
-<span class="arithmatex">\(\tilde{W}\)</span>, as they are able to tell us about the convergence properties.</p>
+mostly interested in the standard-deviation <span class="arithmatex">\(\sigma(\bar{W})\)</span>, and the mean values
+<span class="arithmatex">\(\bar{W}\)</span>, as they are able to tell us about the convergence properties.</p>
 <p>The timeseries in plot 4 does however give us some interesting insights wrt. the
 underlying noise pattern in the video.</p>
 <details class="tip">
@@ -3211,7 +3223,7 @@ underlying noise pattern in the video.</p>
 <h3 id="exercise-21">Exercise 21<a class="headerlink" href="#exercise-21" title="Permanent link">¶</a></h3>
 <p>Inspect the width-over-time plot in greater detail. Can you relate the sequence to the
 environment noise? How would you effectively mitigate the observed issues?</p>
-<p><strong>Optional</strong>: For those who have more experience with timeseries, we recommend you run
+<p><strong>Optional</strong>: For those who have experience with timeseries, we recommend you run
 the following code snippet over your width-over-time entries:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_acf</span><span class="p">(</span><span class="n">width_values</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
@@ -3237,11 +3249,10 @@ This figure gives conclusive evidence, that noise is correlated (lines, or "lags
 <hr>
 <p>Having made the analysis, they become increasingly confident that their approach is
 correct. From the literature on Sub-Pixel Accuracy, they can now compute the mean over
-their observations to make a reliable size prediction.</p>
-<p>To beware hubris, they manually measure the piece of paper. This will inevitably be a
-noisy measurement, e.g. due to the observer's ability to produce a vertical/horizontal
-measurement without tilt, yet acts as a good baseline for validating their own
-measurement.</p>
+their observations to make a more reliable size prediction.</p>
+<p>To beware of hubris, they also manually measure the A4 sheet using a ruler. This will inevitably
+be noisy, e.g. due to the observer's ability to produce a perfectly vertical/horizontal
+alignment, yet it acts as a useful baseline for validating their own measurement.</p>
 <figure>
     <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/manual_measurement.jpg" data-desc-position="bottom"><img alt="Manual Measurement" src="../figures/manual_measurement.jpg" width="800"></a>
     <figcaption>Manual measurement of an A4 paper.</figcaption>
@@ -3271,6 +3282,9 @@ the metrologists?</p>
 </details>
 <h3 id="exercise-24">Exercise 24<a class="headerlink" href="#exercise-24" title="Permanent link">¶</a></h3>
 <p>Are you impressed by the final result, considering the amateuristic setup?</p>
+<h3 id="exercise-25-optional">Exercise 25 (<strong>optional</strong>)<a class="headerlink" href="#exercise-25-optional" title="Permanent link">¶</a></h3>
+<p>Perform the same analysis now for height measurements. Do you notice a difference from the width
+results? If so, can you explain why?</p>
 <div class="admonition abstract">
 <p class="admonition-title">Summary</p>
 <p>This week we explored the possibilities of making quality control procedures using a
