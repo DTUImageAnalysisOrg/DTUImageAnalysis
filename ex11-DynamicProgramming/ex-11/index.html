@@ -1,0 +1,4263 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="02502/02503 DTU Image Analysis Course">
+      
+      
+      
+      
+        <link rel="prev" href="../../ex2-CamerasAndLensesSubpixel/ex2-CameraLensSubpix/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Exercises - 02502/02503 DTU Image Analysis Exercises</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#path-tracing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="02502/02503 DTU Image Analysis Exercises" class="md-header__button md-logo" aria-label="02502/02503 DTU Image Analysis Exercises" data-md-component="logo">
+      
+  <img src="../../icons/White_RGB.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            02502/02503 DTU Image Analysis Exercises
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercises
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="02502/02503 DTU Image Analysis Exercises" class="md-nav__button md-logo" aria-label="02502/02503 DTU Image Analysis Exercises" data-md-component="logo">
+      
+  <img src="../../icons/White_RGB.png" alt="logo">
+
+    </a>
+    02502/02503 DTU Image Analysis Exercises
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex1-setup/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation and Setup Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation and Setup Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-setup/conda_vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conda and VS Code Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-setup/running_python_terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running code from a command line interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-setup/figs_in_nbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figures in Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-setup/data_and_github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data and GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex1-IntroductionToImageAnalysis/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1) Introduction to Image Analysis
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1) Introduction to Image Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-IntroductionToImageAnalysis/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1-IntroductionToImageAnalysis/ex1-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex1b-PCA/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1b) Principal Component Analysis (PCA) in Python
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1b) Principal Component Analysis (PCA) in Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex1b-PCA/ex1b-pca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex2-CamerasAndLenses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2) Cameras and Lenses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2) Cameras and Lenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLenses/ex2-cam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex2b-ChangeDetectionInVideos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2b) Change Detection in Videos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2b) Change Detection in Videos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2b-ChangeDetectionInVideos/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2b-ChangeDetectionInVideos/ex2b-change_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex3-PixelwiseOperations/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3) Pixelwise Operations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3) Pixelwise Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex3-PixelwiseOperations/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex3-PixelwiseOperations/ex3-pw_ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex4-ImageFiltering/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4) Image Filtering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4) Image Filtering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex4-ImageFiltering/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex4-ImageFiltering/ex4-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex4b-ImageMorphology/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4b) Image Morphology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4b) Image Morphology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex4b-ImageMorphology/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex4b-ImageMorphology/ex4b-morph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex5-BLOBAnalysis/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5) BLOB Analysis (connected component analysis and object classification)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5) BLOB Analysis (connected component analysis and object classification)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex5-BLOBAnalysis/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex5-BLOBAnalysis/ex5-blob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex6-PixelClassificationAndObjectSegmentation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6) Pixel Classification and Object Segmentation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6) Pixel Classification and Object Segmentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6-PixelClassificationAndObjectSegmentation/bg_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CT and Housfield Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6-PixelClassificationAndObjectSegmentation/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6-PixelClassificationAndObjectSegmentation/ex6-pixel_cls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex6b-AdvancedPixelClassification/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6b) Advanced Segmentation (Fisherman's LDA for Segmentation)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6b) Advanced Segmentation (Fisherman's LDA for Segmentation)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6b-AdvancedPixelClassification/LDA_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise Theory - LDA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6b-AdvancedPixelClassification/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex6b-AdvancedPixelClassification/ex6b-advanced_pixel_cls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex7-GeometricTransformationsAndRegistration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7) Geometric Transformations and Landmark Based Registration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7) Geometric Transformations and Landmark Based Registration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex7-GeometricTransformationsAndRegistration/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex7-GeometricTransformationsAndRegistration/ex7-registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex8-CatsCatsCats/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8) Cats, Cats, and EigenCats!
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8) Cats, Cats, and EigenCats!
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex8-CatsCatsCats/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex8-CatsCatsCats/ex8-cats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex9-AdvancedRegistration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9) Advanced 3D Registration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_15" id="__nav_15_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    9) Advanced 3D Registration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex9-AdvancedRegistration/adv_img_reg_theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise Theory - Advanced Image Registration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex9-AdvancedRegistration/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex9-AdvancedRegistration/ex9-advanced_registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex10-Viola-Jones/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10) Viola-Jones Style Object Detection
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_16" id="__nav_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    10) Viola-Jones Style Object Detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex10-Viola-Jones/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advice for this exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex10-Viola-Jones/ex10-Viola-Jones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ex2-CamerasAndLensesSubpixel/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11) Camera, Lenses and subpixel averaging (NOT CURRENT CURRICULUM)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_17" id="__nav_17_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    11) Camera, Lenses and subpixel averaging (NOT CURRENT CURRICULUM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/imports_and_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Imports and functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex2-CamerasAndLensesSubpixel/ex2-CameraLensSubpix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12) Path tracing (NOT CURRENT CURRICULUM)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    12) Path tracing (NOT CURRENT CURRICULUM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercises
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#path-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path tracing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-a-basic-path-tracing-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: A basic path tracing task
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im_fundus-rgb2grayim_fundus-note-float-conversion-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        im_fundus = rgb2gray(im_fundus) #Note: float conversion here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#def-shortest_path_left_rightim-nparray-nparray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        def shortest_path_left_right(im: np.array) -&gt; np.array:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runs-path-tracing-algorithm-in-positive-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        """Runs path tracing algorithm in positive direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#args" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Args:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im-nparray-the-input-image-grayscale-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        im (np.array): the input image (grayscale, float)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nparray-the-accumulator-image-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        np.array: the accumulator image, x, y
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        """
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_image-npzeros_likeim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image = np.zeros_like(im)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking_image-npzeros_likeimastypeint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backtracking_image = np.zeros_like(im).astype(int)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_x = []
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_y = []
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_image-0-im-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image[:, 0] = im[:, 0]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-col-in-range1-accumulator_imageshape1-left-to-right-first-row-already-initialized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for col in range(1, accumulator_image.shape[1]): #left to right, first row already initialized
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-row-in-rangeaccumulator_imageshape0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for row in range(accumulator_image.shape[0]):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r_min-max0-row-1-handle-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_min = max(0, row - 1) #handle borders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r_max-minaccumulator_imageshape0-1-row-1-handle-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_max = min(accumulator_image.shape[0] - 1, row + 1) #handle borders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_area-accumulator_imager_min-r_max-1-col-1-available-rows-row-row1-or-row-1-row-row1-or-row-1-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_area = accumulator_image[r_min : r_max + 1, col - 1] # available rows: [row, row+1] or [row-1, row, row+1] or [row-1, row]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_idx_relative-npargminsearch_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min_idx_relative = np.argmin(search_area)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best_row-r_min-min_idx_relative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        best_row = r_min + min_idx_relative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_imagerow-col-imrow-col-accumulator_imagebest_row-col-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image[row, col] = im[row, col] + accumulator_image[best_row, col-1]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking_imagerow-col-best_row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backtracking_image[row, col] = best_row
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        # Backtracking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_tmp-npargminaccumulator_image-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row_tmp = np.argmin(accumulator_image[:, -1])
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start_col-accumulator_imageshape1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_col = accumulator_image.shape[1] - 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trace-back-from-end-point-towards-column-0-and-save-results-for-plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        # Trace back from end-point towards column 0 and save results for plotting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-col-in-rangestart_col-1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for col in range(start_col, -1, -1):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_xappendcol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_x.append(col)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_yappendrow_tmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_y.append(row_tmp)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_tmp-backtracking_imagerow_tmp-col" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row_tmp = backtracking_image[row_tmp, col]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-accumulator_image-path_x-path_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        return accumulator_image, path_x, path_y
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="return accumulator_image, path_x, path_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-2-pcb-connectivity-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: PCB connectivity inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-12-visualizing-the-seam-cuts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 12: Visualizing the seam cuts (optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-13-polar-resampling-for-path-tracing-on-circular-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 13: Polar resampling for path-tracing on circular structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-14-path-tracing-on-the-resampled-gradient-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 14: Path tracing on the resampled gradient image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-15-coordinate-conversion-back-to-the-input-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 15: Coordinate conversion back to the input image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 15: Coordinate conversion back to the input image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#path-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path tracing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-a-basic-path-tracing-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: A basic path tracing task
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im_fundus-rgb2grayim_fundus-note-float-conversion-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        im_fundus = rgb2gray(im_fundus) #Note: float conversion here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#def-shortest_path_left_rightim-nparray-nparray" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        def shortest_path_left_right(im: np.array) -&gt; np.array:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runs-path-tracing-algorithm-in-positive-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        """Runs path tracing algorithm in positive direction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#args" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Args:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#im-nparray-the-input-image-grayscale-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        im (np.array): the input image (grayscale, float)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returns:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nparray-the-accumulator-image-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        np.array: the accumulator image, x, y
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        """
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_image-npzeros_likeim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image = np.zeros_like(im)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking_image-npzeros_likeimastypeint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backtracking_image = np.zeros_like(im).astype(int)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_x = []
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_y = []
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_image-0-im-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image[:, 0] = im[:, 0]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-col-in-range1-accumulator_imageshape1-left-to-right-first-row-already-initialized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for col in range(1, accumulator_image.shape[1]): #left to right, first row already initialized
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-row-in-rangeaccumulator_imageshape0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for row in range(accumulator_image.shape[0]):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r_min-max0-row-1-handle-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_min = max(0, row - 1) #handle borders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r_max-minaccumulator_imageshape0-1-row-1-handle-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r_max = min(accumulator_image.shape[0] - 1, row + 1) #handle borders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_area-accumulator_imager_min-r_max-1-col-1-available-rows-row-row1-or-row-1-row-row1-or-row-1-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search_area = accumulator_image[r_min : r_max + 1, col - 1] # available rows: [row, row+1] or [row-1, row, row+1] or [row-1, row]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#min_idx_relative-npargminsearch_area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min_idx_relative = np.argmin(search_area)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best_row-r_min-min_idx_relative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        best_row = r_min + min_idx_relative
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accumulator_imagerow-col-imrow-col-accumulator_imagebest_row-col-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        accumulator_image[row, col] = im[row, col] + accumulator_image[best_row, col-1]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking_imagerow-col-best_row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        backtracking_image[row, col] = best_row
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        # Backtracking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_tmp-npargminaccumulator_image-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row_tmp = np.argmin(accumulator_image[:, -1])
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start_col-accumulator_imageshape1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        start_col = accumulator_image.shape[1] - 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trace-back-from-end-point-towards-column-0-and-save-results-for-plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        # Trace back from end-point towards column 0 and save results for plotting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-col-in-rangestart_col-1-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        for col in range(start_col, -1, -1):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_xappendcol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_x.append(col)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path_yappendrow_tmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path_y.append(row_tmp)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_tmp-backtracking_imagerow_tmp-col" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        row_tmp = backtracking_image[row_tmp, col]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-accumulator_image-path_x-path_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        return accumulator_image, path_x, path_y
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="return accumulator_image, path_x, path_y">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-2-pcb-connectivity-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: PCB connectivity inspection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 11
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-12-visualizing-the-seam-cuts-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 12: Visualizing the seam cuts (optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-13-polar-resampling-for-path-tracing-on-circular-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 13: Polar resampling for path-tracing on circular structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-14-path-tracing-on-the-resampled-gradient-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 14: Path tracing on the resampled gradient image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-15-coordinate-conversion-back-to-the-input-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 15: Coordinate conversion back to the input image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 15: Coordinate conversion back to the input image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><em>Latest Page Update: 20-03-2026</em></p>
+<p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-11.zip">Solution</a></p>
+<h2 id="path-tracing">Path tracing<a class="headerlink" href="#path-tracing" title="Permanent link">¶</a></h2>
+<p>In this exercise, you will work with dynamic programming. Specifically, we will work on three images, to show-case three different use-cases for path-tracing.</p>
+<h2 id="part-1-a-basic-path-tracing-task">Part 1: A basic path tracing task<a class="headerlink" href="#part-1-a-basic-path-tracing-task" title="Permanent link">¶</a></h2>
+<h3 id="exercise-1-finding-the-accumulator-image-the-forward-pass">Exercise 1: Finding the accumulator image (the forward pass)<a class="headerlink" href="#exercise-1-finding-the-accumulator-image-the-forward-pass" title="Permanent link">¶</a></h3>
+<p>In the <strong><em>data/</em></strong> folder, you are provided with an image <em>fundus.png</em>. 
+Calculate the optimal path, as described in the book, to trace the complete major vein in the image from left to right. Implement a function which returns the accumulator image <span class="arithmatex">\(A\)</span> and the backtracing image <span class="arithmatex">\(T\)</span>. Remember to convert the image to grayscale before doing any path-tracing. </p>
+<details class="tip">
+<summary>If you are stuck:</summary>
+<p>You can either rotate the image in order to use the completely same approach as in the book, or instead implement a function which goes from left to right. We recommend doing it from left to right as it will work with downstream exercises.
+Start out by only making a function which carries out the algorithm from one direction. Later, you can expand on it to handle multiple directions. 
+The function only needs as an input the image and a direction. </p>
+</details>
+<details class="tip">
+<summary>If you are still stuck:</summary>
+<p>Assume you go from left to right. Then you can use: 
+</p><div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">accumulator_image</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">im</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">accumulator_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">accumulator_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                <span class="c1">#do something here.. and remember to take care of the image boundaries!     </span>
+</span></code></pre></div><p></p>
+</details>
+<details class="tip">
+<summary>Solution 1</summary>
+<p>im_fundus = imread("data/fundus.png",as_gray=True)
+print(im_fundus.shape)</p>
+<h1 id="im_fundus-rgb2grayim_fundus-note-float-conversion-here">im_fundus = rgb2gray(im_fundus) #Note: float conversion here<a class="headerlink" href="#im_fundus-rgb2grayim_fundus-note-float-conversion-here" title="Permanent link">¶</a></h1>
+<h1 id="def-shortest_path_left_rightim-nparray-nparray">def shortest_path_left_right(im: np.array) -&gt; np.array:<a class="headerlink" href="#def-shortest_path_left_rightim-nparray-nparray" title="Permanent link">¶</a></h1>
+<h1 id="runs-path-tracing-algorithm-in-positive-direction">"""Runs path tracing algorithm in positive direction<a class="headerlink" href="#runs-path-tracing-algorithm-in-positive-direction" title="Permanent link">¶</a></h1>
+<h1 id="args">Args:<a class="headerlink" href="#args" title="Permanent link">¶</a></h1>
+<h1 id="im-nparray-the-input-image-grayscale-float">im (np.array): the input image (grayscale, float)<a class="headerlink" href="#im-nparray-the-input-image-grayscale-float" title="Permanent link">¶</a></h1>
+<h1 id="returns">Returns:<a class="headerlink" href="#returns" title="Permanent link">¶</a></h1>
+<h1 id="nparray-the-accumulator-image-x-y">np.array: the accumulator image, x, y<a class="headerlink" href="#nparray-the-accumulator-image-x-y" title="Permanent link">¶</a></h1>
+<h1 id="_1">"""<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h1 id="accumulator_image-npzeros_likeim">accumulator_image = np.zeros_like(im)<a class="headerlink" href="#accumulator_image-npzeros_likeim" title="Permanent link">¶</a></h1>
+<h1 id="backtracking_image-npzeros_likeimastypeint">backtracking_image = np.zeros_like(im).astype(int)<a class="headerlink" href="#backtracking_image-npzeros_likeimastypeint" title="Permanent link">¶</a></h1>
+<h1 id="path_x">path_x = []<a class="headerlink" href="#path_x" title="Permanent link">¶</a></h1>
+<h1 id="path_y">path_y = []<a class="headerlink" href="#path_y" title="Permanent link">¶</a></h1>
+<h1 id="accumulator_image-0-im-0">accumulator_image[:, 0] = im[:, 0]<a class="headerlink" href="#accumulator_image-0-im-0" title="Permanent link">¶</a></h1>
+<h1 id="for-col-in-range1-accumulator_imageshape1-left-to-right-first-row-already-initialized">for col in range(1, accumulator_image.shape[1]): #left to right, first row already initialized<a class="headerlink" href="#for-col-in-range1-accumulator_imageshape1-left-to-right-first-row-already-initialized" title="Permanent link">¶</a></h1>
+<h1 id="for-row-in-rangeaccumulator_imageshape0">for row in range(accumulator_image.shape[0]):<a class="headerlink" href="#for-row-in-rangeaccumulator_imageshape0" title="Permanent link">¶</a></h1>
+<h1 id="r_min-max0-row-1-handle-borders">r_min = max(0, row - 1) #handle borders<a class="headerlink" href="#r_min-max0-row-1-handle-borders" title="Permanent link">¶</a></h1>
+<h1 id="r_max-minaccumulator_imageshape0-1-row-1-handle-borders">r_max = min(accumulator_image.shape[0] - 1, row + 1) #handle borders<a class="headerlink" href="#r_max-minaccumulator_imageshape0-1-row-1-handle-borders" title="Permanent link">¶</a></h1>
+<h1 id="search_area-accumulator_imager_min-r_max-1-col-1-available-rows-row-row1-or-row-1-row-row1-or-row-1-row">search_area = accumulator_image[r_min : r_max + 1, col - 1] # available rows: [row, row+1] or [row-1, row, row+1] or [row-1, row]<a class="headerlink" href="#search_area-accumulator_imager_min-r_max-1-col-1-available-rows-row-row1-or-row-1-row-row1-or-row-1-row" title="Permanent link">¶</a></h1>
+<h1 id="min_idx_relative-npargminsearch_area">min_idx_relative = np.argmin(search_area)<a class="headerlink" href="#min_idx_relative-npargminsearch_area" title="Permanent link">¶</a></h1>
+<h1 id="best_row-r_min-min_idx_relative">best_row = r_min + min_idx_relative<a class="headerlink" href="#best_row-r_min-min_idx_relative" title="Permanent link">¶</a></h1>
+<h1 id="accumulator_imagerow-col-imrow-col-accumulator_imagebest_row-col-1">accumulator_image[row, col] = im[row, col] + accumulator_image[best_row, col-1]<a class="headerlink" href="#accumulator_imagerow-col-imrow-col-accumulator_imagebest_row-col-1" title="Permanent link">¶</a></h1>
+<h1 id="backtracking_imagerow-col-best_row">backtracking_image[row, col] = best_row<a class="headerlink" href="#backtracking_imagerow-col-best_row" title="Permanent link">¶</a></h1>
+<h1 id="backtracking"># Backtracking<a class="headerlink" href="#backtracking" title="Permanent link">¶</a></h1>
+<h1 id="row_tmp-npargminaccumulator_image-1">row_tmp = np.argmin(accumulator_image[:, -1])<a class="headerlink" href="#row_tmp-npargminaccumulator_image-1" title="Permanent link">¶</a></h1>
+<h1 id="start_col-accumulator_imageshape1-1">start_col = accumulator_image.shape[1] - 1<a class="headerlink" href="#start_col-accumulator_imageshape1-1" title="Permanent link">¶</a></h1>
+<h1 id="trace-back-from-end-point-towards-column-0-and-save-results-for-plotting"># Trace back from end-point towards column 0 and save results for plotting<a class="headerlink" href="#trace-back-from-end-point-towards-column-0-and-save-results-for-plotting" title="Permanent link">¶</a></h1>
+<h1 id="for-col-in-rangestart_col-1-1">for col in range(start_col, -1, -1):<a class="headerlink" href="#for-col-in-rangestart_col-1-1" title="Permanent link">¶</a></h1>
+<h1 id="path_xappendcol">path_x.append(col)<a class="headerlink" href="#path_xappendcol" title="Permanent link">¶</a></h1>
+<h1 id="path_yappendrow_tmp">path_y.append(row_tmp)<a class="headerlink" href="#path_yappendrow_tmp" title="Permanent link">¶</a></h1>
+<h1 id="row_tmp-backtracking_imagerow_tmp-col">row_tmp = backtracking_image[row_tmp, col]<a class="headerlink" href="#row_tmp-backtracking_imagerow_tmp-col" title="Permanent link">¶</a></h1>
+<h1 id="return-accumulator_image-path_x-path_y">return accumulator_image, path_x, path_y<a class="headerlink" href="#return-accumulator_image-path_x-path_y" title="Permanent link">¶</a></h1>
+<p>def shortest_path_left_right(im: np.array) -&gt; np.array: 
+    """Runs path tracing algorithm in positive direction</p>
+<div class="language-text highlight"><pre><span></span><code>Args:
+    im (np.array): the input image (grayscale, float)
+
+Returns:
+    np.array: the accumulator image, x, y 
+"""
+
+accumulator_image = np.zeros_like(im)
+backtracking_image = np.zeros_like(im).astype(int)
+accumulator_image[:, 0] = im[:, 0]
+for col in range(1, accumulator_image.shape[1]): #left to right, first row already initialized
+        for row in range(accumulator_image.shape[0]):
+            r_min = max(0, row - 1) #handle borders
+            r_max = min(accumulator_image.shape[0] - 1, row + 1) #handle borders
+            search_area = accumulator_image[r_min : r_max + 1, col - 1] # available rows: [row, row+1] or [row-1, row, row+1] or [row-1, row]
+            min_idx_relative = np.argmin(search_area)
+            best_row = r_min + min_idx_relative
+            accumulator_image[row, col] = im[row, col] + accumulator_image[best_row, col-1]
+            backtracking_image[row, col] = best_row
+return accumulator_image, backtracking_image
+</code></pre></div>
+<p>A, T = shortest_path_left_right(im_fundus)
+```</p>
+</details>
+<h3 id="exercise-2-finding-the-minimum-cost-path-backtracking">Exercise 2: Finding the minimum cost path (backtracking)<a class="headerlink" href="#exercise-2-finding-the-minimum-cost-path-backtracking" title="Permanent link">¶</a></h3>
+<p>Implement a function which takes as input the accumulator image <span class="arithmatex">\(A\)</span> and the backtracking image <span class="arithmatex">\(T\)</span> and returns the minimal cost path coordinates. Implement it such that it works for finding the minimal cost path when solving the problem from left to right. </p>
+<h3 id="exercise-3-plotting-the-results">Exercise 3: plotting the results<a class="headerlink" href="#exercise-3-plotting-the-results" title="Permanent link">¶</a></h3>
+<p>Make a function which takes as input the accumulator image, the <span class="arithmatex">\(x\)</span>- and <span class="arithmatex">\(y\)</span>-coordinates of the found path, and the image. Make two plots: one with the accumulator image and the found path, and one with the input image and the found path. Do your results look as expected? Else, work some more with exercise 1. </p>
+<details class="tip">
+<summary>Solution 3</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">plot_results</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">plot_results</span><span class="p">(</span><span class="n">im_fundus</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h2 id="part-2-pcb-connectivity-inspection">Part 2: PCB connectivity inspection<a class="headerlink" href="#part-2-pcb-connectivity-inspection" title="Permanent link">¶</a></h2>
+<p>Now that you've learned to calculate the minimal cost shortest path, we will extend your function to also handle start and end-points, such that we can find the minimal costing path between two points instead. 
+Printec circuit boards (PCBs) are a very common way to produce electrical circuits at scale. An example of a PCB is provided in the figure below. </p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/pcb.jpeg" data-desc-position="bottom"><img alt="PCB_figure" src="../figures/pcb.jpeg"></a>{}
+<br>
+<figcaption>By © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons), CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=52852112</figcaption>
+</figure>
+<p>In order to understand this exercise, you will need to understand very coarsely how a PCB works. It is a sandwich structure, consisting of insulating material (green) called the <em>substrate</em>, and a layer of copper foil which is conducting. The The copper foil is divided into seperate circuit traces, which are the light green paths within the dark green borders you see in the image. These tracks indicate where current can flow in the surface of the PCB. PCBs can be produced with many surface defects; in this case, we will focus on broken traces. Traces may either be broken due to deep scratches in the material, or due to production mistakes. The result is an open circuit, i.e. no current can flow between the two sides of the defect. As a result, it is of large interest to catch these types of defects.</p>
+<p>We will now use your path-tracing method to determine surface-level connectivity on a PCB board. While not necessarily a gold-standard method, it allows us to work with different aspects of minimal cost paths. </p>
+<h3 id="exercise-4-visualize-the-image">Exercise 4: Visualize the image<a class="headerlink" href="#exercise-4-visualize-the-image" title="Permanent link">¶</a></h3>
+<p>We will focus on a specific ROI of the image. Load the image, and visualize it. Then, crop it using the bounds: </p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">y_crop</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1150</span><span class="p">,</span><span class="mi">1400</span><span class="p">],</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">x_crop</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1350</span><span class="p">,</span><span class="mi">1850</span><span class="p">]</span> 
+</span></code></pre></div>
+<p>and visualize the region of interest. We are interested in determining connectivity between the two point coordinates (<span class="arithmatex">\(y,x\)</span>) in the cropped image: </p>
+<p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">start_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">118</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">end_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">449</span><span class="p">]</span>
+</span></code></pre></div>
+Visualize the crop of interest together with the start- and end-point.<p></p>
+<details class="tip">
+<summary>Solution 4</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">im</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">"data/pcb.jpeg"</span><span class="p">,)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">crop_bounds</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1150</span><span class="p">,</span><span class="mi">1400</span><span class="p">],[</span><span class="mi">1350</span><span class="p">,</span><span class="mi">1850</span><span class="p">]]</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">im_crop</span> <span class="o">=</span> <span class="n">im</span><span class="p">[</span><span class="n">crop_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">crop_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">crop_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span><span class="n">crop_bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">start_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">118</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">end_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">449</span><span class="p">]</span> <span class="c1">#what we actually want</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_crop</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"magenta"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-5-calculate-the-reverse-image">Exercise 5: Calculate the reverse image<a class="headerlink" href="#exercise-5-calculate-the-reverse-image" title="Permanent link">¶</a></h3>
+<p>Calculate the reverse image, and explain why we could be interested in this for drawing the minimal cost path between the two points.</p>
+<details class="tip">
+<summary>Solution 5</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="sd">"""</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="sd">we want it to be the reverse image because then the "bright" green tracks</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">give us a low cost, which allows us to check the connectivity along the path</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">"""</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">im_crop</span> <span class="o">=</span> <span class="n">rgb2gray</span><span class="p">(</span><span class="n">im_crop</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">im_crop_r</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">-</span><span class="n">im_crop</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-6-increasing-contrast">Exercise 6: Increasing contrast<a class="headerlink" href="#exercise-6-increasing-contrast" title="Permanent link">¶</a></h3>
+<p>Now, we want to ensure that the difference in cost between the track and border edge is larger. 
+To do so, we use a mask to change the image contents. Use a mask where all values below <span class="arithmatex">\(0.6\)</span> or above <span class="arithmatex">\(0.71\)</span> are set to 1.0. All other values are to be set to 0.0. Visualize the resulting binary image together with the start and end-points. Do you think we have achieved a contrast strong enough for succesful path-tracing between the two points? </p>
+<details class="tip">
+<summary>Solution 6</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"magenta"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">im_crop_r</span><span class="p">[(</span><span class="n">im_crop_r</span><span class="o">&lt;</span><span class="mf">0.60</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">im_crop_r</span><span class="o">&gt;</span><span class="mf">0.71</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">1.0</span> 
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">im_crop_r</span><span class="p">[(</span><span class="n">im_crop_r</span><span class="o">&gt;=</span><span class="mf">0.60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">im_crop_r</span><span class="o">&lt;=</span><span class="mf">0.71</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.0</span> 
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"magenta"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-7-the-shortest-horizontal-path-through-the-binary-image">Exercise 7: The shortest horizontal path through the binary image<a class="headerlink" href="#exercise-7-the-shortest-horizontal-path-through-the-binary-image" title="Permanent link">¶</a></h3>
+<p>Try and use your earlier implemented function on the image and visualize the result. Also print the cost. Does the path you find make sense? Can you spot the issue with the current approach for investigating broken trace defects? </p>
+<details class="tip">
+<summary>Solution 7</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">A</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">shortest_path_left_right</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">backtrace_path</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Minimal found cost: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">plot_results</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#The path makes a lot of sense, and the cost is indeed minimal as it is 0. There are probably multiple paths which achieve this, so the solution may not be unique.</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-8-the-shortest-path-from-the-start-of-the-image-to-a-specific-end-point">Exercise 8: The shortest path from the start of the image to a specific end-point<a class="headerlink" href="#exercise-8-the-shortest-path-from-the-start-of-the-image-to-a-specific-end-point" title="Permanent link">¶</a></h3>
+<p>Now, use the end-coords as the end-point of the minimal cost path algorithm when running from the left boundary of the image. Do you have to make any changes to the algorithm for determining this path and accessing its cost? If so, which part? The forward or backward calculations? </p>
+<details class="tip">
+<summary>Solution 8</summary>
+<p>The accumulator image at the index of the end-point already holds all information we need for the cost. For extracting the path, we need to change the way we use the backtracking image for finding the path; instead of going from the right-most edge, we go from the end-coords. This is most easily done by extending the backtrace_path function, as done below:  </p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">backtrace_path</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">end_point</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">if</span> <span class="n">end_point</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="n">row_tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="n">start_col</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">row_tmp</span> <span class="o">=</span> <span class="n">end_point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">start_col</span> <span class="o">=</span> <span class="n">end_point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found cost: </span><span class="si">{</span><span class="n">A</span><span class="p">[</span><span class="n">row_tmp</span><span class="p">,</span><span class="n">start_col</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="n">path_x</span><span class="p">,</span> <span class="n">path_y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_col</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        <span class="n">path_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span class="n">path_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_tmp</span><span class="p">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">row_tmp</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">row_tmp</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span>                            
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="k">return</span> <span class="n">path_x</span><span class="p">,</span> <span class="n">path_y</span> 
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">backtrace_path</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">end_point</span><span class="o">=</span><span class="n">end_coords</span><span class="p">)</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="n">plot_results</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-9-the-shortest-path-from-a-start-point-to-a-specific-end-point">Exercise 9: The shortest path from a start-point to a specific end-point<a class="headerlink" href="#exercise-9-the-shortest-path-from-a-start-point-to-a-specific-end-point" title="Permanent link">¶</a></h3>
+<p>In order to be able to determine the connectivity between points <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>, we will need to make a minor change to the forward calculation of the algorithm. Luckily, it is a very simple change. If you want to force your path to go through a specific start-point, you just: 
+1. Crop the image such the start-point is the first column 
+2. Put a very large value, e.g. <em>np.inf</em>, in all other rows except your start index</p>
+<p>And run the completely same calculations. 
+Implement this change to the forward calculation method such that you are able to find the path between point <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. </p>
+<p>??? TIP: "Remember"
+    Cropping the image changes the coordinate system. If your original start-point was at <span class="arithmatex">\((r,c)\)</span>, and you crop everything to the left of column <span class="arithmatex">\(c\)</span>, your new start-point coordinate in the cropped matrix will be <span class="arithmatex">\((r,0)\)</span>. Don't forget to shift your end-point coordinates by the same amount!</p>
+<p>??? TIP: "Hint: Numerical Example"
+    Assume you have a 5×5 image I where we want to find a path starting at A=(1,1) and ending at B=(4,4).</p>
+<div class="language-text highlight"><pre><span></span><code>**1. Original Matrix $I$:**
+$$I = \begin{bmatrix} 
+10 &amp; 10 &amp; 255 &amp; 255 &amp; 255 \\
+10 &amp; \mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\
+255 &amp; 255 &amp; 255 &amp; 10 &amp; 255 \\
+255 &amp; 255 &amp; 255 &amp; 10 &amp; 10 \\
+255 &amp; 255 &amp; 255 &amp; 255 &amp; \mathbf{10_B} 
+\end{bmatrix}$$
+
+**2. Cropping and Masking:**
+First, we crop the matrix to start at column $1$. Then, we set the first column of our **Accumulator Image $A$** to $\infty$, except for our starting row (Row 1).
+
+**Resulting Input for Algorithm:**
+$$A_{initial} = \begin{bmatrix} 
+\infty &amp; 255 &amp; 255 &amp; 255 \\
+\mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\
+\infty &amp; 255 &amp; 10 &amp; 255 \\
+\infty &amp; 255 &amp; 10 &amp; 10 \\
+\infty &amp; 255 &amp; 255 &amp; \mathbf{10_B} 
+\end{bmatrix}$$
+
+Now, when you run the forward pass (Eq. 12.7), any path trying to start at Rows 0, 2, 3, or 4 will inherit a cost of $\infty$, effectively "killing" those paths and forcing the algorithm to only consider routes beginning at your chosen $A$.
+</code></pre></div>
+<details class="tip">
+<summary>Solution 9</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">h_</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">im_crop_r</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">im_crop_r_start</span> <span class="o">=</span> <span class="n">im_crop_r</span><span class="p">[:,</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]:]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">w_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">w_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">shortest_path_left_right</span><span class="p">(</span><span class="n">im</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">start_point</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span> 
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="sd">"""Runs path tracing algorithm in positive direction</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="sd">    Args:</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="sd">        im (np.array): the input image (grayscale, float)</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="sd">        start_point (list): an index for the start of the path to go through. Defaults to none (no start point)</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="sd">    Returns:</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="sd">        tuple: the accumulator image, the backtracing image  </span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="sd">    """</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">accumulator_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="n">backtracking_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="sd">"""Add the following 5 lines"""</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="k">if</span> <span class="n">start_point</span><span class="p">:</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>            <span class="n">accumulator_image</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="c1"># High cost</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>            <span class="n">accumulator_image</span><span class="p">[</span><span class="n">start_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">im</span><span class="p">[</span><span class="n">start_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        <span class="n">accumulator_image</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">im</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">accumulator_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="c1">#left to right, first row already initialized</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">accumulator_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>                <span class="n">r_min</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#handle borders</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>                <span class="n">r_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">accumulator_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#handle borders</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>                <span class="n">search_area</span> <span class="o">=</span> <span class="n">accumulator_image</span><span class="p">[</span><span class="n">r_min</span> <span class="p">:</span> <span class="n">r_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># available rows: [row, row+1] or [row-1, row, row+1] or [row-1, row]</span>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>                <span class="n">min_idx_relative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">search_area</span><span class="p">)</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>                <span class="n">best_row</span> <span class="o">=</span> <span class="n">r_min</span> <span class="o">+</span> <span class="n">min_idx_relative</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>                <span class="n">accumulator_image</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">im</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">+</span> <span class="n">accumulator_image</span><span class="p">[</span><span class="n">best_row</span><span class="p">,</span> <span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>                <span class="n">backtracking_image</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">best_row</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="k">return</span> <span class="n">accumulator_image</span><span class="p">,</span> <span class="n">backtracking_image</span> 
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="n">A</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">shortest_path_left_right</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span> <span class="n">start_point</span><span class="o">=</span><span class="n">start_coords</span><span class="p">)</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">backtrace_path</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">end_point</span><span class="o">=</span><span class="n">end_coords</span><span class="p">)</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_</span><span class="o">+</span><span class="p">(</span><span class="n">w_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">x_</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">y_</span><span class="o">+</span><span class="p">(</span><span class="n">h_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">y_</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>
+</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_crop_r</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
+</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">w_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">start_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">"orange"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-9-50"><a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">w_</span><span class="o">-</span><span class="n">im_crop_r_start</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">"magenta"</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-9-51"><a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>
+</span><span id="__span-9-52"><a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h3 id="exercise-10-determining-whether-there-is-surface-electrical-connection-between-a-and-b">Exercise 10: Determining whether there is surface electrical connection between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span><a class="headerlink" href="#exercise-10-determining-whether-there-is-surface-electrical-connection-between-a-and-b" title="Permanent link">¶</a></h3>
+<p>Now you have a complete algorithmic setup which allows determining whether there is surface connection between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. How do you check it without having to inspect the plots? 
+Can you make a plot which shows all electrical surface connection going from point A? </p>
+<details class="tip">
+<summary>Solution 10</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">end_coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="c1">#if this is larger than zero there is a defect present</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#the complete trace of electrical connectivity from point A</span>
+</span></code></pre></div>
+</details>
+<p>The smart student realizes that path tracing in this case does not give us any more information about the problem than a simple BLOB-analysis would. We could just have made the mask, and check whether <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are contained in the same BLOB. But path-tracing has some strengths over BLOB analysis for specific tasks. This is mainly because we can change the cost-function freely to measure what we want. E.g. we could build cost-functions for measuring the distance to the nearest edge for the copper trace, and design it so the path is going through the center of the copper. If we then were to visualize the gradient of the accumulated cost along the minimum cost path, we would be able to find "narrowing" of the trace on a per-pixel basis. </p>
+<h3 id="part-3-seam-carving">Part 3: Seam carving<a class="headerlink" href="#part-3-seam-carving" title="Permanent link">¶</a></h3>
+<p>One of the most intuitive industry applications of minimal cost paths for image analysis is image editing. One example of such a method is seam carving, and you now have everything you need to make your own seam carving pipeline. Seam carving is an algorithm for content-aware image resizing for e.g. smaller screens. </p>
+<p>This is easily appreciated when looking at the following image: </p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../figures/seam_carving.jpeg" data-desc-position="bottom"><img alt="Seam carving" src="../figures/seam_carving.jpeg"></a>{}
+<br>
+<figcaption>By The author is Newton2 (cropped by Yummifruitbat) - File:Broadway tower.jpgOwn work, CC BY 2.5, https://commons.wikimedia.org/w/index.php?curid=1949384</figcaption>
+</figure>
+<p>Imagine displaying this photograph on a smartphone screen. We would have to reshape the image so much that it would be completely distorted. Or we would have to downscale it so much that we wouldn't be able to see the person anymore. But what if we instead were able to algorithmically determine parts of the image to remove automatically, without loosing the interesting details of the image? This is exactly what seam carving tries to solve. The method we will use will be based on vertical seams. This means, we will have to remove columns of the image. </p>
+<p>The algorithm then is: 
+1. Loop over the number of columns to remove
+2. Calculate the energy of each pixel, e.g. using gradient magnitude 
+3. Define seams based on the energy 
+4. Remove low-energy seams 
+5. Repeat </p>
+<p>We will find the seams based on the minimal cost path through the energy landscape. Thus, we simply will have to define a new cost image for the shortest path algorithm. The cost function simply has to put a large cost on regions of interest we do not want to remove from the image. </p>
+<h1 id="exercise-11">Exercise 11<a class="headerlink" href="#exercise-11" title="Permanent link">¶</a></h1>
+<p>Finish the function for doing vertical seam carving, run it with <span class="arithmatex">\(N=220\)</span> iterations (i.e. remove 220 columns). Visualize the output image. </p>
+<p>The image to use is <strong><em>data/seam_carving_small.jpeg</em></strong>. Load it as a RGB image.</p>
+<p>For the energy-map calculation you use the form: </p>
+<div class="arithmatex">\[E(y,x) = \sum_{C\in{R,G,B}}\sqrt{G_{y,C}^2+G_{x,C}^2}\]</div>
+<p>i.e. the sum of gradient magnitudes across all channels. </p>
+<p>Where the gradient can be calculated using the <a href="https://scikit-image.org/docs/stable/api/skimage.filters.html#skimage.filters.sobel">sobel</a> function:
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.filters</span><span class="w"> </span><span class="kn">import</span> <span class="n">sobel</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">sobel</span><span class="p">(</span><span class="n">im</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#the gradient magnitude for the red channel</span>
+</span></code></pre></div>
+Before computing the energy-map in every iteration, apply a gaussian blur to the original image used for the feature calculation. This makes results more stable. Use a standard-deviation of 0.5. Remember to cut seams away from your original image, not the feature (blurred) image.<p></p>
+<p>For finding the seam to cut, we advice you to use the skimage <a href="https://scikit-image.org/docs/stable/api/skimage.graph.html#skimage.graph.shortest_path">shortest_path</a> function: 
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">shortest_path</span> 
+</span></code></pre></div><p></p>
+<p>But you may also use your own implementation if you prefer. Note that the results will be different. </p>
+<div class="admonition note">
+<p class="admonition-title">What skimage.graph.shortest_path actually does</p>
+<p>This function tries to find the shortest path as measured by absolute difference between fields visited. Basically it is the same as changing the update rule from: 
+$<span class="arithmatex">\(A(r,c) = I(r,c) + \text{min}(A(r-1,c-1),A(r-1,c),A(r-1,c+1))\)</span>$ 
+to 
+$<span class="arithmatex">\(A(r,c) = I(r,c) + \text{min}(\vert I(r,c)-I(r-1,c-1) \vert,\vert I(r-1,c)\vert,\vert I(r-1,c+1)\vert)\)</span>$ 
+It uses Djikstra's shortest path to solve this. As a result, it finds iso-curves through the energy-map. In this case, this is fine, as we expect an iso-curve to hold very little information of interest for the final image, but you should be aware of this difference if you use it for solving other problems.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Code template</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">path_x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">:</span> <span class="c1">#check whether it is RGB (or RGBA)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">else</span><span class="p">:</span> <span class="c1">#grayscale or simply an array</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span> 
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">channels</span> <span class="o">=</span> <span class="mi">1</span> 
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="c1"># Create a True mask with shape H x W   </span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">path_x</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Set the seam pixels to False</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="c1">#keep everything but the seam. Note: this flattens the array to shape (H*W-H) x N_channels</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">channels</span><span class="p">))</span> <span class="c1">#reshape back to H x (W-1) x C </span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">if</span> <span class="n">channels</span> <span class="ow">and</span> <span class="n">channels</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="c1">#case grayscale or array: flatten last dimension</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#H x (W-1)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="k">return</span> <span class="n">image</span> 
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="k">def</span><span class="w"> </span><span class="nf">vertical_seam_carve</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">N_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span><span class="p">):</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_iter</span><span class="p">):</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        <span class="c1">#your code for preprocessing and energy map calculation... </span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        <span class="n">path_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">path_x</span><span class="p">)</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: New width is </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>    <span class="k">return</span> <span class="n">image</span>
+</span></code></pre></div>
+</div>
+<details class="hint">
+<summary>Hint 1:</summary>
+<p>You only need to implement three lines: one for the gaussian blur, one for the energy map calculation and one for the minimal costing path evaluation.</p>
+</details>
+<details class="tip">
+<summary>Solution 11</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">imread</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.filters</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussian</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.filters</span><span class="w"> </span><span class="kn">import</span> <span class="n">sobel</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">shortest_path</span> 
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">path_x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="c1"># Create a True mask with shape H x W   </span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">path_x</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Set the seam pixels to False</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="c1">#keep everything but the seam. Note: this flattens the array to shape (H*W-H) x N_channels</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">channels</span><span class="p">))</span> <span class="c1">#reshape back </span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="k">if</span> <span class="n">channels</span> <span class="ow">and</span> <span class="n">channels</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="k">return</span> <span class="n">image</span> 
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="k">def</span><span class="w"> </span><span class="nf">vertical_seam_carve</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">N_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span><span class="p">):</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_iter</span><span class="p">):</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>        <span class="n">im_blur</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">channel_axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>        <span class="n">energy_map</span> <span class="o">=</span> <span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span><span class="o">+</span><span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span><span class="o">+</span><span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        <span class="n">path</span><span class="p">,</span> <span class="n">total_cost</span> <span class="o">=</span> <span class="n">shortest_path</span><span class="p">(</span><span class="n">energy_map</span><span class="p">,</span> <span class="n">reach</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>        <span class="n">path_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">path_x</span><span class="p">)</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: New width is </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="k">return</span> <span class="n">image</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="n">im</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">"data/seam_carving_small.jpeg"</span><span class="p">)</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="n">out_im</span> <span class="o">=</span> <span class="n">vertical_seam_carve</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">out_im</span><span class="p">)</span>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h1 id="exercise-12-visualizing-the-seam-cuts-optional">Exercise 12: Visualizing the seam cuts (optional)<a class="headerlink" href="#exercise-12-visualizing-the-seam-cuts-optional" title="Permanent link">¶</a></h1>
+<p>Can you visualize the seams cut away in the original image? </p>
+<details class="tip">
+<summary>Solution 12</summary>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">path_x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">ndim</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#also support the seam_map and grayscale images</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        <span class="n">channels</span> <span class="o">=</span> <span class="mi">1</span>  
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="c1"># Create a True mask with shape H x W   </span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    <span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">path_x</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Set the seam pixels to False</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="c1">#keep everything but the seam. Note: this flattens the array to shape (H*W-H) x N_channels</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">channels</span><span class="p">))</span> <span class="c1">#reshape back </span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>    <span class="k">if</span> <span class="n">channels</span> <span class="ow">and</span> <span class="n">channels</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> <span class="c1">#case: grayscale or seam-map -&gt; H x W-1</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>    <span class="k">return</span> <span class="n">image</span> 
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">vertical_seam_carve_triplet</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">N_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span><span class="p">):</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>    <span class="n">all_original_seams</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    <span class="n">col_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">cols</span><span class="p">),</span> <span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_iter</span><span class="p">):</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>        <span class="n">im_blur</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">channel_axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>        <span class="n">energy_map</span> <span class="o">=</span> <span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span><span class="o">+</span><span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span><span class="o">+</span><span class="n">sobel</span><span class="p">(</span><span class="n">im_blur</span><span class="p">[:,:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>        <span class="n">path</span><span class="p">,</span> <span class="n">total_cost</span> <span class="o">=</span> <span class="n">shortest_path</span><span class="p">(</span><span class="n">energy_map</span><span class="p">,</span> <span class="n">reach</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>        <span class="n">path_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>        <span class="n">original_x</span> <span class="o">=</span> <span class="n">col_map</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">path_x</span><span class="p">]</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>        <span class="n">all_original_seams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">original_x</span><span class="p">)</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>        <span class="n">image</span> <span class="o">=</span> <span class="n">cut_seam_column</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">path_x</span><span class="p">)</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>        <span class="n">col_map</span> <span class="o">=</span> <span class="n">cut_seam_column</span><span class="p">(</span><span class="n">col_map</span><span class="p">,</span> <span class="n">path_x</span><span class="p">)</span>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: New width is </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">all_original_seams</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="n">out_im</span><span class="p">,</span> <span class="n">all_seams</span> <span class="o">=</span> <span class="n">vertical_seam_carve_triplet</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">im</span><span class="p">,</span> <span class="n">N_iter</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">out_im</span><span class="p">)</span>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="k">for</span> <span class="n">seam</span> <span class="ow">in</span> <span class="n">all_seams</span><span class="p">:</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">seam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
+</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
+<h1 id="exercise-13-polar-resampling-for-path-tracing-on-circular-structures">Exercise 13: Polar resampling for path-tracing on circular structures<a class="headerlink" href="#exercise-13-polar-resampling-for-path-tracing-on-circular-structures" title="Permanent link">¶</a></h1>
+<p>Start out by loading the image <em>data/frontal_ct.png</em>. This is the same figure as figure 12.12 in the book. You will now try to reproduce the results from this example. 
+1. Find the centre coordinates of the organ
+2. Define a sampling radius large enough to contain the complete organ 
+3. Resample using the polar transform and plot the results with the radius on the <span class="arithmatex">\(x\)</span>-axis and the sampling angle on the <span class="arithmatex">\(y\)</span>-axis. 
+4. Calculate the horizontal gradient using <code>skimage.filters.sobel()</code> and visualize this as well</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip:</p>
+<p>Use the function <code>skimage.transform.warp_polar</code>. Note that the zero-angle in this function is offset compared to the book. While the textbook might assume a starting point at 12 o'clock or 9 o'clock, skimage defaults to 3 o'clock. This causes the resampled image to look "translated" vertically along the angle axis. As long as your back-transformation is consistent with this 3 o'clock start, the final segmentation will be correct</p>
+</div>
+<details class="tip">
+<summary>Solution 13</summary>
+<p>from skimage.transform import warp_polar 
+im = io.imread("data/frontal_ct.png",as_gray=True)</p>
+<p>fig, ax = plt.subplots(1,1)
+ax.imshow(im,cmap="gray")
+RADIUS = 60
+spleen_centre = [125,110]
+ax.scatter(spleen_centre[1], spleen_centre[0], s=100, c='red', marker='x', label='Liver Centre')
+roi = plt.Circle((spleen_centre[1], spleen_centre[0]), RADIUS, color='blue', fill=False, linewidth=2)
+ax.add_patch(roi)
+ax.legend()
+ax.set_title("CT Slice with ROI")
+plt.show()</p>
+<p>resampled = warp_polar(im, center=spleen_centre, radius=RADIUS, scaling='linear')</p>
+<p>fig, ax = plt.subplots(1,2,sharey=True)
+ax[0].imshow(resampled, cmap='gray') # No vmin/vmax needed now as it's 0-1</p>
+<p>gradient_im = sobel(resampled, axis=1)</p>
+<p>ax[1].imshow(gradient_im)
+ax[0].set_xlabel("Radial distance")
+ax[0].set_ylabel("Angle")
+ax[1].set_xlabel("Radial distance")
+ax[1].set_ylabel("Angle")</p>
+<p>plt.show()
+```</p>
+</details>
+<h1 id="exercise-14-path-tracing-on-the-resampled-gradient-image">Exercise 14: Path tracing on the resampled gradient image<a class="headerlink" href="#exercise-14-path-tracing-on-the-resampled-gradient-image" title="Permanent link">¶</a></h1>
+<p>Run a vertical path-tracing on the resampled gradient image to get the outline of the organ in the polar plane. To do so, change the orientation of your implemented path-tracing function to be vertical, or alternatively transpose the image, but remember to transpose back. 
+Save the coordinates of the trace.</p>
+<details class="tip">
+<summary>Solution 14</summary>
+<p>def minimal_costing_path(im: np.array, direction: str, start_point: list = None, end_point: list = None) -&gt; np.array: 
+    """Runs path tracing algorithm in positive direction, either horizontally or vertically</p>
+<div class="language-text highlight"><pre><span></span><code>Args:
+    im (np.array): the input image (grayscale)
+    direction (str): the direction to use.
+
+Returns:
+    np.array: the accumulator image 
+"""
+horizontal = True if direction.lower()=="horizontal" else False 
+vertical = True if direction.lower()=="vertical" else False
+
+accumulator_image = np.zeros_like(im)
+backtracking_image = np.zeros_like(im).astype(int)
+path_x = []
+path_y = []
+if vertical:
+    accumulator_image[0,:] = im[0,:]
+
+    for row in range(1, accumulator_image.shape[0]): 
+        for col in range(accumulator_image.shape[1]):
+            c_min = max(0, col-1)
+            c_max = min(accumulator_image.shape[1]-1,col+1)
+            search_area = accumulator_image[row-1,c_min:c_max+1]
+            min_idx_relative = np.argmin(search_area)
+            best_col = c_min+min_idx_relative
+            accumulator_image[row,col] = im[row,col]+accumulator_image[row-1,best_col]
+            backtracking_image[row,col] = best_col
+    #backtracking 
+    if end_point is None: 
+        col_tmp = np.argmin(accumulator_image[-1, :])
+        start_row = accumulator_image.shape[0] - 1
+
+    else:
+        start_row = end_point[0]
+        col_tmp = end_point[1]
+
+    # Trace back to row 0
+    for row in range(start_row, -1, -1):
+        path_x.append(col_tmp)
+        path_y.append(row)
+        col_tmp = backtracking_image[row, col_tmp]
+
+elif horizontal: 
+        if start_point:
+            accumulator_image[:, 0] = np.inf # High cost
+            accumulator_image[start_point[0], 0] = im[start_point[0], 0]
+
+        else:
+            accumulator_image[:, 0] = im[:, 0]
+        for col in range(1, accumulator_image.shape[1]):
+                for row in range(accumulator_image.shape[0]):
+                    #search radius
+                    r_min = max(0, row - 1)
+                    r_max = min(accumulator_image.shape[0] - 1, row + 1)
+                    search_area = accumulator_image[r_min : r_max + 1, col - 1] # available rows: [row-1, row, row+1]
+                    min_idx_relative = np.argmin(search_area)
+                    best_row = r_min + min_idx_relative
+                    accumulator_image[row, col] = im[row, col] + accumulator_image[best_row, col-1]
+                    backtracking_image[row, col] = best_row
+        # Backtracking
+        if end_point is None: 
+            row_tmp = np.argmin(accumulator_image[:, -1])
+            start_col = accumulator_image.shape[1] - 1
+        else:
+            row_tmp = end_point[0]
+            start_col = end_point[1]
+
+        # Trace back to column 0
+        for col in range(start_col, -1, -1):
+            path_x.append(col)
+            path_y.append(row_tmp)
+            row_tmp = backtracking_image[row_tmp, col]
+
+return accumulator_image, backtracking_image, path_x, path_y
+</code></pre></div>
+<p>A, T, path_x, path_y = minimal_costing_path(gradient_im,direction="vertical")
+fig, ax = plt.subplots(1,3,sharey=True)
+ax[0].imshow(gradient_im)
+ax[0].plot(np.array(path_x),np.array(path_y),color="red")
+ax[1].imshow(gradient_im)
+ax[2].matshow(A)
+ax[0].set_xlabel("Radial distance")
+ax[0].set_ylabel("Angle")
+ax[1].set_xlabel("Radial distance")
+ax[1].set_ylabel("Angle")</p>
+<p>plt.show()</p>
+<p>def plot_results(im,A,x,y):
+    fig, ax = plt.subplots(1,2)
+    ax[0].matshow(A)
+    ax[0].plot(x,y,color="red")</p>
+<div class="language-text highlight"><pre><span></span><code>ax[1].imshow(im,cmap="gray")
+ax[1].plot(x,y,color="red")
+
+plt.show()
+</code></pre></div>
+<p>plot_results(gradient_im,A,path_x,path_y)
+```</p>
+</details>
+<h1 id="exercise-15-coordinate-conversion-back-to-the-input-image">Exercise 15: Coordinate conversion back to the input image<a class="headerlink" href="#exercise-15-coordinate-conversion-back-to-the-input-image" title="Permanent link">¶</a></h1>
+<p>Now, calculate the corresponding coordinates in the input image. In the textbook, the mapping is often described using a Cartesian-style coordinate system:
+$<span class="arithmatex">\(r_p^I = r_s + \cos{\theta_p}c_p^r\\c_p^I = c_s + \sin{\theta_p}c_p^r\)</span>$</p>
+<p>However, in Python's image coordinate system, the Row index represents the vertical axis (Y) and the Column index represents the horizontal axis (X). To map your polar path back to the original CT scan correctly while maintaining the skimage 3-o'clock start point, you should map sine to rows and cosine to columns:
+$<span class="arithmatex">\(r_p^I = r_s + \sin{\theta_p}c_p^r\\c_p^I = c_s + \cos{\theta_p}c_p^r\)</span>$</p>
+<p>Visualize the final path overlaid on the original input image to verify that it "snaps" to the organ boundary.</p>
+<details class="tip">
+<summary>Solution 15</summary>
+<p>col_p = np.array(path_x)
+row_p = np.array(path_y)</p>
+<p>thetas = 2<em>np.pi</em>row_p/len(row_p)
+row_input = spleen_centre[0]+np.sin(thetas)<em>col_p
+col_input = spleen_centre[1]+np.cos(thetas)</em>col_p</p>
+<p>plt.imshow(im, cmap="gray")
+plt.plot(col_input, row_input, color="red")
+```</p>
+</details>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S259012302502506X">A comprehensive review of research on surface defect detection of PCBs based on machine vision</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Seam_carving">Seam carving wikipedia</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../../ex2-CamerasAndLensesSubpixel/ex2-CameraLensSubpix/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exercises">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Exercises
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/DTUImageAnalysisOrg/DTUImageAnalysis" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.footer", "content.code.copy", "content.code.annotate", "content.action.edit", "content.action.view", "content.tabs.link", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
