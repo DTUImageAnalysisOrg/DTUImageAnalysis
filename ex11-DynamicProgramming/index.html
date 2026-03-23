@@ -82,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#exercise-11-path-tracing" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2550,6 +2555,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-python-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Python packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-data-and-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise data and material
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2566,10 +2625,34 @@
 
 
 
-  <h1>Index</h1>
-
 <p><em>Latest Page Update: 23-03-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../downloads/sol_material-11.zip">Solution</a></p>
+<h1 id="exercise-11-path-tracing">Exercise 11 - Path tracing<a class="headerlink" href="#exercise-11-path-tracing" title="Permanent link">¶</a></h1>
+<hr>
+<p>In this exercise, we will implement the path-tracing algorithm from MIA. You will use path tracing along different cost images, and in addition learn how to find the minimum cost path between two pre-defined points. You will gain experience with using scikit-images graph library to solve the same problems. Finally, you will learn to perform polar resampling for path-tracing along round objects. </p>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">¶</a></h2>
+<p>After completing this exercise, the student should be able to do the following:</p>
+<ol>
+<li>Calculate the accumulator image.</li>
+<li>Calculate the backtracking image.</li>
+<li>Use the backtracking image to trace the minimum cost path.</li>
+<li>Be able to calculate the minimum cost path between two pre-defined points.</li>
+<li>Reason about which cost image makes sense to use for a specific path tracing problem.</li>
+<li>Be able to use <code>skimage.graph.shortest_path</code> as a faster alternative for solving minimum cost path problems.</li>
+<li>Perform a polar resampling using scikit-image.</li>
+<li>Transform coordinates from polar space back to image space. </li>
+</ol>
+<h2 id="theory">Theory<a class="headerlink" href="#theory" title="Permanent link">¶</a></h2>
+<p>This weeks material mainly focuses on path tracing. Image analysis path tracing is a sub-topic of a larger field called graph optimization. In this course, you are not expected to know anything about graphs. But in some cases, your results (using dynamic programming) may differ from library functions such as <code>skimage.graph.shortest_path</code>, because we use a single-step greedy algorithm, whereas library functions often solve graph problems with algorithms such as Djikstra's shortest path.
+Remember, while commonly referred to as the shortest path in image analysis, in the domain of graph theory, the problem we are trying to solve is referred to as a minimum cost path. </p>
+<h2 id="installing-python-packages">Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permanent link">¶</a></h2>
+<p>In this exercise we do not rely on any new dependencies. 
+We will use the virtual environment from the previous exercise (course02503).</p>
+<h2 id="exercise-data-and-material">Exercise data and material<a class="headerlink" href="#exercise-data-and-material" title="Permanent link">¶</a></h2>
+<p>Download the data you'll need for this exercise by clicking here: <a class="md-button md-button--primary inline-button" href="../downloads/material-11.zip">Data</a></p>
+<p>Alternatively, you can also fetch the data for the whole course through the <a href="https://github.com/RasmusRPaulsen/DTUImageAnalysis">Image Analysis GitHub repository</a>. See the <a href="../ex1-setup/data_and_github/">Data and GitHub</a> section for more information. If you're using Git, it may be wise run:</p>
+<p><code>git pull</code></p>
+<p>As this will fetch updates to the material, which may happen throughout the course.</p>
 
 
 
