@@ -2643,8 +2643,8 @@
 <li>Transform coordinates from polar space back to image space. </li>
 </ol>
 <h2 id="theory">Theory<a class="headerlink" href="#theory" title="Permanent link">¶</a></h2>
-<p>This weeks material mainly focuses on path tracing. Image analysis path tracing is a sub-topic of a larger field called graph optimization. In this course, you are not expected to know anything about graphs. But in some cases, your results (using dynamic programming) may differ from library functions such as <code>skimage.graph.shortest_path</code>, because we use a single-step greedy algorithm, whereas library functions often solve graph problems with algorithms such as Djikstra's shortest path.
-Remember, while commonly referred to as the shortest path in image analysis, in the domain of graph theory, the problem we are trying to solve is referred to as a minimum cost path. </p>
+<p>This weeks material mainly focuses on path tracing. Image analysis path tracing is a sub-topic of a larger field called graph theory. In this course, you are not expected to know anything about graphs. But in some cases, your results (using dynamic programming) may differ from library functions such as <code>skimage.graph.shortest_path</code> depending on how costs are computed. 
+Remember, while commonly referred to as the shortest path in image analysis, in the domain of graph theory, the problem we are trying to solve is referred to as a minimum cost path (MCP). </p>
 <h2 id="installing-python-packages">Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Permanent link">¶</a></h2>
 <p>In this exercise we do not rely on any new dependencies. 
 We will use the virtual environment from the previous exercise (course02503).</p>

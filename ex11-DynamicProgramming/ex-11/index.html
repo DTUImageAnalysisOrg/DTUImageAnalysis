@@ -3127,8 +3127,8 @@ Before computing the energy-map in every iteration, apply a gaussian blur to the
 </span></code></pre></div>
 <p>But you may also use your own implementation if you prefer. Note that the results will be different. </p>
 <div class="admonition note">
-<p class="admonition-title">What skimage.graph.shortest_path actually does</p>
-<p>does not directly solve the minimal cost problem as you've learned in the course. Instead it uses Djikstra's shortest path to solve a problem which minimzes the difference in intensities visited along the path. As a result, it finds iso-curves through the energy-map or input image. In this case, this is fine, as we expect an iso-curve to hold very little information of interest for input image, but you should be aware of this difference if you use it for solving other problems.</p>
+<p class="admonition-title">What <code>skimage.graph.shortest_path</code> actually does</p>
+<p>This library function does not directly solve the minimal cost problem formulation which you've learned in the course. Instead it uses Djikstra's shortest path to solve a problem which minimzes the difference in intensities visited along the path. In other words, the cost image is computed differently. As a result, it finds iso-curves through the energy-map or input image, whereas the dynamic programming approach in the book solves the problem of finding the "lowerst valley" in the cost landscape. For this application this is perfectly fine, as we expect an iso-curve to hold very little information of interest for the input image, but you should be aware of this difference if you use it for solving other problems which are best modeled using the lowest intensity path.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Code template</p>
