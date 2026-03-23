@@ -2921,11 +2921,11 @@ Printec circuit boards (PCBs) are a very common way to produce electrical circui
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">y_crop</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1150</span><span class="p">,</span><span class="mi">1400</span><span class="p">],</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">x_crop</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1350</span><span class="p">,</span><span class="mi">1850</span><span class="p">]</span> 
 </span></code></pre></div>
-<p>and visualize the region of interest. We are interested in determining connectivity between the two point coordinates (<span class="arithmatex">\(y,x\)</span>) in the cropped image: </p>
-<p></p><div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">start_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">118</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">end_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">449</span><span class="p">]</span>
+<p>and visualize the region of interest. We are interested in determining connectivity between the two points <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> with the following coordinates in the cropped image: </p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">start_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">118</span><span class="p">,</span><span class="mi">49</span><span class="p">]</span> <span class="c1">#point A: format y,x</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">end_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mi">102</span><span class="p">,</span><span class="mi">449</span><span class="p">]</span> <span class="c1">#point B: format y,x</span>
 </span></code></pre></div>
-Visualize the crop of interest together with the start- and end-point.<p></p>
+<p>Visualize the crop of interest together with the start- and end-point.</p>
 <details class="tip">
 <summary>Solution 4</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">im</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">"data/pcb.jpeg"</span><span class="p">,)</span>
@@ -3018,18 +3018,18 @@ To do so, we use a mask to change the image contents. Use a mask where all value
 </ol>
 <p>And run the completely same calculations. 
 Implement this change to the forward calculation method such that you are able to find the path between point <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. </p>
-<p>??? TIP: "Remember"
-    Cropping the image changes the coordinate system. If your original start-point was at <span class="arithmatex">\((r,c)\)</span>, and you crop everything to the left of column <span class="arithmatex">\(c\)</span>, your new start-point coordinate in the cropped matrix will be <span class="arithmatex">\((r,0)\)</span>. Don't forget to shift your end-point coordinates by the same amount!</p>
-<p>??? TIP: "Hint: Numerical Example"
-    Assume you have a 5×5 image I where we want to find a path starting at A=(1,1) and ending at B=(4,4). The original matrix <span class="arithmatex">\(I\)</span> could then be:</p>
-<div class="language-text highlight"><pre><span></span><code>$$I = \begin{bmatrix} 10 &amp; 10 &amp; 255 &amp; 255 &amp; 255 \\10 &amp; \mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\255 &amp; 255 &amp; 255 &amp; 10 &amp; 255 \\255 &amp; 255 &amp; 255 &amp; 10 &amp; 10 \\255 &amp; 255 &amp; 255 &amp; 255 &amp; \mathbf{10_B} \end{bmatrix}$$
-
-First, we crop the matrix to start at column $1$. Then, we set the first column of our **Accumulator Image** $A$ to $\infty$, except for our starting row (Row 1):
-
-$$A_{initial} = \begin{bmatrix} \infty &amp; 255 &amp; 255 &amp; 255 \\\mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\    \infty &amp; 255 &amp; 10 &amp; 255 \\    \infty &amp; 255 &amp; 10 &amp; 10 \\    \infty &amp; 255 &amp; 255 &amp; \mathbf{10_B}\end{bmatrix}$$
-
-Now, when you run the forward pass (Eq. 12.7), any path trying to start at Rows 0, 2, 3, or 4 will inherit a cost of $\infty$, effectively "killing" those paths and forcing the algorithm to only consider routes beginning at your chosen point $A$.
-</code></pre></div>
+<details class="tip">
+<summary>Remember:</summary>
+<p>Cropping the image changes the coordinate system. If your original start-point was at <span class="arithmatex">\((r,c)\)</span>, and you crop everything to the left of column <span class="arithmatex">\(c\)</span>, your new start-point coordinate in the cropped matrix will be <span class="arithmatex">\((r,0)\)</span>. Don't forget to shift your end-point coordinates by the same amount!</p>
+</details>
+<details class="tip">
+<summary>Hint: Numerical Example:</summary>
+<p>Assume you have a 5×5 image I where we want to find a path starting at A=(1,1) and ending at B=(4,4). The original matrix <span class="arithmatex">\(I\)</span> could then be:</p>
+<div class="arithmatex">\[I = \begin{bmatrix} 10 &amp; 10 &amp; 255 &amp; 255 &amp; 255 \\10 &amp; \mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\255 &amp; 255 &amp; 255 &amp; 10 &amp; 255 \\255 &amp; 255 &amp; 255 &amp; 10 &amp; 10 \\255 &amp; 255 &amp; 255 &amp; 255 &amp; \mathbf{10_B} \end{bmatrix}\]</div>
+<p>First, we crop the matrix to start at column <span class="arithmatex">\(1\)</span>. Then, we set the first column of our <strong>Accumulator Image</strong> <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(\infty\)</span>, except for our starting row (Row 1):</p>
+<div class="arithmatex">\[A_{initial} = \begin{bmatrix} \infty &amp; 255 &amp; 255 &amp; 255 \\\mathbf{10_A} &amp; 10 &amp; 10 &amp; 255 \\    \infty &amp; 255 &amp; 10 &amp; 255 \\    \infty &amp; 255 &amp; 10 &amp; 10 \\    \infty &amp; 255 &amp; 255 &amp; \mathbf{10_B}\end{bmatrix}\]</div>
+<p>Now, when you run the forward pass (Eq. 12.7), any path trying to start at Rows 0, 2, 3, or 4 will inherit a cost of <span class="arithmatex">\(\infty\)</span>, effectively "killing" those paths and forcing the algorithm to only consider routes beginning at your chosen point <span class="arithmatex">\(A\)</span>.</p>
+</details>
 <details class="tip">
 <summary>Solution 9</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">h_</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">im_crop_r</span><span class="o">.</span><span class="n">shape</span>
