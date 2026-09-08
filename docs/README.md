@@ -1,3 +1,5 @@
+_Latest Website Update: 08-09-2026_
+
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
 # DTU Course on  Image Analysis
