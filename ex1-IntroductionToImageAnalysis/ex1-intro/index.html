@@ -2897,7 +2897,7 @@
 
 
 
-<p><em>Latest Page Update: 06-10-2026</em></p>
+<p><em>Latest Page Update: 13-10-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-1.zip">Solution</a></p>
 <h1 id="basic-image-handling">Basic image handling<a class="headerlink" href="#basic-image-handling" title="Permanent link">¶</a></h1>
 <p>In this exercise, we will read images from the disk, display them and make some basic examinations of them.</p>
@@ -2946,7 +2946,7 @@ for bone fracture detection.</p>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">im_org</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
-<p><strong>Exercise 4:</strong> <em>Display the image and try to use the simple viewer tools like the </em><em>zoom</em><em> tool to inspect the finger bones. You can see the pixel values at a given pixel position (in x, y coordinates) in the upper right corner. Where do you see the highest and lowest pixel values?</em></p>
+<p><strong>Exercise 4:</strong> <em>Display the image and try to use the simple viewer tools like the <strong>zoom</strong> tool to inspect the finger bones. You can see the pixel values at a given pixel position (in x, y coordinates) in the upper right corner. Where do you see the highest and lowest pixel values?</em></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im_org</span><span class="p">)</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Metacarpal image'</span><span class="p">)</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -3239,7 +3239,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 <p><strong>Exercise 22:</strong> <em>Take an image with a bright object on a dark background. Compute and visualise the histograms for the image. Can you recognise the object and the background in the histogram?</em></p>
 <h2 id="color-channels">Color channels<a class="headerlink" href="#color-channels" title="Permanent link">¶</a></h2>
 <p>We are now going to look at the intensity values of the different channels of a color (RGB) image taken at DTU.</p>
-<p><strong>Exercise 23:</strong> <em>Start by reading and showing the </em><em>DTUSign1.jpg</em><em> image.</em></p>
+<p><strong>Exercise 23:</strong> <em>Start by reading and showing the <strong>DTUSign1.jpg</strong> image.</em></p>
 <details class="tip">
 <summary>Solution 23</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1.jpg'</span><span class="p">)</span>
@@ -3267,7 +3267,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </span></code></pre></div>
 </details>
 <h2 id="simple-image-manipulations">Simple Image Manipulations<a class="headerlink" href="#simple-image-manipulations" title="Permanent link">¶</a></h2>
-<p><strong>Exercise 25:</strong> <em>Start by reading and showing the </em><em>DTUSign1.jpg</em><em> image.</em> </p>
+<p><strong>Exercise 25:</strong> <em>Start by reading and showing the <strong>DTUSign1.jpg</strong> image.</em> </p>
 <details class="tip">
 <summary>Solution 25</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">out_dir</span> <span class="o">=</span> <span class="s1">'results/'</span>
@@ -3278,7 +3278,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 <p>You can create a black rectangle in the image, by setting all RGB channels to zero in a given region. This is also an example of using NumPy slicing:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="n">im_org</span><span class="p">[</span><span class="mi">500</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">:</span><span class="mi">1500</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
 </span></code></pre></div>
-<p><strong>Exercise 26:</strong> <em>Show the image again and save it to disk as </em><em>DTUSign1-marked.jpg</em><em> using the <code>io.imsave</code> function. Try to save the image using different image formats like for example PNG.</em></p>
+<p><strong>Exercise 26:</strong> <em>Show the image again and save it to disk as <strong>DTUSign1-marked.jpg</strong> using the <code>io.imsave</code> function. Try to save the image using different image formats like for example PNG.</em></p>
 <details class="tip">
 <summary>Solution 26</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">out_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1-marked.jpg'</span><span class="p">,</span> <span class="n">im_org</span><span class="p">)</span>
@@ -3298,7 +3298,7 @@ You can plot a histogram like this. In an image with a bright object on a dark o
 </span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="n">io</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">out_dir</span> <span class="o">+</span> <span class="s1">'DTUSign1-marked_blue.jpg'</span><span class="p">,</span> <span class="n">im_copy</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
-<p><strong>Exercise 28:</strong> <em>Try to automatically create an image based on </em><em>metacarpals.png</em><em> where the bones are colored blue. You should use <code>color.gray2rgb</code> and pixel masks.</em></p>
+<p><strong>Exercise 28:</strong> <em>Try to automatically create an image based on <strong>metacarpals.png</strong> where the bones are colored blue. You should use <code>color.gray2rgb</code> and pixel masks.</em></p>
 <details class="tip">
 <summary>Solution 28</summary>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="n">im_org</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">in_dir</span> <span class="o">+</span> <span class="s1">'metacarpals.png'</span><span class="p">)</span>
