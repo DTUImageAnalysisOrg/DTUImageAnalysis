@@ -1,3 +1,5 @@
+_Latest Page Update: 20-10-2026_
+
 ***Solution is now available! Download the full solution from here:*** [Solution](../downloads/sol_material-6.zip){ .md-button .md-button--primary .inline-button }
 
 ## Abdominal computed tomography
