@@ -1,3 +1,5 @@
+_Latest Page Update: 27-10-2026_
+
 ***Solution is now available! Download the full solution from here:*** [Solution](../downloads/sol_material-6b.zip){ .md-button .md-button--primary .inline-button }
 
 # Exercise 6b - Advanced segmentation. Fisherman's Linear discriminant analysis for segmentation
