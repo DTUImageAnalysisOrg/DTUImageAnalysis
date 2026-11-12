@@ -1,3 +1,5 @@
+_Latest Page Update: 12-11-2026_
+
 
 # Exercise 9 - Advanced 3D registration
 ---
