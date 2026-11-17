@@ -2516,7 +2516,7 @@
 
 
 
-<p><em>Latest Page Update: 12-11-2026</em></p>
+<p><em>Latest Page Update: 17-11-2026</em></p>
 <p><strong><em>Solution is now available! Download the full solution from here:</em></strong> <a class="md-button md-button--primary inline-button" href="../../downloads/sol_material-7.zip">Solution</a></p>
 <h2 id="image-rotation">Image rotation<a class="headerlink" href="#image-rotation" title="Permanent link">¶</a></h2>
 <p>One of the most useful and simple geometric transformation is rotation, where an image is rotated around a point. </p>
@@ -3237,10 +3237,18 @@ Two photos with toy figures have been taken with a standard camera (play1.png an
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 103, 215, 234</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 101, 233, 250</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 40, 122, 130</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked=""><span class="task-list-indicator"></span></label> 50, 200, 121</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 91, 239, 277</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> 50, 200, 121</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked=""><span class="task-list-indicator"></span></label> 91, 239, 277</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"><span class="task-list-indicator"></span></label> Do not know</li>
 </ul>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">246</span><span class="p">,</span> <span class="mi">244</span><span class="p">,</span> <span class="mi">36</span><span class="p">],</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>                <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">108</span><span class="p">],</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>                <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">234</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="n">gamma_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">255</span> <span class="o">*</span> <span class="p">(</span><span class="n">img</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span><span class="o">**</span><span class="mf">1.12</span><span class="p">)</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="n">row1</span> <span class="o">=</span> <span class="n">gamma_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="n">row2</span> <span class="o">=</span> <span class="n">gamma_img</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">row1</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span><span class="nb">min</span><span class="p">(</span><span class="n">row1</span><span class="p">[:</span><span class="mi">3</span><span class="p">]),</span><span class="nb">min</span><span class="p">(</span><span class="n">row1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])])</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="n">row3</span> <span class="o">=</span> <span class="n">gamma_img</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">row2</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span><span class="nb">min</span><span class="p">(</span><span class="n">row2</span><span class="p">[:</span><span class="mi">3</span><span class="p">]),</span><span class="nb">min</span><span class="p">(</span><span class="n">row2</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])])</span>
+</span></code></pre></div>
 </details>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
 <ul>
